@@ -8,28 +8,21 @@ Pasos:
 2. (*Opcional*) Mete miniconda no **PATH** de Microsoft Windows. O instalador di que pode dar problemas, pero é só se temos configuracións previas que empreguen Python e nalgúns casos moi especiais (mira os pasos abaixo).
 3. Actualiza tódolos paquetes da contorna base para que non dea problemas
 
-    ~~~
-    conda update –-all
-    ~~~
+        conda update –-all
 
 4. Borra a contorna bigdata anterior
 
-    ~~~
-    conda env remove -n bigdata
-    ~~~
+        conda env remove -n bigdata
 
 5. Crea a nova contorna bigdata e actívaa
 
-    ~~~
-    conda create -n bigdata python=3.8
-    conda activate bigdata
-    ~~~
+        conda create -n bigdata python=3.8
+        conda activate bigdata
 
 6. Instala os paquetes mínimos que imos precisar
 
-    ~~~
-    conda install -c conda-forge jupyterlab pandas numpy wordcloud nltk
-    ~~~
+        conda install -c conda-forge jupyterlab pandas numpy wordcloud nltk
+
 
 ## Engadir miniconda ao PATH en Microsoft Windows
 
@@ -77,8 +70,7 @@ Busca "Jupyter" do autor "Microsoft" e instálao.
 1. Abre o code.
 2. Abre unha terminal (En GNU/Linux: Ctrl+Shift+`, en Microsoft Windows: Ctrl+ñ) e escribir o comando (en Windows podemos especificar tamén powershell ao final):
 
-    ~~~~
-    conda init
-    ~~~~
+        conda init
+
 
 3. Pecha tódolos terminais e xa podes abrir un que será inicializado na contorna base.
