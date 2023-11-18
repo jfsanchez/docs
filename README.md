@@ -1,2 +1,0 @@
-# jfsanchezdocs
-MKdocs con apuntes
