@@ -24,7 +24,21 @@ Pasos:
         conda install -c conda-forge jupyterlab pandas numpy wordcloud nltk
 
 
-## Engadir miniconda ao PATH en Microsoft Windows
+## Engadir miniconda ao PATH
+
+### GNU/Linux 
+
+O instalador ofrécenos por defecto inicializar conda e metela no PATH, deberíamos optar por esta opción.
+
+Se non o fixemos e non queremos executar de novo o instalador coa opción -u, entón podemos engadir ao final do .bashrc (considerando que ocnda estea instalado na ruta por defecto e a nivel usuario):
+
+~~~~
+export PATH=$PATH:$HOME/miniconda3
+~~~~
+
+### Microsoft Windows
+
+O instalador tamén ofrece a posibilidade de meter conda no PATH pero o desaconsella, se non o fixeches (non é unha opción por defecto) entón, pódelo meter manualmente como se indica a continuación.
 
 Menú inicio -> Editar las variables de entorno de esta cuenta
 
@@ -38,12 +52,10 @@ Premer en "Editar..."
 
 Logo en "Nuevo" e engadir unha entrada por liña
 
-E substituir **USUARIO** polo voso usuario
-
+Mirar cal das dúas aplica (mira os directorios e busca onde tes conda instalado)
 ~~~~
-C:\Users\USUARIO\Miniconda3\bin
-C:\Users\USUARIO\Miniconda3\scripts
-C:\Users\USUARIO\Miniconda3\
+%USERPROFILE%\AppData\Local\miniconda3\condabin
+%USERPROFILE%\Miniconda3\bin
 ~~~~
 
 # Configurar Visual Studio Code (vscode) con conda e jupyterlab
