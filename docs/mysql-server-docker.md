@@ -1,10 +1,10 @@
 # Instalar MySQL en docker
 
-Basado en: <https://hub.docker.com/_/mysql>
+Basado en la imagen oficial: <https://hub.docker.com/_/mysql>
 
-1. Emplearemos el directorio /root/mysqldb para guardar la BBDD.
+1. Emplearemos el directorio /root/mysqldb de nuestra máquina real para guardar la BBDD.
 2. Usaremos el puerto 9906 en el anfitrión porque en ocasiones se bloquea por seguridad el puerto 3306.
-3. La contraseña será: abc123.
+3. La contraseña del usuario root será: abc123. y tendrá permisos para conectar desde cualquier host.
 
 ~~~~
 docker run -p 9906:3306 --name mysqlpracticoso -v /root/mysqldb:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=abc123. -d mysql:8
@@ -50,3 +50,5 @@ Si queremos conectar desde DBeaver en nuestra máquina local y hemos instalado e
 
 
 ![Configuración DBeaver](images/mysql-server-docker/dbeaver.png "Opciones de conexión en DBeaver")
+
+⚠️ **AVISO**: Esta configuración NO pretende ser segura, su objetivo es montar de forma rápida un entorno para aprendizaje.
