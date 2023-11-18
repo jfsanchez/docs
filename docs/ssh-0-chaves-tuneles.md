@@ -1,9 +1,9 @@
 # 🔑 SSH e túneles sen cavar nin picar pedra
-## Qué é SSH
+## ◼️ Qué é SSH
 
 Un protocolo cifrado (**S**ecure **SH**ell) para conectar cun servidor e poder enviarlle comandos en modo texto. Permite moitas máis opcións, como por exemplo, redirixir portos.
 
-## Xerar chave SSH
+## 🗝️ Xerar chave SSH
 
 Hoxe en día deberíamos abandonar a autenticación por usuario e clave en prol dun método máis seguro, o cifrado asimétrico que emprega chave pública e privada.
 
@@ -20,7 +20,7 @@ Se non existe, podemos facer unha das seguintes cousas para crealo:
 - Tentar conectar con calquer servidor por SSH. Exemplo: `ssh localhost`.
 - Xerar unha chave SSH: `ssh-keygen`.
 
-### Microsoft Windows
+### 🪟 Microsoft Windows
 
 Abrimos PowerShell e executamos:
 
@@ -30,7 +30,7 @@ ssh-keygen
 
 Vídeo de Youtube: <https://www.youtube.com/watch?v=leYE4E9lLOI>
 
-### GNU/Linux
+### 🐧 GNU/Linux
 
 Abrimos unha consola xterm ou similar e executamos:
 
@@ -49,13 +49,13 @@ Se precisamos acceder a un recurso que está detrás dun firewall ou ben non é 
 ![Túnel SSH](images/ssh/tunel-ssh.png "Cómo funciona o túnel SSH e para que serve")
 
 
-### Tipos de túneles
+### ♵ Tipos de túneles
 
 - **Locales**: Abren no noso equipo (no que executamos o comando SSH) un porto. O destino pode ser o mesmo host ssh (localhost) ou outro destino ao que ese servidor teña acceso.
 - **Remotos**: Abren no porto do host SSH ao que nos conectamos. Podemos exportar un servizo local.
 - **Dinámicos**: Creamos un [proxy](https://es.wikipedia.org/wiki/Servidor_proxy) socks que pode ser empregado por moitas aplicacións (por exemplo, un navegador).
 
-### Comandos
+### 🔲 Comandos
 
 Nunha consola, chamando SSH directamente podemos facer:
 
