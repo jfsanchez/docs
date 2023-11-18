@@ -68,7 +68,9 @@ Busca "Jupyter" do autor "Microsoft" e instálao.
 
 1. Abre o code.
 2. Abre unha terminal (En GNU/Linux: Ctrl+Shift+`, en Microsoft Windows: Ctrl+ñ) e escribir o comando (en Windows podemos especificar tamén powershell ao final):
+
     ~~~~
     conda init
     ~~~~
+
 3. Pecha tódolos terminais e xa podes abrir un que será inicializado na contorna base.
