@@ -1,0 +1,14 @@
+theme:
+  name: material
+  highlightjs: True
+  hljs_style: shades-of-purple
+  locale: es
+  language: gl
+  include_homepage_in_sidebar: True
+  prev_next_buttons_location: both
+
+site_name: JFSanchez
+site_url: https://jfsanchez.es/docs
+repo_url: https://github.com/jfsanchez/
+site_author: Jose Sánchez
+copyright: 2023 - Jose Sánchez
