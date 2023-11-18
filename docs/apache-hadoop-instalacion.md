@@ -372,10 +372,6 @@ E finalmente dende o master iniciamos todo o sistema (esto conecta por SSH aos n
 
 `start-dfs.sh`
 
----
-# Quedamos aquí
----
-
 ### Arrancando Apache Hadoop ao inicio con cron
 
 Se queremos lanzar o proceso de Apache Hadoop dende cron (por exemplo para facer uso da opción `@reboot`) deberemos cambiar por si acaso o arquivo: `hadoop-3.2.4/etc/hadoop/hadoop-env.sh` e mudar as seguintes variables, para non depender do .bashrc do usuario:
