@@ -38,7 +38,9 @@ Abrimos unha consola xterm ou similar e executamos:
 ssh-keygen
 ~~~~
 
-Vídeo en ASCIINEMA: <https://asciinema.org/a/O1BcQeVes6Ncu2sEACF55c1yQ>
+Vídeo en ASCIINEMA
+
+[![asciicast](https://asciinema.org/a/O1BcQeVes6Ncu2sEACF55c1yQ.svg)](https://asciinema.org/a/O1BcQeVes6Ncu2sEACF55c1yQ)
 
 ## 🚇 Tunelización SSH: Empregando SSH para redireccionar portos (SSH Port Forwarding)
 
