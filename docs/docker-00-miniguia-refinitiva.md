@@ -504,7 +504,9 @@ Lanzalo:
 - **vaultproject.io**: Hashicorp vault. Permite almacenar credenciales y usarlas como parte del proceso CD/CI para no tener que almacenarlas en el repositorio directamente.
 
 ## PLONK Stack
+
 Consiste en los siguientes elementos:
+
 - **Prometheus.io**: Monitorea y gestiona alertas. Soporta métricas en tiempo real y usa una BBDD con series temporales.
 
 - **Linux**:
