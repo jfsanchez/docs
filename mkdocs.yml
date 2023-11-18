@@ -6,6 +6,8 @@ theme:
   language: gl
   include_homepage_in_sidebar: True
   prev_next_buttons_location: both
+  favicon: "images/favicon.png"
+  logo: "images/logo.png"
 
 site_name: JFSanchez
 site_url: https://jfsanchez.es/docs
