@@ -423,6 +423,6 @@ Podes atopar máis información:
 
 ## Se atopas fallos. Contacta:
 
-© 2023 - Jose Francisco Sánchez Corral. <jfsanchez@edu.xunta.gal>
+© 2023 - Jose Sánchez <jfsanchez@edu.xunta.gal>
 
 Se atopas erros, agradecerei que me envíes un email co aviso ou as correccións.
