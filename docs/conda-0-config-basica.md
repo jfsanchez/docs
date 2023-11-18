@@ -8,7 +8,7 @@ Pasos:
 2. (*Opcional*) Mete miniconda no **PATH** de Microsoft Windows. O instalador di que pode dar problemas, pero é só se temos configuracións previas que empreguen Python e nalgúns casos moi especiais (mira os pasos abaixo).
 3. Actualiza tódolos paquetes da contorna base para que non dea problemas
 
-        conda update –-all
+        conda update --all
 
 4. Borra a contorna bigdata anterior
 
