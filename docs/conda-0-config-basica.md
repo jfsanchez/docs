@@ -7,22 +7,29 @@ Pasos:
 1. Baixa miniconda <https://docs.conda.io/projects/miniconda/en/latest/> e instálao no teu equipo.
 2. (*Opcional*) Mete miniconda no **PATH** de Microsoft Windows. O instalador di que pode dar problemas, pero é só se temos configuracións previas que empreguen Python e nalgúns casos moi especiais (mira os pasos abaixo).
 3. Actualiza tódolos paquetes da contorna base para que non dea problemas
-    ~~~~
+
+    ~~~
     conda update –-all
-    ~~~~
+    ~~~
+
 4. Borra a contorna bigdata anterior
-    ~~~~
+
+    ~~~
     conda env remove -n bigdata
-    ~~~~
+    ~~~
+
 5. Crea a nova contorna bigdata e actívaa
-    ~~~~
+
+    ~~~
     conda create -n bigdata python=3.8
     conda activate bigdata
-    ~~~~
+    ~~~
+
 6. Instala os paquetes mínimos que imos precisar
-    ~~~~
+
+    ~~~
     conda install -c conda-forge jupyterlab pandas numpy wordcloud nltk
-    ~~~~
+    ~~~
 
 ## Engadir miniconda ao PATH en Microsoft Windows
 
@@ -59,6 +66,7 @@ Busca "Jupyter" do autor "Microsoft" e instálao.
 1. Vai á roda de configuración e selecciona configuración (En GNU/Linux: Ctrl+,).
 2. Busca `conda path`.
 3. No cadro pon a ruta ao executable de conda (conda.bat en Microsoft Windows)
+
 ~~~~
 /home/USUARIO/miniconda3/bin/conda
 ~~~~
