@@ -1,4 +1,4 @@
-# Apuntes
+# 📕 Apuntes
 
 Podes mirar outros apuntes feitos con revealjs na miña web principal [JFSanchez.es](https://jfsanchez.es).
 

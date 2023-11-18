@@ -1,4 +1,4 @@
-# Instalar MariaDB en docker
+# 🧾 Instalar MariaDB en docker
 
 Basado en la imagen oficial: <https://hub.docker.com/_/mariadb>
 

@@ -1,4 +1,4 @@
-# Licencia
+# ⚖️ Licencia
 
 Los materiales se publican con copyright. Se permite su uso en docencia a alumnado de cursos de especialización, pero no para formación de formadores.
 

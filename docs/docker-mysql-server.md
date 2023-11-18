@@ -1,4 +1,4 @@
-# Instalar MySQL en docker
+# 🧾 Instalar MySQL en docker
 
 Basado en la imagen oficial: <https://hub.docker.com/_/mysql>
 

@@ -1,4 +1,4 @@
-# Docker: La miniguía "re"finitiva
+# 📘 Docker: La miniguía "re"finitiva
 
 ⚠️ ⚠️ ⚠️ Esta guía está desordenada, es el resultado de varios cursos, investigación por mi cuenta e ir apuntando pasos. La idea es ir ordenándola poco a poco. Puede contener errores, repeticiones y no ser exacta.
 
