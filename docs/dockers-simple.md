@@ -31,4 +31,3 @@ sudo usermod -a -G docker $USER
 docker run hello-world
 ~~~~
 
-Redirigir puertos anfitrión <-> docker: <https://tecadmin.net/forwarding-ports-to-docker-containers-using-linux-firewalls/>
