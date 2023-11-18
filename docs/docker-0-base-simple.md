@@ -1,4 +1,4 @@
-# Instalar docker en debian
+# Instalar docker en Debian
 
 Basado en: <https://docs.docker.com/engine/install/debian/>
 
