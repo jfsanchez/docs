@@ -484,9 +484,15 @@ Lo lógico en estos casos es planificar la migración, probarla y ejecutar final
 
 Ejemplo con docker compose. Moodle:
 
-~~~~
-    curl -sSL https://raw.githubusercontent.com/bitnami/containers/main/bitnami/moodle/docker-compose.yml > docker-compose.yml
+Bajar el `docker-compose.yml` de moodle hecho por bitnami.
 
+~~~~
+curl -sSL https://raw.githubusercontent.com/bitnami/containers/main/bitnami/moodle/docker-compose.yml > docker-compose.yml
+~~~~
+
+Lanzalo:
+
+~~~~
     docker-compose up -d
 ~~~~
 
@@ -497,16 +503,20 @@ Ejemplo con docker compose. Moodle:
 - **Rancher Desktop**: Cliente open-source para gestión de Containers y Kubernetes para Windows, Linux y Mac.
 - **vaultproject.io**: Hashicorp vault. Permite almacenar credenciales y usarlas como parte del proceso CD/CI para no tener que almacenarlas en el repositorio directamente.
 
-## PLONK Stack:
+## PLONK Stack
 Consiste en los siguientes elementos:
 - **Prometheus.io**: Monitorea y gestiona alertas. Soporta métricas en tiempo real y usa una BBDD con series temporales.
+
 - **Linux**:
+
 - **OpenFaaS**: "Function as a service". Haciendo uso de una arquitectura de microservicios podemos desarrollar, ejecutar y administrar funcionalidades en una aplicación olvidándonos de la parte de la infraestructura ("serverless"). Ejemplos en los que se puede aplicar esta técnica son: procesos batch (por lotes), procesamiento en stream (flujo), procesos ETL, IoT (Internet de las cosas), apps para móviles, aplicaciones web, APIs, etc. La diferencia con PaaS es que el desarrollador/admnistrador ni siquiera debe preocuparse por el escalado o aumentar los servidores.
+
 - **NATS**: Mensajería de alto rendimiento. Comunica sistemas/procesos/servicios. Partes: NATS Core, Jet Stream.
+
 - **Kubernetes**: Orquestador para desplegar los contenedores en servidores.
 
 **Más información**: <https://www.openfaas.com/blog/plonk-stack/>
 
 ## Mirar también...
-- https://www.youtube.com/watch?v=MIl-LJodYUU
-- https://bobcares.com/blog/move-docker-container-to-another-host/
+- <https://www.youtube.com/watch?v=MIl-LJodYUU>
+- <https://bobcares.com/blog/move-docker-container-to-another-host/>
