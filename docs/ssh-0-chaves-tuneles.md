@@ -28,7 +28,10 @@ Abrimos PowerShell e executamos:
 ssh-keygen
 ~~~~
 
-Vídeo de Youtube: <https://www.youtube.com/watch?v=leYE4E9lLOI>
+Vídeo de Youtube
+
+[![ssh-keygen en Microsoft Windows](https://img.youtube.com/vi/leYE4E9lLOI/default.jpg)](https://youtu.be/leYE4E9lLOI)
+
 
 ### 🐧 GNU/Linux
 
