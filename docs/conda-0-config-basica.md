@@ -58,15 +58,15 @@ Mirar cal das dúas aplica (mira os directorios e busca onde tes conda instalado
 %USERPROFILE%\Miniconda3\bin
 ~~~~
 
-# Configurar Visual Studio Code (vscode) con conda e jupyterlab
+## Configurar Visual Studio Code (vscode) con conda e jupyterlab
 
-## Instalar plugin de jupyterlab
+### Instalar plugin de jupyterlab
 
 Selecciona na roda de configuración (abaixo, esquerda) a opción "Extensiones".
 
 Busca "Jupyter" do autor "Microsoft" e instálao.
 
-## Configurar a ruta base de conda
+### Configurar a ruta base de conda
 
 1. Vai á roda de configuración e selecciona configuración (En GNU/Linux: Ctrl+,).
 2. Busca `conda path`.
@@ -76,7 +76,7 @@ Busca "Jupyter" do autor "Microsoft" e instálao.
 /home/USUARIO/miniconda3/bin/conda
 ~~~~
 
-## Configurar a terminal
+### Configurar a terminal
 
 
 1. Abre o code.
