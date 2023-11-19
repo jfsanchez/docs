@@ -421,8 +421,8 @@ Podes atopar máis información:
  - <https://www.tutorialspoint.com/es/hadoop/hadoop_multi_node_cluster.htm>
  - <https://hadoop.apache.org/docs/r3.0.0/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml>
 
-## Se atopas fallos. Contacta:
+## Copyright
 
-© 2023 - Jose Sánchez <correo@jfsanchez.es>
+© 2023 - Jose Sánchez
 
-Se atopas erros, agradecerei que me envíes un email co aviso ou as correccións.
+Se atopas erros, agradecerei que me envíes un email/mensaxe co aviso ou as correccións.
