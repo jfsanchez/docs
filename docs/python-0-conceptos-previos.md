@@ -1,13 +1,13 @@
-## 💊 Arquivos en Python
+# 💊 Arquivos en Python
 
-### Rutas absolutas e relativas en Microsoft Windows e GNU/Linux
+## Rutas absolutas e relativas en Microsoft Windows e GNU/Linux
 
 Así de xeito rápido poderíamos definir:
 
 - **Ruta absoluta**: Ruta completa, todas as indicacións dende cero para chegar á ruta.
 - **Ruta relativa**: Partindo do directorio actual, as indicacións para chegar á ruta.
 
-### Son cuestións de formato (de texto)...
+## Son cuestións de formato (de texto)...
 
 Hai diferentes maneiras de poñer unha ruta (absoluta ou relativa) e que a mesma sexa compatible con Microsoft Windows e GNU/Linux.
 
@@ -34,13 +34,13 @@ else:
     path_base='/home/usuario/Downloads/datasets/'
 ```
 
-### Comparación de cadeas de texto
+## Comparación de cadeas de texto
 
 💡 Curiosidade polo método **casefold()** empregado no código de enriba? É unha boa práctica para comparar **determinadas** cadeas de texto, podes mirar a documentación en: <https://docs.python.org/3/library/stdtypes.html#str.casefold>. Básicamente ignora as maiúsculas e minúsculas e ten en conta cousas como que a dobre ss no alemán pode equivaler á: ß. O algoritmo de casefold está descrito aquí: <https://www.unicode.org/versions/Unicode15.0.0/ch03.pdf>. Se simplemente queres ignorar maiúsculas, podes aplicar un **lower()** a ambas cadeas.
 
 Para engadir subdirectorios á ruta, temos varias opcións:
 
-#### Suma de cadeas de texto
+### Suma de cadeas de texto
 
 
 ```python
@@ -50,7 +50,7 @@ with open(path_base+'a-coruna.csv') as ficheiro:
 
 💡 Curiosidade do que fai o método **rstrip()**? Básicamente borra os caracteres da cola que lle indiquemos. Se non indicamos ningún, entón borrará os caracteres que sexan de tipo espacio en branco: **espacios** ' ', **tabuladores** '\t' e **novas liñas** '\n'. <https://www.w3schools.com/python/ref_string_rstrip.asp> e <https://docs.python.org/3/library/stdtypes.html>.
 
-#### Con os.path.join
+### Con os.path.join
 
 
 ```python
@@ -62,7 +62,7 @@ with open(os.path.join(path_base, 'lugo.csv')) as ficheiro:
 
 Tamén existe a libraría **pathlib**: <https://docs.python.org/3/library/pathlib.html>.
 
-#### Con f-string (format string)
+### Con f-string (format string)
 
 Poñeremos unha f antes das comillas e logo as variables entre chaves {}:
 
@@ -72,7 +72,7 @@ with open(f'{path_base}pontevedra.csv') as ficheiro:
     print(ficheiro.readline().rstrip())
 ```
 
-#### Con r-string (raw string)
+### Con r-string (raw string)
 
 E se nos poñemos burros, con r-string tamén podemos empregas as barras invertidas sen necesidade de escapalas. O texto non se interpreta, é tal cual.
 
@@ -82,7 +82,7 @@ with open(r'C:\Users\USUARIO\Downloads\datasets\ourense.csv') as ficheiro:
     print(ficheiro.readline().rstrip())
 ```
 
-#### Con fr-string (format e raw)
+### Con fr-string (format e raw)
 
 Tamén podemos mezclar ambas combinacións para obter o mellor de ambos mundos.
 
@@ -95,7 +95,7 @@ with open(fr'C:\Users\USUARIO\Downloads\datasets\{arquivo}') as ficheiro:
 ```
 
 
-### Cómo crear un arquivo temporal
+## Cómo crear un arquivo temporal
 
 
 ```python
@@ -186,7 +186,7 @@ with open(ruta_arquivo) as ficheiro:
 
 ```
 
-#### Tipos de apertura
+### Tipos de apertura
 
 No **open()** podemos especificar principalmente: **r** (lectura, por defecto), **w** (escritura), **a** (append ou engadir ao final) entre outras.
 
