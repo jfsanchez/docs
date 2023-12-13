@@ -16,7 +16,7 @@ Pasos:
 
 5. Crea a nova contorna bigdata e actívaa
 
-        conda create -n bigdata python=3.8
+        conda create -n bigdata python=3.10
         conda activate bigdata
 
 6. Instala os paquetes mínimos que imos precisar
