@@ -1,4 +1,4 @@
-# Maxias pitónicas
+# 🪄 Ipython: Maxias pitónicas
 
 ![images/python/ipython.png](images/python/ipython.png)
 
