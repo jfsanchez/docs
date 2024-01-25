@@ -11,6 +11,7 @@ Requiere un usuario con permisos sudo.
 ~~~~
 sudo apt update
 sudo apt -y dist-upgrade
+sudo apt -y install curl
 ~~~~
 
 2. Ejecutar el script recomendado por docker
