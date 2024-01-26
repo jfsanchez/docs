@@ -27,13 +27,13 @@ sudo sh ./get-docker.sh
 sudo usermod -a -G docker $USER
 ~~~~
 
-4. Sair da sesión e volver a abrila (ou abrir unha sesión enriba como se indica)
+4. Salir de la sesión y volver a abrirla (o abrir una sesión sobre la actual como se indica a continuación)
 
 ~~~~
 sudo su - $USER
 ~~~~
 
-4. Probar docker
+5. Probar docker
 ~~~~
 docker run hello-world
 ~~~~
