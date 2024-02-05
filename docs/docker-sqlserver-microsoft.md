@@ -1,4 +1,4 @@
-# 🧾 Instalar Microsoft SQL Server en docker con Ubuntu
+# 🧾 Microsoft SQL Server con Ubuntu (docker)
 
 Basado en la imagen oficial: <https://hub.docker.com/_/microsoft-mssql-server>
 
