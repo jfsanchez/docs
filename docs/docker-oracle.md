@@ -1,4 +1,4 @@
-# 🔮 Oracle Free
+# 🔮 Oracle Free (docker)
 
 /!\ **AVISO:** Apuntes en elaboración. Incompletos.
 
