@@ -1,6 +1,6 @@
 # 🔮 Oracle Free (docker)
 
-/!\ **AVISO:** Apuntes en elaboración. Incompletos.
+⚠️ **AVISO:** Apuntes en elaboración. Incompletos.
 
 ## Instalación
 
