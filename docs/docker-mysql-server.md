@@ -1,10 +1,10 @@
 # 🧾 MySQL (docker)
 
-Basado en la imagen oficial: <https://hub.docker.com/_/mysql>
+Baseado na imaxe oficial: <https://hub.docker.com/_/mysql>
 
-1. Emplearemos el directorio /root/mysqldb de nuestra máquina real para guardar la BBDD.
-2. Usaremos el puerto 9906 en el anfitrión porque en ocasiones se bloquea por seguridad el puerto 3306.
-3. La contraseña del usuario root será: abc123. y tendrá permisos para conectar desde cualquier host.
+1. Empregaremos o directorio */root/mysqldb* da nosa máquina real para gardar a BBDD.
+2. Faremos uso do porto 9906 no anfitrión porque en ocasións bloquéase por seguridade o porto por defecto 3306 e non se pode abrir.
+3. O contrasinal do usuario root será: abc123. e terá permisos para conectar dende calquer host (perigoso e inseguro).
 
 ~~~~
 docker run -p 9906:3306 --name mysqlpracticoso \
@@ -13,9 +13,9 @@ docker run -p 9906:3306 --name mysqlpracticoso \
  -d mysql:8
 ~~~~
 
-## Conectar al servidor MySQL desde el propio docker
+## Conectar ao servidor MySQL dende o propio docker
 
-No hay que especificar el puerto 9906, ya que es una redirección en el propio anfitrión.
+Non temos que especificar o porto 9906, xa que é unha redirección no propio anfitrión.
 
 ~~~~
 docker exec -it mysqlpracticoso mysql -hlocalhost -uroot -pabc123.
@@ -23,35 +23,35 @@ docker exec -it mysqlpracticoso mysql -hlocalhost -uroot -pabc123.
 
 ## Conectar al servidor MySQL del docker desde el anfitrión
 
-Instalar el paquete mariadb (idealmente debería ser mysql)
+Instalar o paquete mariadb (dependendo da distro pode ser que exista mariadb ou mysql como alias do comando do cliente)
 
 ~~~~
 sudo apt install mariadb-client
 ~~~~
 
-Averiguar la IP del contenedor
+Averiguar o enderezo IP do contedor
 
 ~~~~
 docker inspect mysqlpracticoso|grep IPAddress
 ~~~~
 
-Conectar a la IP (imaginemos que nos ha dicho que es: 172.17.0.2)
+Conectar á IP (neste exemplo a IP é: 172.17.0.2, pero pode ser diferente no teu caso)
 
 ~~~~
 mysql -h172.17.0.2 -uroot -pabc123.
 ~~~~
 
-## Conectar al servidor MySQL desde otro equipo
+## Conectar ao servidor MySQL dende outro equipo
 
-Al haber ejecutado el docker con la opción -p 9906:3306 hemos mapeado automáticamente el puerto 9906 a nuestra máquina real, apuntando dentro del docker al puerto por defecto de MySQL 3306.
+Ao ter executado o docker coa opción -p 9906:3306 temos mapeado automáticamente o porto 9906 á nosa máquina real, apuntando adentro do docker ao porto por defecto de MySQL: 3306.
 
 ~~~~
 mysql -hlocalhost -P9906 -uroot -pabc123.
 ~~~~
 
-Si queremos conectar desde DBeaver en nuestra máquina local y hemos instalado el contenedor de MySQL en una máquina remota, tampoco debemos olvidarnos de configurar el puerto:
+Se queremos conectar dende DBeaver na nosa máquina local e temos instalado o contedor de MySQL nunha máquina remota, tampouco debemos esquecer configurar o porto:
 
 
 ![Configuración DBeaver](images/mysql-server-docker/dbeaver.png "Opciones de conexión en DBeaver")
 
-⚠️ **AVISO**: Esta configuración NO pretende ser segura, su objetivo es montar de forma rápida un entorno para aprendizaje.
+⚠️ **AVISO**: Esta configuración NON pretende ser segura, o seu obxectivo é montar de xeito rápido un contorno para a aprendizaxe. Entre outras cousas deberíamos deshabilitar o usuario root para conexións remotas, borrar as BBDD de proba e impredir o acceso directo ao servidor de base de datos.
