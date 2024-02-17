@@ -3,7 +3,7 @@
 Basado en la imagen oficial: <https://hub.docker.com/_/microsoft-mssql-server>
 
 - Usuario por defecto (admin): sa
-- Clave especificada: 1-2-3-a-a-a-a-a-b-b-b-b-b-c-c-c-c
+- Clave especificada: Abc12300. Advertencia: La clave debe tener al menos una letra mayúscula, una minúscula, un número y al menos ocho caracteres.
 - Puerto al que conectarse de forma exterior: `41433`: Se elige este puerto ya que el habitual `1433` suele estar bloqueado por algunos filtros automáticos.
 
 ~~~~
