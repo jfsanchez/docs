@@ -21,7 +21,9 @@ Pasos:
 
 6. Instala os paquetes mínimos que imos precisar
 
-        conda install -c conda-forge jupyterlab ipykernel ipython nbconvert pandas numpy pyarrow fastparquet wordcloud nltk pymysql ipython-sql sqlalchemy selenium requests beautifulsoup4
+        conda install -c conda-forge jupyterlab ipykernel ipython \
+         nbconvert pandas numpy pyarrow fastparquet wordcloud nltk \
+         pymysql ipython-sql sqlalchemy selenium requests beautifulsoup4
 
 
 ## Engadir miniconda ao PATH
