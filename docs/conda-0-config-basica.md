@@ -1,4 +1,4 @@
-# 🐍 Crear contorna BigData en conda
+# 🐍 Conda: Contorno BigData
 
 Esta contorna permite facer parte dos exercicios na clase. Imos instalar algunhas librarías básicas, o jupyterlab (para os notebook) e configurar o Visual Studio Code (vscode).
 
