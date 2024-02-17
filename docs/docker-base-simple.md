@@ -1,12 +1,12 @@
 # 🧾 Instalar docker en Debian
 
-Basado en: <https://docs.docker.com/engine/install/debian/>
+Precisamos un usuario con permisos de administrador ou *sudo*.
 
-Requiere un usuario con permisos sudo.
+## Pasos
 
-1. Crear la máquina en AWS / GCloud / Azure / CESGA Cloud y conectarse a ella por SSH. Elegir una distribución debian.
+1. Crear a máquina en AWS / GCloud / Azure / CESGA Cloud e conectarse a ela por SSH. Elexiremos una distribución debian (recomendado a última estable).
 
-2. Actualizar hasta el final la máquina
+2. Actualizamos ata o final a máquina:
 
 ~~~~
 sudo apt update
@@ -14,31 +14,37 @@ sudo apt -y dist-upgrade
 sudo apt -y install curl
 ~~~~
 
-3. Ejecutar el script recomendado por docker
+3. Executamos o script (guión) recomendado pola páxina oficial de docker:
 
 ~~~~
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh ./get-docker.sh
 ~~~~
 
-4. Añadir tu usuario al grupo docker (para evitar emplear sudo)
+4. Engadimos o noso usuario ao grupo docker (para evitar empregar sudo):
 
 ~~~~
 sudo usermod -a -G docker $USER
 ~~~~
 
-5. Salir de la sesión y volver a abrirla (o abrir una sesión sobre la actual como se indica a continuación)
+5. Saímos da sesión e volvemos abrila (ou abrimos unha sesión sobre a actual como se indica a continuación):
 
 ~~~~
 sudo su - $USER
 ~~~~
 
-6. Probar docker
+6. Probamos o docker de exemplo de **hola-mundo**:
 ~~~~
 docker run hello-world
 ~~~~
 
-Imágenes oficiales de docker:
+## Máis información
+
+- Baseado en: <https://docs.docker.com/engine/install/debian/>
+
+## Imaxes oficiales para docker que podes probar
+
+Nesta páxina tes algunhas configuracións rápidas (exemplos xa feitos) baseados nestas imaxes:
 
 - <https://hub.docker.com/_/mysql>
 - <https://hub.docker.com/_/mariadb>
