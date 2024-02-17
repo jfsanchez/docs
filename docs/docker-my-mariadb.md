@@ -1,21 +1,21 @@
 # 🧾 MariaDB (docker)
 
-Basado en la imagen oficial: <https://hub.docker.com/_/mariadb>
+Baseado na imaxe oficial: <https://hub.docker.com/_/mariadb>
 
 ~~~~
     docker run -p 9907:3306 -v /root/mariadatosdb:/var/lib/mysql/ --detach \
-    --name mariadblapractica --env MARIADB_USER=usuariamaria \
-    --env MARIADB_PASSWORD=donamaria123456 \
-    --env MARIADB_ROOT_PASSWORD=estanopuedeserla2clavederoot \
+    --name mariadbpracticasql --env MARIADB_USER=usuariamaria \
+    --env MARIADB_PASSWORD=DonaMaria123456 \
+    --env MARIADB_ROOT_PASSWORD=EsteNonPodeSerOcontrasinalDEr00t \
     mariadb:latest
 ~~~~
 
-Para conectar desde otro host:
+Para conectar dende outro host:
 
-- `X.X.X.X` es la IP del servidor al que queremos conectar.
+- `X.X.X.X` é a IP do servidor ao que queremos conectar.
 
 ~~~~
-mysql -hX.X.X.X -P9907 -uroot -pestanopuedeserla2clavederoot
+mariadb -hX.X.X.X -P9907 -uroot -pEsteNonPodeSerOcontrasinalDEr00t
 ~~~~
 
-⚠️ **AVISO**: Esta configuración NO pretende ser segura, su objetivo es montar de forma rápida un entorno para aprendizaje. De hecho debería deshabilitarse el usuario root en remoto, borrarse las BBDD de prueba e impedir el acceso directo a la base de datos entre otros.
+⚠️ **AVISO**: Esta configuración NON pretende ser segura, o seu obxectivo é montar de xeito rápido un contorno para a aprendizaxe. Entre outras cousas deberíamos deshabilitar o usuario root para conexións remotas, borrar as BBDD de proba e impredir o acceso directo ao servidor de base de datos.
