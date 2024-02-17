@@ -1,4 +1,6 @@
-# 🧾 Instalación de HADOOP con ClusterShell
+# 🧾 Instalación de HADOOP
+
+Instalación de Apache Hadoop empregando ClusterShell
 
 ## Requisitos previos
 
