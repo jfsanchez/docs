@@ -7,7 +7,10 @@ Basado en la imagen oficial: <https://hub.docker.com/_/mysql>
 3. La contraseña del usuario root será: abc123. y tendrá permisos para conectar desde cualquier host.
 
 ~~~~
-docker run -p 9906:3306 --name mysqlpracticoso -v /root/mysqldb:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=abc123. -d mysql:8
+docker run -p 9906:3306 --name mysqlpracticoso \
+ -v /root/mysqldb:/var/lib/mysql \
+ -e MYSQL_ROOT_PASSWORD=abc123. \
+ -d mysql:8
 ~~~~
 
 ## Conectar al servidor MySQL desde el propio docker
