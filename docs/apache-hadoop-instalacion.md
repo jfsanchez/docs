@@ -1,4 +1,4 @@
-# 🧾 Instalación de HADOOP
+# 🧾 Instalación de Hadoop
 
 Instalación de Apache Hadoop empregando ClusterShell
 
