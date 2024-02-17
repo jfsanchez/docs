@@ -1,4 +1,6 @@
-# 🧾 Microsoft SQL Server con Ubuntu (docker)
+# 🧾 MS-SQL (docker)
+
+Microsoft SQL Server en Ubuntu (con docker).
 
 Basado en la imagen oficial: <https://hub.docker.com/_/microsoft-mssql-server>
 
