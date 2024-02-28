@@ -5,8 +5,11 @@
 ## Instalación
 
     docker pull container-registry.oracle.com/database/free:latest
+    docker run -p 5560:5560 -d --name oracle_free  container-registry.oracle.com/database/free 
 
 ## Conexión
+
+    docker exec -it oracle_free sqlplus / as sysdba
 
 Para conectar a Oracle, dependendo se o temos instalado directamente ou nun docker, podemos empregar os seguintes comandos.
 
