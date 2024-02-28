@@ -5,7 +5,7 @@
 ## Instalación
 
     docker pull container-registry.oracle.com/database/free:latest
-    docker run -p 5560:5560 -d --name oracle_free  container-registry.oracle.com/database/free 
+    docker run -p 5560:5560 -d --name oracle_free container-registry.oracle.com/database/free 
 
 ## Conexión
 
