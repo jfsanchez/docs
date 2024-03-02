@@ -11,6 +11,27 @@ docker run --name mongo \
 mongo
 ~~~~
 
+## Atlas
+
+### Instalar cliente Atlas
+
+~~~~
+sudo apt install mongodb-atlas-cli
+~~~~
+
+### Iniciar sesión
+
+~~~~
+atlas auth login
+~~~~
+
+### Conectarse a atlas desde mongosh
+
+~~~~
+mongosh "mongodb+srv://.../" --apiVersion 1 --username USUARIO
+~~~~
+
+
 #### Máis información
   
   - <https://hub.docker.com/_/mongo>
