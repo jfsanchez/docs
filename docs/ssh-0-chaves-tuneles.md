@@ -12,6 +12,7 @@ Dentro do noso HOME (cartafol de usuario). Habitualmente en GNU/Linux: `/home/US
 - 📁 ***.ssh***
     - 📄 **known_hosts**: Fingerprints dos servidores aos que nos temos conectado. A primeira vez que conectamos cun servidor, avísanos e nos amosa o fingerprint. Teóricamente deberíamos asegurarnos que é correcto para evitar ataques tipo MITM.
     - 📄 **authorized_keys**: Fingerprints das chaves públicas autorizadas a entrar no servidor.
+    - 📄 **config**: Para non ter que empregar opcións ao conectar. Pódese empregar unha chave, usuario e redirección de portos diferente por cada host.
     - 🔑 **id_rsa**: Chave privada (non publicar e protexer por frase de paso) permite descifrar/asinar o que se cifrou coa chave pública.
     - 🔐 **id_rsa.pub**: Chave pública, pódese publicar e subir aos servidores. Débese engadir ao final do arquivo known_hosts para autorizar a nosa chave.
 
