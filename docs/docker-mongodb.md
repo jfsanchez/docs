@@ -11,6 +11,9 @@ docker run --name mongo \
 mongo
 ~~~~
 
+Baseado na imaxe oficial: <https://hub.docker.com/_/mongo>
+
+
 ## Atlas (servidor na nube)
 
 ### Conectarse a atlas dende mongosh
@@ -33,7 +36,6 @@ sudo apt install mongodb-atlas-cli
 atlas auth login
 ~~~~
 
+### Conectar a mongo dende Python
 
-#### Máis información
-  
-  - <https://hub.docker.com/_/mongo>
+- <https://github.com/jfsanchez/SBD/blob/main/notebooks/bbdd/mongodb.ipynb>
