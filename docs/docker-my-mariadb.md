@@ -23,15 +23,15 @@ mariadb -hX.X.X.X -P9907 -uroot -pEsteNonPodeSerOcontrasinalDEr00t
 ### Crear usuario e conceder permisos a base de datos
 
 ~~~~
-    CREATE USER 'usuario-a-crear'@'%' IDENTIFIED BY 'contrasinal-abc123.';
-    GRANT ALL PRIVILEGES ON base-de-datos.* TO 'usuario-a-crear'@'%';
-    FLUSH PRIVILEGES;
+CREATE USER 'usuario-a-crear'@'%' IDENTIFIED BY 'contrasinal-abc123.';
+GRANT ALL PRIVILEGES ON base-de-datos.* TO 'usuario-a-crear'@'%';
+FLUSH PRIVILEGES;
 ~~~~
 
 ### Executar un arquivo .sql (útil para recuperar un backup)
 
 ~~~~
-    source /ruta/ao/arquivo.sql
+source /ruta/ao/arquivo.sql
 ~~~~
 
 ## Comando mysqldump para backup (dende shell)
@@ -39,13 +39,13 @@ mariadb -hX.X.X.X -P9907 -uroot -pEsteNonPodeSerOcontrasinalDEr00t
 ### Backup de todas as BBDD:
 
 ~~~~
-    mysqldump -uUSUARIO -pCLAVE --all-databases > YYYY-mm-dd_mysql_backup.sql
+mysqldump -uUSUARIO -pCLAVE --all-databases > YYYY-mm-dd_mysql_backup.sql
 ~~~~
 
 ### Backup dunha BBDD concreta:
 
 ~~~~
-    mysqldump -uUSUARIO -pCLAVE --databases BASE_DATOS > YYYY-mm-dd_mysql_backup.sql
+mysqldump -uUSUARIO -pCLAVE --databases BASE_DATOS > YYYY-mm-dd_mysql_backup.sql
 ~~~~
 
 ⚠️ **AVISO**: Esta configuración NON pretende ser segura, o seu obxectivo é montar de xeito rápido un contorno para a aprendizaxe. Entre outras cousas deberíamos deshabilitar o usuario root para conexións remotas, borrar as BBDD de proba e impredir o acceso directo ao servidor de base de datos.
