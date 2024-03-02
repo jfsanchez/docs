@@ -1,6 +1,6 @@
 # 🧾 MongoDB (docker)
 
-## Crear docker:
+## Crear docker (servidor local):
 
 ~~~~
 docker run --name mongo \
@@ -11,7 +11,15 @@ docker run --name mongo \
 mongo
 ~~~~
 
-## Atlas
+## Atlas (servidor na nube)
+
+### Conectarse a atlas dende mongosh
+
+Debe instalarse MongoDB como indica a documentación: engadir a chave, o repo...
+
+~~~~
+mongosh "mongodb+srv://.../" --apiVersion 1 --username USUARIO
+~~~~
 
 ### Instalar cliente Atlas
 
@@ -23,12 +31,6 @@ sudo apt install mongodb-atlas-cli
 
 ~~~~
 atlas auth login
-~~~~
-
-### Conectarse a atlas desde mongosh
-
-~~~~
-mongosh "mongodb+srv://.../" --apiVersion 1 --username USUARIO
 ~~~~
 
 
