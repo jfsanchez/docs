@@ -23,6 +23,29 @@ Para conectar a Oracle, dependendo se o temos instalado directamente ou nun dock
     $ docker exec -it dbname sqlplus system/cdb-user-password@cdb-sid
     $ docker exec -it dbname sqlplus pdbadmin/pdb-user-password@pdbname
 
+### Exemplo de creación de usuario e asignación de permisos
+
+~~~~
+  CREATE USER oraclefreeuser
+    IDENTIFIED BY Abc12300 
+    DEFAULT TABLESPACE tablespace
+    TEMPORARY TABLESPACE tbs_temp_01
+    QUOTA UNLIMITED on tablespace;
+~~~~
+
+~~~~
+GRANT CREATE VIEW, CREATE PROCEDURE, CREATE SEQUENCE, CREATE TRIGGER to oraclefreeuser;
+GRANT ALTER ANY TABLE to oraclefreeuser;
+GRANT ALTER ANY PROCEDURE to oraclefreeuser;
+GRANT ALTER ANY TRIGGER to oraclefreeuser;
+GRANT DELETE ANY TABLE to oraclefreeuser;
+GRANT DROP ANY PROCEDURE to oraclefreeuser;
+GRANT DROP ANY TRIGGER to oraclefreeuser;
+GRANT DROP ANY VIEW to oraclefreeuser;
+GRANT CREATE TABLE to oraclefreeuser;
+~~~~
+
+- Máis información sobre a creación de usuarios: <https://blog.devart.com/how-to-create-oracle-user.html>
 
 ## Conexión dende Python
 
