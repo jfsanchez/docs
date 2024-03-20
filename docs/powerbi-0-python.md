@@ -32,3 +32,7 @@ datos_estudantes = ({
         })
 df = pd.DataFrame(datos_estudantes)
 ~~~~
+
+También puede ser interesante:
+
+  - **Expresiones DAX**: <https://learn.microsoft.com/es-es/dax/>
