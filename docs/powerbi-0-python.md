@@ -35,4 +35,4 @@ df = pd.DataFrame(datos_estudantes)
 
 Tamén pode resultarche interesante:
 
-  - **Expresiones DAX**: <https://learn.microsoft.com/es-es/dax/>
+  - **Expresións DAX**: <https://learn.microsoft.com/es-es/dax/>
