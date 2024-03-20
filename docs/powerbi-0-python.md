@@ -1,6 +1,6 @@
-# 🧐 PowerBi y Python
+# 🧐 PowerBi e Python
 
-## Crear un entorno de conda para Microsoft PowerBi
+## Crear un novo contorno de conda para Microsoft PowerBi
 
 ~~~~
 conda create -n powerbi python=3.11
@@ -8,20 +8,20 @@ conda activate powerbi
 conda install -c conda-forge matplotlib pandas mkl-service
 ~~~~
 
-## Configurar un entorno conda en Microsoft PowerBI
+## Configurar un contorno conda en Microsoft PowerBI
 
-  - Ir a: Archivo -> Opciones y configuración -> Opciones.
-  - En la parte izquiera seleccionar: Creación de scripts de Python.
-  - En establezca un directorio raíz para Python, examinar y seleccionar la carpeta del entorno de conda:
+  - Ir a: *"Archivo -> Opciones y configuración -> Opciones"*.
+  - Na parte esquiera seleccionar: *"Creación de scripts de Python"*.
+  - En "Establezca un directorio raíz para Python" preme en "Examinar" e selecciona o cartafol do contorno de conda:
 ~~~~
 C:\Users\usuario\AppData\Local\miniconda3\envs\powerbi
 ~~~~
 
-## Usar un código en Python como origen de datos
+## Empregar código en Python como orixe de datos
 
-  - Hacer click en Inicio -> Obtener datos -> Más...
-  - Buscar: Script de Python.
-  - Introducir este código de ejemplo:
+  - Facer click en *"Inicio -> Obtener datos -> Más..."*
+  - Buscar: *"Script de Python"*.
+  - Podes empregar este código como exemplo:
 
 ~~~~
 import pandas as pd
@@ -33,6 +33,6 @@ datos_estudantes = ({
 df = pd.DataFrame(datos_estudantes)
 ~~~~
 
-También puede ser interesante:
+Tamén pode resultarche interesante:
 
   - **Expresiones DAX**: <https://learn.microsoft.com/es-es/dax/>
