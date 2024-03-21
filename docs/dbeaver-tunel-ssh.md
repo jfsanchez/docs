@@ -6,7 +6,7 @@ DBeaver é un programa cliente SQL que permite ver, administrar e xestionar base
 
 Imos ver paso a paso como configurar unha conexión facendo uso dun túnel SSH simple (sen saltar por máis dun host).
 
-Neste exemplo configuraremos un [servidor de MySQL](docker-mysql-server.md) que temos instalado mediante [docker](docker-0-base-simple.md)
+Neste exemplo configuraremos un [servidor de MySQL](docker-mysql-server.md) que temos instalado mediante [docker](docker-base-simple.md)
 
 1. Seleccionamos o tipo de base de datos **MySQL**.
 ![Configuración. Paso 1](images/dbeaver/paso1-lista-bbdd.png "DBeaver")
