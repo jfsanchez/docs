@@ -14,6 +14,7 @@ conda install -c conda-forge matplotlib pandas mkl-service
     ~~~~
     conda env list
     ~~~~
+    ![Contornos conda](images/powerbi/contornos-conda.png "Averiguando a ruta dos contornos conda instalados no noso sistema")
   - Ir a: *"Archivo -> Opciones y configuración -> Opciones"*.
   - Na parte esquiera seleccionar: *"Creación de scripts de Python"*.
   - En "Establezca un directorio raíz para Python" preme en "Examinar" e selecciona o cartafol do contorno de conda que temos averiguado anteriormente.
