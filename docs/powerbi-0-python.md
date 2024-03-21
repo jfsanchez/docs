@@ -18,7 +18,7 @@ conda install -c conda-forge matplotlib pandas mkl-service
   - Ir a: *"Archivo -> Opciones y configuración -> Opciones"*.
   - Imos na parte esquerda, en: *"Creación de scripts de Python"*
   - En *"Directorios raíz de Python detectados:"* seleccionamos *"Otros"* e nos aparecerá unha caixa para seleccionar un directorio cunha instalación de Python.
-  - En "Establezca un directorio raíz para Python" preme en "Examinar" e selecciona o cartafol do contorno de conda que temos averiguado anteriormente.
+  - En *"Establezca un directorio raíz para Python"* preme en *"Examinar"* e selecciona o cartafol do contorno de conda que temos averiguado anteriormente.
     ![Power BI selección de instalación de Python](images/powerbi/seleccionar-contorno-conda-en-powerbi.png "Power BI selección de instalación de Python")
 
 ## Empregar código en Python como orixe de datos
