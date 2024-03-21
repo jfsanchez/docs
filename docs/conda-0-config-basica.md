@@ -1,20 +1,20 @@
 # 🐍 Conda: Contorno BigData
 
-Esta contorna permite facer parte dos exercicios na clase. Imos instalar algunhas librarías básicas, o jupyterlab (para os notebook) e configurar o Visual Studio Code (vscode).
+Este contorno permite facer os exercicios da clase. Imos instalar algunhas librarías básicas, o jupyterlab (para os notebook) e configurar o Visual Studio Code (vscode/code) por comodidade.
 
 Pasos:
 
 1. Baixa miniconda <https://docs.conda.io/projects/miniconda/en/latest/> e instálao no teu equipo.
 2. (*Opcional*) Mete miniconda no **PATH** de Microsoft Windows. O instalador di que pode dar problemas, pero é só se temos configuracións previas que empreguen Python e nalgúns casos moi especiais (mira os pasos abaixo).
-3. Actualiza tódolos paquetes da contorna base para que non dea problemas
+3. Actualiza tódolos paquetes do contorno base para que non dea problemas:
 
         conda update --all
 
-4. Borra a contorna bigdata anterior
+4. Borra o contorno bigdata anterior:
 
         conda env remove -n bigdata
 
-5. Crea a nova contorna bigdata e actívaa
+5. Crea o novo contorno bigdata e actívao:
 
         conda create -n bigdata python=3.10
         conda activate bigdata
@@ -42,17 +42,17 @@ export PATH=$PATH:$HOME/miniconda3
 
 O instalador tamén ofrece a posibilidade de meter conda no PATH pero o desaconsella, se non o fixeches (non é unha opción por defecto) entón, pódelo meter manualmente como se indica a continuación.
 
-Menú inicio -> Editar las variables de entorno de esta cuenta
+*Menú inicio -> Editar las variables de entorno de esta cuenta*
 
 ![Opción do menú inicio](images/conda-0/0-vars-contorna.png "Editar las variables de entorno de esta cuenta")
 
 ![Variables](images/conda-0/1-path.png "Variable PATH usaurio ou sistema")
 
-Premer en "Editar..."
+Premer en *"Editar..."*
 
 ![Editando variables](images/conda-0/2-path.png "Editando variable")
 
-Logo en "Nuevo" e engadir unha entrada por liña
+Logo en *"Nuevo"* e engadir unha entrada por liña
 
 Mirar cal das dúas aplica (mira os directorios e busca onde tes conda instalado)
 ~~~~
@@ -64,9 +64,9 @@ Mirar cal das dúas aplica (mira os directorios e busca onde tes conda instalado
 
 ### Instalar plugin de jupyterlab
 
-Selecciona na roda de configuración (abaixo, esquerda) a opción "Extensiones".
+Selecciona na roda de configuración (abaixo, esquerda) a opción *"Extensiones"*.
 
-Busca "Jupyter" do autor "Microsoft" e instálao.
+Busca *"Jupyter"* do autor *"Microsoft"* e instálao.
 
 ### Configurar a ruta base de conda
 
@@ -87,4 +87,4 @@ Busca "Jupyter" do autor "Microsoft" e instálao.
         conda init
 
 
-3. Pecha tódolos terminais e xa podes abrir un que será inicializado na contorna base.
+3. Pecha tódolos terminais e xa podes abrir un que será inicializado no contorno base.
