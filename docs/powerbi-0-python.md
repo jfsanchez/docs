@@ -10,12 +10,14 @@ conda install -c conda-forge matplotlib pandas mkl-service
 
 ## Configurar un contorno conda en Microsoft PowerBI
 
+  - Averiguar cal é o directorio do contorno *"powerbi"*, por exemplo con comando:
+    ~~~~
+    conda env list
+    ~~~~
   - Ir a: *"Archivo -> Opciones y configuración -> Opciones"*.
   - Na parte esquiera seleccionar: *"Creación de scripts de Python"*.
-  - En "Establezca un directorio raíz para Python" preme en "Examinar" e selecciona o cartafol do contorno de conda:
-~~~~
-C:\Users\usuario\AppData\Local\miniconda3\envs\powerbi
-~~~~
+  - En "Establezca un directorio raíz para Python" preme en "Examinar" e selecciona o cartafol do contorno de conda que temos averiguado anteriormente.
+
 
 ## Empregar código en Python como orixe de datos
 
