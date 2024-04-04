@@ -3,18 +3,18 @@
 Baseado na imaxe oficial: <https://hub.docker.com/_/mariadb>
 
 ~~~~
-    docker run -p 9907:3306 -v /root/mariadatosdb:/var/lib/mysql/ --detach \
-    --name mariadbpracticasql --env MARIADB_USER=usuariamaria \
-    --env MARIADB_PASSWORD=DonaMaria123456 \
-    --env MARIADB_ROOT_PASSWORD=EsteNonPodeSerOcontrasinalDEr00t \
-    --restart unless-stopped \
-    mariadb:latest
+docker run -p 9907:3306 -v /root/mariadatosdb:/var/lib/mysql/ --detach \
+--name mariadbpracticasql --env MARIADB_USER=usuariamaria \
+--env MARIADB_PASSWORD=DonaMaria123456 \
+--env MARIADB_ROOT_PASSWORD=EsteNonPodeSerOcontrasinalDEr00t \
+--restart unless-stopped \
+mariadb:latest
 ~~~~
 
 Para conectar dende o propio docker:
 
 ~~~~
-    docker exec -it mariadbpracticasql mariadb -uroot -pEsteNonPodeSerOcontrasinalDEr00t
+docker exec -it mariadbpracticasql mariadb -uroot -pEsteNonPodeSerOcontrasinalDEr00t
 ~~~~
 
 Para conectar dende outro host:
