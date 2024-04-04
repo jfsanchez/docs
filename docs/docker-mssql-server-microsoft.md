@@ -21,7 +21,11 @@ docker run \
 - Usuario por defecto (admin): sa
 - Contrasinal de exemplo: Abc12300. **Advertencia**: O contrasinal debe ter alomenos unha letra maiúscula, unha minúscula, un número e alomenos oito caracteres, do contrario o docker finalizará.
 - Porto ao que conectarse de forma exterior: `41433`: Elíxese este porto posto que o habitual `1433` está bloqueado no contorno que empregamos por algúns filtros automáticos que non se pode abrir no grupo de seguridade.
-- Existe o cliente nativo: mssql-cli
+- Existe o cliente: **mssql-cli** que se pode instalar con pip:
+
+    ~~~~
+    pip install mssql-cli
+    ~~~~
 
 #### Cómo conectar dende Python
 
