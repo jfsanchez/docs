@@ -7,13 +7,16 @@ Se non tiveras docker, debes instalalo: <https://jfsanchez.es/docs/docker-base-s
 Se non queremos poñer contrasinal:
 
 ~~~~
-docker run -d --name redis-stack-server -p 6379:6379 redis/redis-stack-server:latest
+docker run -d --name redis-stack-server \
+-p 6379:6379 redis/redis-stack-server:latest
 ~~~~
 
 Con contrasinal:
 
 ~~~~
-docker run -d --name redis-stack-server -p 6379:6379 -e REDIS_ARGS="--requirepass 123quetal123" redis/redis-stack-server:latest
+docker run -d --name redis-stack-server -p 6379:6379 \
+-e REDIS_ARGS="--requirepass 123quetal123" \
+redis/redis-stack-server:latest
 ~~~~
 
 Para conectarse dende docker co cliente por defecto:
@@ -31,7 +34,8 @@ AUTH 123quetal123
 
 Directamente co contrasinal na liña de comandos (inseguro):
 ~~~~
-docker exec -it redis-stack-server redis-cli -h localhost -p 6379 -a 123quetal123
+docker exec -it redis-stack-server \
+redis-cli -h localhost -p 6379 -a 123quetal123
 ~~~~
 
 ## Comandos útiles:
