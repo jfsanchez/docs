@@ -4,7 +4,7 @@ Precisamos un usuario con permisos de administrador ou *sudo*.
 
 ## Pasos
 
-1. Crear a máquina en AWS / GCloud / Azure / CESGA Cloud e conectarse a ela por SSH. Elexiremos una distribución debian (recomendado a última estable).
+1. Crear a máquina en AWS / GCloud / Azure / CESGA Cloud ou instalación local en Microsoft Windows con WSL (Debian ou Ubuntu) e conectarse a ela por SSH. De ser unha instancia na nube, trataremos de elexir unha distribución Debian (recoméndase a última estable).
 
 2. Actualizamos ata o final a máquina:
 
