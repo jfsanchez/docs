@@ -25,6 +25,9 @@ docker run \
 
     ~~~~
     pip install mssql-cli
+    pip install --upgrade cli_helpers
+    pip install --upgrade tabulate
+    export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=true
     ~~~~
 
 #### Cómo conectar dende Python
