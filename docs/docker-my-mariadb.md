@@ -11,6 +11,12 @@ Baseado na imaxe oficial: <https://hub.docker.com/_/mariadb>
     mariadb:latest
 ~~~~
 
+Para conectar dende o propio docker:
+
+~~~~
+    docker exec -it mariadbpracticasql mariadb -uroot -pEsteNonPodeSerOcontrasinalDEr00t
+~~~~
+
 Para conectar dende outro host:
 
 - `X.X.X.X` é a IP do servidor ao que queremos conectar.
