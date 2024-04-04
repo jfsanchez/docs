@@ -7,6 +7,7 @@ Baseado na imaxe oficial: <https://hub.docker.com/_/mariadb>
     --name mariadbpracticasql --env MARIADB_USER=usuariamaria \
     --env MARIADB_PASSWORD=DonaMaria123456 \
     --env MARIADB_ROOT_PASSWORD=EsteNonPodeSerOcontrasinalDEr00t \
+    --restart unless-stopped \
     mariadb:latest
 ~~~~
 
