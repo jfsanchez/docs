@@ -54,6 +54,8 @@ CREATE USER lambon WITH PASSWORD 'Fl4nD3C4f3';
 
 ~~~~
 GRANT ALL PRIVILEGES ON DATABASE sobremesa to lambon;
+\c sobremesa
+GRANT ALL ON SCHEMA public TO lambon;
 ~~~~
 
 **Conectar co usuario, contrasinal e BBDD creadas**
@@ -68,4 +70,5 @@ docker exec -it de-postre-sql \
 
  - <https://www.postgresql.org/>
  - <https://www.w3schools.com/postgresql/index.php>
+ - <https://www.postgresql.org/docs/current/datatype.html>
  - <https://github.com/jfsanchez/SBD/tree/main/notebooks/bbdd>
