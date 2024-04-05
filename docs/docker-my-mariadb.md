@@ -6,7 +6,7 @@ Baseado na imaxe oficial: <https://hub.docker.com/_/mariadb>
 docker run -p 9907:3306 -v /root/mariadatosdb:/var/lib/mysql/ --detach \
 --name mariadbpracticasql --env MARIADB_USER=usuariamaria \
 --env MARIADB_PASSWORD=DonaMaria123456 \
---env MARIADB_ROOT_PASSWORD=EsteNonPodeSerOcontrasinalDEr00t \
+--env MARIADB_ROOT_PASSWORD=N0nECl4v3DEr00t \
 --restart unless-stopped \
 mariadb:latest
 ~~~~
@@ -14,7 +14,7 @@ mariadb:latest
 Para conectar dende o propio docker:
 
 ~~~~
-docker exec -it mariadbpracticasql mariadb -uroot -pEsteNonPodeSerOcontrasinalDEr00t
+docker exec -it mariadbpracticasql mariadb -uroot -pN0nECl4v3DEr00t
 ~~~~
 
 Para conectar dende outro host:
@@ -22,7 +22,7 @@ Para conectar dende outro host:
 - `X.X.X.X` é a IP do servidor ao que queremos conectar.
 
 ~~~~
-mariadb -hX.X.X.X -P9907 -uroot -pEsteNonPodeSerOcontrasinalDEr00t
+mariadb -hX.X.X.X -P9907 -uroot -pN0nECl4v3DEr00t
 ~~~~
 
 ## Comandos útiles dende consola MySQL/MariaDB
