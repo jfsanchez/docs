@@ -1,8 +1,6 @@
 # 🧾 Redis (docker)
 
-Baseado na imaxe oficial: <https://hub.docker.com/r/redis/redis-stack-server>
-
-Se non tiveras docker, debes instalalo: <https://jfsanchez.es/docs/docker-base-simple/>
+ - Baseado na imaxe oficial: <https://hub.docker.com/r/redis/redis-stack-server>
 
 Se non queremos poñer contrasinal:
 
