@@ -1,12 +1,15 @@
-# PostgreSQL
+# 🧾 PostgreSQL (docker)
 
 - Baseado na imaxe oficial: <https://hub.docker.com/_/postgres>
 
 ## Instalación co docker
 
 ~~~~
-docker run --name de-postre-sql -e POSTGRES_PASSWORD=Cl431Ns3gur4 -d postgres
+docker run --name de-postre-sql -e POSTGRES_PASSWORD=Cl431Ns3gur4 \
+    -p 5432:5432 -p 5433:5433 -d postgres
 ~~~~
+
+Se non che funciona a conexión dende o exterior, cambia o porto a outro que non sexa coñecido. Algúns servizos poden bloquear, por seguridade, portos coñecidos.
 
 ## Conexión simple co cliente nativo
 
