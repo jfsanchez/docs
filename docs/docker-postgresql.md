@@ -65,10 +65,12 @@ docker exec -it de-postre-sql \
     psql postgresql://lambon:Fl4nD3C4f3@localhost/sobremesa
 ~~~~
 
+## Conexión dende Python
+
+ - <https://github.com/jfsanchez/SBD/blob/main/notebooks/bbdd/postgresql-psycopg2-sqlalchemy.ipynb>
 
 ## Máis información
 
  - <https://www.postgresql.org/>
  - <https://www.w3schools.com/postgresql/index.php>
  - <https://www.postgresql.org/docs/current/datatype.html>
- - <https://github.com/jfsanchez/SBD/tree/main/notebooks/bbdd>
