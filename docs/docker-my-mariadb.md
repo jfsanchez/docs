@@ -1,6 +1,6 @@
 # 🧾 MariaDB (docker)
 
-Baseado na imaxe oficial: <https://hub.docker.com/_/mariadb>
+ - Baseado na imaxe oficial: <https://hub.docker.com/_/mariadb>
 
 ~~~~
 docker run -p 9907:3306 -v /root/mariadatosdb:/var/lib/mysql/ --detach \
