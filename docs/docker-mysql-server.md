@@ -2,9 +2,11 @@
 
  - Baseado na imaxe oficial: <https://hub.docker.com/_/mysql>
 
-1. Empregaremos o directorio */root/mysqldb* da nosa máquina real para gardar a BBDD.
-2. Faremos uso do porto 9906 no anfitrión porque en ocasións bloquéase por seguridade o porto por defecto 3306 e non se pode abrir.
-3. O contrasinal do usuario root será: abc123. e terá permisos para conectar dende calquer host (perigoso e inseguro).
+Empregaremos o directorio */root/mysqldb* da nosa máquina real para gardar a BBDD.
+
+Faremos uso do porto 9906 no anfitrión porque en ocasións bloquéase por seguridade o porto por defecto 3306 e non se pode abrir.
+
+O contrasinal do usuario root será: *abc123.* e terá permisos para conectar dende calquer host (perigoso e inseguro).
 
 ~~~~
 docker run -p 9906:3306 --name mysqlpracticoso \
