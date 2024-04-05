@@ -1,6 +1,8 @@
 # 🧾 Instalar docker en Debian
 
-Precisamos un usuario con permisos de administrador ou *sudo*.
+- Baseado en: <https://docs.docker.com/engine/install/debian/>
+
+Antes de continuar: Precisamos un usuario con permisos de administrador ou *sudo*.
 
 ## Pasos
 
@@ -37,10 +39,6 @@ sudo su - $USER
 ~~~~
 docker run hello-world
 ~~~~
-
-## Máis información
-
-- Baseado en: <https://docs.docker.com/engine/install/debian/>
 
 ## Imaxes oficiales para docker que podes probar
 
