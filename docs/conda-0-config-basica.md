@@ -16,7 +16,7 @@ Pasos:
 
 5. Crea o novo contorno bigdata e actívao:
 
-        conda create -n bigdata python=3.10
+        conda create -n bigdata python=3.11
         conda activate bigdata
 
 6. Instala os paquetes mínimos que imos precisar
@@ -24,6 +24,9 @@ Pasos:
         conda install -c conda-forge jupyterlab ipykernel ipython \
          nbconvert pandas numpy pyarrow fastparquet wordcloud nltk \
          pymysql ipython-sql sqlalchemy selenium requests beautifulsoup4
+
+
+        conda install psycopg2
 
 
 ## Engadir miniconda ao PATH
