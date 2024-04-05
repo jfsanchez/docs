@@ -23,12 +23,12 @@ docker run \
 - Porto ao que conectarse de forma exterior: `41433`: Elíxese este porto posto que o habitual `1433` está bloqueado no contorno que empregamos por algúns filtros automáticos que non se pode abrir no grupo de seguridade.
 - Existe o cliente: **mssql-cli** que se pode instalar con pip:
 
-    ~~~~
-    pip install mssql-cli
-    pip install --upgrade cli_helpers
-    pip install --upgrade tabulate
-    export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=true
-    ~~~~
+~~~~
+pip install mssql-cli
+pip install --upgrade cli_helpers
+pip install --upgrade tabulate
+export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=true
+~~~~
 
 #### Cómo conectar dende Python
 
