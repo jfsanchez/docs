@@ -1,5 +1,7 @@
 # 🧾 MongoDB (docker)
 
+ - Baseado na imaxe oficial: <https://hub.docker.com/_/mongo>
+
 ## Crear docker (servidor local):
 
 ~~~~
@@ -10,9 +12,6 @@ docker run --name mongo \
   -p 27017:27017 \
   mongo
 ~~~~
-
-Baseado na imaxe oficial: <https://hub.docker.com/_/mongo>
-
 
 ## Atlas (servidor na nube)
 
