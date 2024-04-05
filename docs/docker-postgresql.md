@@ -59,7 +59,8 @@ GRANT ALL PRIVILEGES ON DATABASE sobremesa to lambon;
 **Conectar co usuario, contrasinal e BBDD creadas**
 
 ~~~~
-docker exec -it de-postre-sql psql postgresql://lambon:Fl4nD3C4f3@localhost/sobremesa
+docker exec -it de-postre-sql \
+    psql postgresql://lambon:Fl4nD3C4f3@localhost/sobremesa
 ~~~~
 
 
