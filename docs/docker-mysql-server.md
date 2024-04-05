@@ -1,6 +1,6 @@
 # 🧾 MySQL (docker)
 
-Baseado na imaxe oficial: <https://hub.docker.com/_/mysql>
+ - Baseado na imaxe oficial: <https://hub.docker.com/_/mysql>
 
 1. Empregaremos o directorio */root/mysqldb* da nosa máquina real para gardar a BBDD.
 2. Faremos uso do porto 9906 no anfitrión porque en ocasións bloquéase por seguridade o porto por defecto 3306 e non se pode abrir.
