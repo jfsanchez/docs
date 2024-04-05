@@ -52,13 +52,27 @@ CREATE USER lambon WITH PASSWORD 'Fl4nD3C4f3';
 
 **Dar permisos**
 
+Damos os permisos sobre a BBDD ao usuario:
+
 ~~~~
 GRANT ALL PRIVILEGES ON DATABASE sobremesa to lambon;
+~~~~
+
+Conectamos á base de datos:
+
+~~~~
 \c sobremesa
+~~~~
+
+Damos permiso ao esquema public:
+
+~~~~
 GRANT ALL ON SCHEMA public TO lambon;
 ~~~~
 
 **Conectar co usuario, contrasinal e BBDD creadas**
+
+Se temos aberta a conexión á BBDD, pechámola.
 
 ~~~~
 docker exec -it de-postre-sql \
