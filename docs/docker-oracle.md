@@ -2,6 +2,8 @@
 
 ⚠️ **AVISO:** Apuntes en elaboración. Incompletos.
 
+ - Baseado en: <https://www.oracle.com/es/database/free/get-started/>
+
 ## 1. Instalación
 
 ### 1.1. Baixar a imaxe
