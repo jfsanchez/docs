@@ -96,6 +96,8 @@ stateDiagram-v2
 
 Realmente existen 6 estado. O estado borrado é para que se vexa mellor no diagrama máis non é un estado. O `Erro` ou `Morto` poden ser o mesmo estado nalgunhas circunstancias.
 
+Máis información acerca dos estados en: <https://www.baeldung.com/ops/docker-container-states>.
+
 ## Imaxes oficiales para docker que podes probar
 
 Nesta páxina tes algunhas configuracións rápidas (exemplos xa feitos) baseados nestas imaxes:
