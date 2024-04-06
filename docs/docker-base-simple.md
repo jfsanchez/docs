@@ -45,10 +45,11 @@ mindmap
     Volumes
     Redes
 ```
+En docker existen os conceptos de: Contedores, imaxes, volumes e redes.
 
 Cando executamos un "docker run", créase un contedor baseado nunha imaxe que se descarga de internet e arráncase. Este contedor é como unha máquina virtual xa configurada e funcionando.
 
-Hai imaxes xa listas en internet: https://hub.docker.com/ ou ben podemos facer a nosa.
+Hai imaxes xa listas en internet: <https://hub.docker.com/> ou ben podemos facer a nosa.
 
 Unha vez creado un contedor podémolo parar ou arrancar.
 
