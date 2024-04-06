@@ -2,14 +2,14 @@
 
  - Baseado na imaxe oficial: <https://hub.docker.com/_/mariadb>
 
-~~~~ { .yaml .annotate }
-docker run -p 9907:3306 -v /root/mariadatosdb:/var/lib/mysql/ --detach # (1)! \
+``` bash
+docker run -p 9907:3306 -v /root/mariadatosdb:/var/lib/mysql/ --detach \ # (1)!
 --name mariadbpracticasql --env MARIADB_USER=usuariamaria \
 --env MARIADB_PASSWORD=DonaMaria123456 \ # (2)!
 --env MARIADB_ROOT_PASSWORD=N0nECl4v3DEr00t \
 --restart unless-stopped \ # (3)!
 mariadb:latest
-~~~~
+```
 
 1:  `-v` para asociar o directorio local `/root/mariadatosdb` ao contedor en `/var/lib/mysql`.
 
