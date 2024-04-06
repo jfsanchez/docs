@@ -10,6 +10,7 @@ docker run -p 9907:3306 -v /root/mariadatosdb:/var/lib/mysql/ --detach \ # (1)!
 --restart unless-stopped \ # (3)!
 mariadb:latest
 ```
+
 1.  `-v` para asociar o directorio local `/root/mariadatosdb` ao contedor en `/var/lib/mysql`.
 2.  `--env` ou `-e` para definir variables de entorno (configuración) presentes na imaxe.
 3.  Para que inicie automáticamente o contedor tras un reinicio de docker ou da máquina.
