@@ -10,7 +10,7 @@ theme:
   logo: "images/logo.png"
   features:
     - content.code.copy
-    - content.code.annotate
+    - content.code.annotate #
 
 markdown_extensions:
   - pymdownx.highlight:
