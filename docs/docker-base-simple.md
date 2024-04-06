@@ -69,6 +69,33 @@ Podemos gardar os datos en volumes ou directorios compartidos. Se non especifica
 
 👁️ Se queremos ver os datos dun volume que xa non está asociado a un contedor, podemos crear un contedor temporal para velos: ```docker run -it --rm -v [ID do volume]:/vol busybox ls -l /vol```
 
+## Estados dun contedor
+
+``` mermaid
+---
+title: Estados dun contenedor docker
+---
+stateDiagram-v2
+    [*] --> Creación
+    Creado --> En_Execución
+    En_Execución --> Parado_Rematado
+    En_Execución --> Erro
+    En_Execución --> Pausado
+    Pausado --> En_Execución
+    Parado_Rematado --> Erro
+    Parado_Rematado --> En_Execución
+    Parado_Rematado --> Borrado
+    Parado_Rematado --> Morto
+    Erro --> En_Reinicio
+    En_Reinicio --> Erro
+    En_Reinicio --> En_Execución
+    Morto --> Borrado
+    Borrado --> [*]
+
+```
+
+Realmente existen 6 estado. O estado borrado é para que se vexa mellor no diagrama máis non é un estado. O `Erro` ou `Morto` poden ser o mesmo estado nalgunhas circunstancias.
+
 ## Imaxes oficiales para docker que podes probar
 
 Nesta páxina tes algunhas configuracións rápidas (exemplos xa feitos) baseados nestas imaxes:
