@@ -19,7 +19,9 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
-  
+  - pymdownx.tabbed:
+      alternate_style: true
+
 site_name: JFSanchez
 site_url: https://jfsanchez.es/docs
 repo_url: https://github.com/jfsanchez/
