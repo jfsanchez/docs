@@ -2,8 +2,6 @@
 
 - Baseado en: <https://docs.docker.com/engine/install/debian/>
 
-Antes de continuar: Precisamos un usuario con permisos de administrador ou *sudo*.
-
 ## Pasos
 
 1. Crear a máquina en AWS / GCloud / Azure / CESGA Cloud ou instalación local en Microsoft Windows con WSL (Debian ou Ubuntu) e conectarse a ela por SSH. De ser unha instancia na nube, trataremos de elexir unha distribución Debian (recoméndase a última estable).
