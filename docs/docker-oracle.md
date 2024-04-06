@@ -32,7 +32,7 @@ Para conectar a Oracle, dependendo se o temos instalado directamente ou nun dock
 ``` bash
 sqlplus sys@localhost:1521/FREEPDB1 as sysdba
 sqlplus sys@localhost:1521/FREE as sysdba
-``` bash
+```
 
 ### 4. Comandos para docker:
 
