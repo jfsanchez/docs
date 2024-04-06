@@ -3,11 +3,11 @@
  - Baseado na imaxe oficial: <https://hub.docker.com/_/mariadb>
 
 ~~~~ { .yaml .annotate }
-docker run -p 9907:3306 -v /root/mariadatosdb:/var/lib/mysql/ --detach \ # (1)
+docker run -p 9907:3306 -v /root/mariadatosdb:/var/lib/mysql/ --detach \ # (1)!
 --name mariadbpracticasql --env MARIADB_USER=usuariamaria \
---env MARIADB_PASSWORD=DonaMaria123456 \ # (2)
+--env MARIADB_PASSWORD=DonaMaria123456 \ # (2)!
 --env MARIADB_ROOT_PASSWORD=N0nECl4v3DEr00t \
---restart unless-stopped \ # (3)
+--restart unless-stopped \ # (3)!
 mariadb:latest
 ~~~~
 
