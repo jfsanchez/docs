@@ -2,19 +2,19 @@
 
 ## Crear un novo contorno de conda para Microsoft PowerBi
 
-~~~~
+``` bash
 conda create -n powerbi python=3.11
 conda activate powerbi
 conda install -c conda-forge matplotlib pandas mkl-service
-~~~~
+```
 
 ## Configurar un contorno conda en Microsoft PowerBI
 
   - Averiguar cal é o directorio do contorno *"powerbi"*, por exemplo con comando:
 
-~~~~
+``` bash
 conda env list
-~~~~
+```
 
 ![Contornos conda](images/powerbi/contornos-conda.png "Averiguando a ruta dos contornos conda instalados no noso sistema")
 
@@ -31,7 +31,7 @@ conda env list
   - Buscar: *"Script de Python"*.
   - Podes empregar este código como exemplo:
 
-~~~~
+``` py
 import pandas as pd
 datos_estudantes = ({
     'Nomes':["Fulano", "Mengana", "Zutano", "Perengana"],
@@ -39,7 +39,7 @@ datos_estudantes = ({
     'Notas':[9, 8, 7, 6]
         })
 df = pd.DataFrame(datos_estudantes)
-~~~~
+```
 
 Tamén pode resultarche interesante:
 
