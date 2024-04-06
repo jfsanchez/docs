@@ -66,6 +66,7 @@ Podemos gardar os datos en volumes ou directorios compartidos. Se non especifica
 ### Volumes
 - Ver volume: ```docker volume ls```
 - Borrar volume: ```docker volume rm [ID ou NOME]```
+- Ver datos dun volume que xa non está asociado: ```docker run -it --rm -v [ID do volume]:/vol busybox ls -l /vol```
 
 ## Imaxes oficiales para docker que podes probar
 
