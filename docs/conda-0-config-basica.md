@@ -23,10 +23,8 @@ Pasos:
 
         conda install -c conda-forge jupyterlab ipykernel ipython \
          nbconvert pandas numpy pyarrow fastparquet wordcloud nltk \
-         pymysql ipython-sql sqlalchemy selenium requests beautifulsoup4
-
-
-        conda install psycopg2
+         pymysql ipython-sql sqlalchemy selenium requests beautifulsoup4 \
+         psycopg2
 
 
 ## Engadir miniconda ao PATH
