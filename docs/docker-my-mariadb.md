@@ -29,32 +29,31 @@ mariadb:latest
 
 ## Comandos útiles dende consola MySQL/MariaDB
 
-- Ver as bases de datos
+### Ver as bases de datos
 
 ``` sql
 show databases;
 ```
 
-- Seleccionar unha base de datos
+### Seleccionar unha base de datos
 
 ``` sql
 use database;
 ```
 
-- Ver as táboas da BBDD actual seleccionada
+### Ver as táboas da BBDD actual seleccionada
 
 ``` sql
 show tables;
 ```
 
-- Ver información do estado do servidor
+### Ver información do estado do servidor
 
 ``` sql
 \s
 ```
 
-
-Saír do cliente
+### Saír do cliente
 
 ``` sql
 \q
