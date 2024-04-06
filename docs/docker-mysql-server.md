@@ -58,6 +58,39 @@ Se queremos conectar dende DBeaver na nosa máquina local e temos instalado o co
 
 ## Comandos útiles dende consola MySQL/MariaDB
 
+- Ver as bases de datos
+
+~~~~
+show databases;
+~~~~
+
+- Seleccionar unha base de datos
+
+~~~~
+use database;
+~~~~
+
+- Ver as táboas da BBDD actual seleccionada
+
+~~~~
+show tables;
+~~~~
+
+- Ver información do estado do servidor
+
+~~~~
+\s
+~~~~
+
+
+Saír do cliente
+
+~~~~
+\q
+~~~~
+
+Tamén funcionaría *quit* ou Crtl+D
+
 ### Crear usuario e conceder permisos a base de datos
 
 ~~~~
