@@ -49,23 +49,23 @@ Podemos gardar os datos en volumes ou directorios compartidos. Se non especifica
 
 ### Contedores
 - Ver contedores en execución: ```docker ps```
-- Ver tódolos contedores: docker ps -a
-- Crear un contedor: docker run hello-world
-- Parar un contedor: docker stop [ID ou NOME]
-- Iniciar un contedor: docker start [ID ou NOME]
-- Executar un comando dentro do contenedor: docker exec -it [ID ou NOME] [COMANDO]
-- Ver tódalas opcións do contedor: docker inspect [ID ou NOME]
-- Borrar un contedor: docker rm [ID ou NOME]
+- Ver tódolos contedores: ```docker ps -a```
+- Crear un contedor: ```docker run hello-world```
+- Parar un contedor: ```docker stop [ID ou NOME]```
+- Iniciar un contedor: ```docker start [ID ou NOME]```
+- Executar un comando dentro do contenedor: ```docker exec -it [ID ou NOME] [COMANDO]```
+- Ver tódalas opcións do contedor: ```docker inspect [ID ou NOME]```
+- Borrar un contedor: ```docker rm [ID ou NOME]```
 
-👁️ Se queremos que os contedores volvan executarse cando a máquina se reinicie, podemos especificar a opción: --restart unless-stopped
+👁️ Se queremos que os contedores volvan executarse cando a máquina se reinicie, podemos especificar a opción: ```--restart unless-stopped```
 
 ### Imaxes
-- Ver imaxes: docker image ls
-- Borrar imaxe: docker image rm [ID ou NOME]
+- Ver imaxes: ```docker image ls```
+- Borrar imaxe: ```docker image rm [ID ou NOME]```
 
 ### Volumes
-- Ver volume: docker volume ls
-- Borrar volume: docker volume rm [ID ou NOME]
+- Ver volume: ```docker volume ls```
+- Borrar volume: ```docker volume rm [ID ou NOME]```
 
 ## Imaxes oficiales para docker que podes probar
 
