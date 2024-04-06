@@ -7,8 +7,9 @@ Pasos:
 1. Baixa miniconda <https://docs.conda.io/projects/miniconda/en/latest/> e instálao no teu equipo.
 2. (*Opcional*) Mete miniconda no **PATH** de Microsoft Windows. O instalador di que pode dar problemas, pero é só se temos configuracións previas que empreguen Python e nalgúns casos moi especiais (mira os pasos abaixo).
 3. Actualiza tódolos paquetes do contorno base para que non dea problemas:
-
-        conda update --all
+``` bash
+conda update --all
+```
 
 4. Borra o contorno bigdata anterior:
 
