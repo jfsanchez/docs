@@ -31,50 +31,50 @@ mariadb:latest
 
 - Ver as bases de datos
 
-~~~~
+``` sql
 show databases;
-~~~~
+```
 
 - Seleccionar unha base de datos
 
-~~~~
+``` sql
 use database;
-~~~~
+```
 
 - Ver as táboas da BBDD actual seleccionada
 
-~~~~
+``` sql
 show tables;
-~~~~
+```
 
 - Ver información do estado do servidor
 
-~~~~
+``` sql
 \s
-~~~~
+```
 
 
 Saír do cliente
 
-~~~~
+``` sql
 \q
-~~~~
+```
 
 Tamén funcionaría *quit* ou Crtl+D
 
 ### Crear usuario e conceder permisos a base de datos
 
-~~~~
+``` sql
 CREATE USER 'usuario-a-crear'@'%' IDENTIFIED BY 'contrasinal-abc123.';
 GRANT ALL PRIVILEGES ON base-de-datos.* TO 'usuario-a-crear'@'%';
 FLUSH PRIVILEGES;
-~~~~
+```
 
 ### Executar un arquivo .sql (útil para recuperar un backup)
 
-~~~~
+``` sql
 source /ruta/ao/arquivo.sql
-~~~~
+```
 
 ## Comando mysqldump para backup (dende shell)
 
