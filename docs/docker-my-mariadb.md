@@ -2,7 +2,7 @@
 
  - Baseado na imaxe oficial: <https://hub.docker.com/_/mariadb>
 
-~~~~ bash { .yaml .annotate }
+~~~~ { .yaml .annotate }
 docker run -p 9907:3306 -v /root/mariadatosdb:/var/lib/mysql/ --detach \ # (1)
 --name mariadbpracticasql --env MARIADB_USER=usuariamaria \
 --env MARIADB_PASSWORD=DonaMaria123456 \ # (2)
