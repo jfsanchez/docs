@@ -9,36 +9,32 @@ Antes de continuar: Precisamos un usuario con permisos de administrador ou *sudo
 1. Crear a máquina en AWS / GCloud / Azure / CESGA Cloud ou instalación local en Microsoft Windows con WSL (Debian ou Ubuntu) e conectarse a ela por SSH. De ser unha instancia na nube, trataremos de elexir unha distribución Debian (recoméndase a última estable).
 
 2. Actualizamos ata o final a máquina:
-
-~~~~
+``` bash
 sudo apt update
 sudo apt -y dist-upgrade
 sudo apt -y install curl
-~~~~
+```
 
 3. Executamos o script (guión) recomendado pola páxina oficial de docker:
-
-~~~~
+``` bash
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh ./get-docker.sh
-~~~~
+```
 
 4. Engadimos o noso usuario ao grupo docker (para evitar empregar sudo):
-
-~~~~
+``` bash
 sudo usermod -a -G docker $USER
-~~~~
+```
 
 5. Saímos da sesión e volvemos abrila (ou abrimos unha sesión sobre a actual como se indica a continuación):
-
-~~~~
+``` bash
 sudo su - $USER
-~~~~
+```
 
 6. Probamos o docker de exemplo de **hola-mundo**:
-~~~~
+``` bash
 docker run hello-world
-~~~~
+```
 
 ## Imaxes oficiales para docker que podes probar
 
