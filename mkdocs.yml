@@ -8,6 +8,8 @@ theme:
   prev_next_buttons_location: both
   favicon: "images/favicon.png"
   logo: "images/logo.png"
+  features:
+    - content.code.copy
 
 site_name: JFSanchez
 site_url: https://jfsanchez.es/docs
