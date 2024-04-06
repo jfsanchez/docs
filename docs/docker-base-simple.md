@@ -76,7 +76,7 @@ Podemos gardar os datos en volumes ou directorios compartidos. Se non especifica
 title: Estados dun contenedor docker
 ---
 stateDiagram-v2
-    [*] --> Creación
+    [*] --> Creado
     Creado --> En_Execución
     En_Execución --> Parado_Rematado
     En_Execución --> Erro
