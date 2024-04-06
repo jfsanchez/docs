@@ -1,8 +1,8 @@
-# 🔵 Instalar docker en Debian
+# 🔵 Guía básica de dockers
 
 - Baseado en: <https://docs.docker.com/engine/install/debian/>
 
-## Pasos
+## Instalación de docker en Debian
 
 1. Crear a máquina en AWS / GCloud / Azure / CESGA Cloud ou instalación local en Microsoft Windows con WSL (Debian ou Ubuntu) e conectarse a ela por SSH. De ser unha instancia na nube, trataremos de elexir unha distribución Debian (recoméndase a última estable).
 
@@ -33,6 +33,39 @@ sudo su - $USER
 ``` bash
 docker run hello-world
 ```
+## Conceptos básicos de dockers
+
+⚠️ Este resumo contén imprecisións porque pretende ser breve.
+
+En docker hai: Contedores, Imaxes, Volumes e Redes.
+
+Cando executamos un "docker run", créase un contedor baseado nunha imaxe que se descarga de internet e arráncase. Este contedor é como unha máquina virtual xa configurada e funcionando.
+
+Hai imaxes xa listas en internet: https://hub.docker.com/ ou ben podemos facer a nosa.
+
+Unha vez creado un contedor podémolo parar ou arrancar.
+
+Podemos gardar os datos en volumes ou directorios compartidos. Se non especificamos nada a información queda no contedor ou no volume que cree por defecto (se o crea).
+
+### Contedores
+- Ver contedores en execución: ```docker ps```
+- Ver tódolos contedores: docker ps -a
+- Crear un contedor: docker run hello-world
+- Parar un contedor: docker stop [ID ou NOME]
+- Iniciar un contedor: docker start [ID ou NOME]
+- Executar un comando dentro do contenedor: docker exec -it [ID ou NOME] [COMANDO]
+- Ver tódalas opcións do contedor: docker inspect [ID ou NOME]
+- Borrar un contedor: docker rm [ID ou NOME]
+
+👁️ Se queremos que os contedores volvan executarse cando a máquina se reinicie, podemos especificar a opción: --restart unless-stopped
+
+### Imaxes
+- Ver imaxes: docker image ls
+- Borrar imaxe: docker image rm [ID ou NOME]
+
+### Volumes
+- Ver volume: docker volume ls
+- Borrar volume: docker volume rm [ID ou NOME]
 
 ## Imaxes oficiales para docker que podes probar
 
