@@ -18,7 +18,7 @@ mariadb:latest
 3:  Para que inicie automáticamente o contedor tras un reinicio de docker ou da máquina.
 
 
-=== "Cliente no docker"
+=== "Conectar co cliente do docker"
 
     ``` bash
     docker exec -it mariadbpracticasql mariadb -uroot -pN0nECl4v3DEr00t
@@ -26,7 +26,7 @@ mariadb:latest
 
     - Podemos engadir `-hX.X.X.X` para conectar con outro equipo.
 
-=== "Cliente noutro host"
+=== "Conectar cun cliente doutro host"
 
     ``` bash
     mariadb -hX.X.X.X -P9907 -uroot -pN0nECl4v3DEr00t
