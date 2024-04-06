@@ -37,7 +37,14 @@ docker run hello-world
 
 ⚠️ Este resumo contén imprecisións porque pretende ser breve.
 
-En docker hai: Contedores, Imaxes, Volumes e Redes.
+``` mermaid
+mindmap
+  root((Docker))
+    Contedores
+    Imaxes
+    Volumes
+    Redes
+```
 
 Cando executamos un "docker run", créase un contedor baseado nunha imaxe que se descarga de internet e arráncase. Este contedor é como unha máquina virtual xa configurada e funcionando.
 
@@ -94,7 +101,7 @@ stateDiagram-v2
 
 ```
 
-Realmente existen 6 estado. O estado borrado é para que se vexa mellor no diagrama máis non é un estado. O `Erro` ou `Morto` poden ser o mesmo estado nalgunhas circunstancias.
+Realmente existen 6 estados. O estado borrado é para que se vexa mellor no diagrama máis non é un estado. O `Erro` ou `Morto` poden ser o mesmo estado nalgunhas circunstancias.
 
 Máis información acerca dos estados en: <https://www.baeldung.com/ops/docker-container-states>.
 
