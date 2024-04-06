@@ -76,17 +76,17 @@ source /ruta/ao/arquivo.sql
 
 ## Comando mysqldump para backup (dende shell)
 
-### Backup de todas as BBDD:
+=== "Todas as BBDD"
 
-~~~~
-mysqldump -uUSUARIO -pCLAVE --all-databases > YYYY-mm-dd_mysql_backup.sql
-~~~~
+    ``` bash
+    mysqldump -uUSUARIO -pCLAVE --all-databases > YYYY-mm-dd_mysql_backup.sql
+    ```
 
-### Backup dunha BBDD concreta:
+=== "Unha BBDD concreta"
 
-~~~~
-mysqldump -uUSUARIO -pCLAVE --databases BASE_DATOS > YYYY-mm-dd_mysql_backup.sql
-~~~~
+    ``` bash
+    mysqldump -uUSUARIO -pCLAVE --databases BASE_DATOS > YYYY-mm-dd_mysql_backup.sql
+    ```
 
 ### Conectar a MySQL dende Python
 
