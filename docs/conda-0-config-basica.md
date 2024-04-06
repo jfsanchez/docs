@@ -12,20 +12,23 @@ Pasos:
     ```
 
 4. Borra o contorno bigdata anterior:
-
-        conda env remove -n bigdata
+    ``` bash
+    conda env remove -n bigdata
+    ```
 
 5. Crea o novo contorno bigdata e actívao:
-
-        conda create -n bigdata python=3.11
-        conda activate bigdata
+    ``` bash
+    conda create -n bigdata python=3.11
+    conda activate bigdata
+    ```
 
 6. Instala os paquetes mínimos que imos precisar
-
-        conda install -c conda-forge jupyterlab ipykernel ipython \
-         nbconvert pandas numpy pyarrow fastparquet wordcloud nltk \
-         pymysql ipython-sql sqlalchemy selenium requests beautifulsoup4 \
-         psycopg2
+    ``` bash
+    conda install -c conda-forge jupyterlab ipykernel ipython \
+       nbconvert pandas numpy pyarrow fastparquet wordcloud nltk \
+       pymysql ipython-sql sqlalchemy selenium requests beautifulsoup4 \
+       psycopg2
+    ```
 
 
 ## Engadir miniconda ao PATH
@@ -36,9 +39,9 @@ O instalador ofrécenos por defecto inicializar conda e metela no PATH, debería
 
 Se non o fixemos e non queremos executar de novo o instalador coa opción -u, entón podemos engadir ao final do .bashrc (considerando que ocnda estea instalado na ruta por defecto e a nivel usuario):
 
-~~~~
+``` bash
 export PATH=$PATH:$HOME/miniconda3
-~~~~
+```
 
 ### Microsoft Windows
 
@@ -76,17 +79,18 @@ Busca *"Jupyter"* do autor *"Microsoft"* e instálao.
 2. Busca `conda path`.
 3. No cadro pon a ruta ao executable de conda (conda.bat en Microsoft Windows)
 
-~~~~
+``` bash
 /home/USUARIO/miniconda3/bin/conda
-~~~~
+```
 
 ### Configurar a terminal
 
 
 1. Abre o code.
 2. Abre unha terminal (En GNU/Linux: Ctrl+Shift+`, en Microsoft Windows: Ctrl+ñ) e escribir o comando (en Windows podemos especificar tamén powershell ao final):
-
-        conda init
+    ``` bash
+    conda init
+    ```
 
 
 3. Pecha tódolos terminais e xa podes abrir un que será inicializado no contorno base.
