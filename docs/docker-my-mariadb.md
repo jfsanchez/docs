@@ -2,14 +2,18 @@
 
  - Baseado na imaxe oficial: <https://hub.docker.com/_/mariadb>
 
-~~~~
-docker run -p 9907:3306 -v /root/mariadatosdb:/var/lib/mysql/ --detach \
+~~~~ bash { .yaml .annotate }
+docker run -p 9907:3306 -v /root/mariadatosdb:/var/lib/mysql/ --detach \ # (1)
 --name mariadbpracticasql --env MARIADB_USER=usuariamaria \
---env MARIADB_PASSWORD=DonaMaria123456 \
+--env MARIADB_PASSWORD=DonaMaria123456 \ # (2)
 --env MARIADB_ROOT_PASSWORD=N0nECl4v3DEr00t \
---restart unless-stopped \
+--restart unless-stopped \ # (3)
 mariadb:latest
 ~~~~
+
+1:  `-v` para asociar o directorio local `/root/mariadatosdb` ao contedor en `/var/lib/mysql`.
+2:  `--env` ou `-e` para definir variables de entorno (configuración) presentes na imaxe.
+3:  Para que inicie automáticamente o contedor tras un reinicio de docker ou da máquina.
 
 === "Cliente no docker"
 
