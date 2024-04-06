@@ -11,19 +11,21 @@ docker run -p 9907:3306 -v /root/mariadatosdb:/var/lib/mysql/ --detach \
 mariadb:latest
 ~~~~
 
-Para conectar dende o propio docker:
+=== "Cliente no docker"
 
-~~~~
-docker exec -it mariadbpracticasql mariadb -uroot -pN0nECl4v3DEr00t
-~~~~
+    ``` bash
+    docker exec -it mariadbpracticasql mariadb -uroot -pN0nECl4v3DEr00t
+    ```
 
-Para conectar dende outro host:
+    - Podemos engadir `-hX.X.X.X` para conectar con outro equipo.
 
-- `X.X.X.X` é a IP do servidor ao que queremos conectar.
+=== "Cliente noutro host"
 
-~~~~
-mariadb -hX.X.X.X -P9907 -uroot -pN0nECl4v3DEr00t
-~~~~
+    ``` bash
+    mariadb -hX.X.X.X -P9907 -uroot -pN0nECl4v3DEr00t
+    ```
+
+    - `X.X.X.X` é a IP do servidor ao que queremos conectar.
 
 ## Comandos útiles dende consola MySQL/MariaDB
 
