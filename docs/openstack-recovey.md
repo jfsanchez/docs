@@ -4,6 +4,8 @@
 
 Se te tes quedado fora dunha instancia, sempre podes borrala (sen borrar o volume de datos asociado) e meter ese volume noutra instancia (nova ou existente). Desde esa máquina a que tes acceso podes facer os cambios necesarios no volume, por exemplo copiar unha chave SSH ou poñerlle contrasinal ao usuario co que conectas (esto último é inseguro).
 
+Un volume non debe estar asociado a outra instancia para poder asocialo (attach). Unha vez está libre, pódese asociar a unha instancia en execución.
+
 ``` bash
 sudo su
 lsblk # (1)!
@@ -26,7 +28,7 @@ mount /dev/DISPOSITIVO /mnt/volume-a-recuperar
 
   ``` bash
   mkdir /mnt/volume-a-recuperar/home/USUARIO/.ssh/
-  cp $USER/.ssh/id_rsa.pub /mnt/volume-a-recuperar/home/USUARIO/.ssh/
+  cp $HOME/.ssh/id_rsa.pub /mnt/volume-a-recuperar/home/USUARIO/.ssh/
   ```
 
 Emprega os comandos con sentido. Debes adaptalos ao teu caso.
