@@ -11,8 +11,8 @@ mkdir /mnt/volume-a-recuperar
 mount /dev/DISPOSITIVO /mnt/volume-a-recuperar
 ```
 
-1:  Este comando serve para averiguar o nome e número do dispositivo (o último).
-2:  En usuario debes poñer o usuario que empregas para conectar (mudarás a clave del).
+1.  Este comando serve para averiguar o nome e número do dispositivo (o último).
+2.  En usuario debes poñer o usuario que empregas para conectar (mudarás a clave del).
 
 ### Opción 1: Mudando o contrasinal de usuario
 
