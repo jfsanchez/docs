@@ -6,7 +6,7 @@ Se te tes quedado fora dunha instancia, sempre podes borrala (sen borrar o volum
 
 ``` bash
 sudo su
-lsblk (1)!
+lsblk # (1)!
 mkdir /mnt/volume-a-recuperar
 mount /dev/DISPOSITIVO /mnt/volume-a-recuperar
 ```
@@ -17,7 +17,7 @@ mount /dev/DISPOSITIVO /mnt/volume-a-recuperar
 
   ``` bash
   chroot /mnt/volume-a-recuperar /bin/bash
-  passwd USUARIO (1)!
+  passwd USUARIO # (1)!
   ```
 1.  En usuario debes poñer o usuario que empregas para conectar (mudarás a clave del).
 
