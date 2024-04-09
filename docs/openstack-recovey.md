@@ -1,4 +1,4 @@
-# OpenStack: Recuperación
+# ⛈️ OpenStack: Recuperación
 
 ## Recuperando instancias do OpenStack a través dos volumes
 
