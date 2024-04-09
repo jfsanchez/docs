@@ -19,10 +19,10 @@ mount /dev/DISPOSITIVO /mnt/volume-a-recuperar
 
   ``` bash
   chroot /mnt/volume-a-recuperar /bin/bash
-  passwd USUARIO # (2)!
+  passwd USUARIO # (1)!
   ```
 
-2.  En usuario debes poñer o usuario que empregas para conectar (mudarás a clave del).
+1.  En usuario debes poñer o usuario que empregas para conectar (mudarás a clave del).
 
 ### Opción 2: Copiando a chave SSH ao authorized_keys
 
