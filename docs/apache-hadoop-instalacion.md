@@ -18,6 +18,7 @@ Teremos que abrir os seguintes portos (ollo, deberíamolos abrir só entre eles 
 
  - HADOOP_HDFS: 9000 (TCP)
  - HADDOP_MASTER_WEB: 9870 (TCP)
+ - HADOOP_SECONDARY_NAMENODE_WEB 9864 (TCP) (admin)
  - HADOOP_SECONDARY_NAMENODE_WEB 9868 (TCP)
 
 **Apache Spark**:
