@@ -1,4 +1,4 @@
-# Apache Spark - Instalación
+# 🧾 Apache Spark - Instalación
 
 Con ClusterShell.
 
