@@ -3,7 +3,7 @@
 Creamos un arquivo para swap e o formateamos:
 
 ```bash 
-dd if=/dev/zero of=/archivoswap bs=1024K count=4096
+dd if=/dev/zero of=/arquivoswap bs=1024K count=4096
 mkswap /arquivoswap
 ```
 
