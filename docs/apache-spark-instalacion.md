@@ -71,5 +71,10 @@ E no master o mesmo, pero con comando master:
 
 ``` bash
 sudo crontab -e
+```
+
+E meter no arquivo:
+
+```
 @reboot /home/cesgaxuser/spark-3.3.2-bin-hadoop3/sbin/start-master.sh
 ```
