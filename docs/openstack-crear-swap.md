@@ -1,4 +1,4 @@
-# 🧠 Crear SWAP
+# 🧠 SWAP en GNU/Linux
 
 A SWAP é a memoria virtual en GNU/Linux. Cando se acaba a memoria física, baixanse algunhas páxinas de memoria ao almacenamento secundario adicado especialmente a isto.
 
