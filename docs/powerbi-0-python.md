@@ -43,7 +43,25 @@ df = pd.DataFrame(datos_estudantes)
 
 ## Acceso dende PowerBi a Hadoop
 
-URL de exemplo: http://X.Y.Z.T:9870/webhdfs/v1/user?op=LISTSTATUS
+Podes acceder aos arquivos que estean no HDFS dende PowerBI 
+
+Ver tódolos arquivos:
+
+<http://X.Y.Z.T:9870/webhdfs/v1/user?op=LISTSTATUS>
+
+Descargar un arquivo concreto:
+
+<http://hadoop1:9864/webhdfs/v1/user/oteusuario/arquivo.extension?op=OPEN&namenoderpcaddress=hadoop1:9000&offset=0>
+
+
+Cambiar C:\Windows\system32\drivers\etc\hosts e meter a IP do master co nome:
+
+```
+10.133.28.88 hadoop1
+```
+
+Isto é necesario porque internamente, cando baixamos un arquivo, por defecto temos configurado que vaia ao nome.
+
 
 Tamén pode resultarche interesante:
 
