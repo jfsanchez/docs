@@ -66,3 +66,4 @@ Isto é necesario porque internamente, cando baixamos un arquivo, por defecto te
 Tamén pode resultarche interesante:
 
   - **Expresións DAX**: <https://learn.microsoft.com/es-es/dax/>
+  - **WebHDFS**: <https://hadoop.apache.org/docs/r1.0.4/webhdfs.html>
