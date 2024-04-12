@@ -41,6 +41,10 @@ datos_estudantes = ({
 df = pd.DataFrame(datos_estudantes)
 ```
 
+## Acceso dende PowerBi a Hadoop
+
+URL de exemplo: http://X.Y.Z.T:9870/webhdfs/v1/user?op=LISTSTATUS
+
 Tamén pode resultarche interesante:
 
   - **Expresións DAX**: <https://learn.microsoft.com/es-es/dax/>
