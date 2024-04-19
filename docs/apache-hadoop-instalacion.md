@@ -373,7 +373,8 @@ Dende *hadoop1* (o nodo master) executamos:
 
 E finalmente dende o master iniciamos todo o sistema (esto conecta por SSH aos nodos e executa os comandos necesarios para que se poñan a traballar):
 
-`start-dfs.sh`
+- `start-dfs.sh`
+- `start-yarn.sh`
 
 ### Arrancando Apache Hadoop ao inicio con cron
 
@@ -400,6 +401,7 @@ E metemos no arquivo o seguinte contido:
 
 ~~~~
     @reboot /home/cesgaxuser/hadoop-3.2.4/sbin/start-dfs.sh
+    @reboot /home/cesgaxuser/hadoop-3.2.4/sbin/start-yarn.sh
 ~~~~
 
 Por último reiniciamos tódolos nodos:
