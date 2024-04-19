@@ -29,6 +29,17 @@ clush -l cesgaxuser -bw hadoop[1-3] sudo curl -L -O https://dlcdn.apache.org/spa
 clush -l cesgaxuser -bw hadoop[1-3] sudo tar xzvf spark-3.3.2-bin-hadoop3.tgz
 ```
 
+Copiamos el siguiente template y editamos el siguiente fichero:
+``` bash
+sudo cp /home/cesgaxuser/spark-3.3.2-bin-hadoop3/conf/spark-defaults.conf.template /home/cesgaxuser/spark-3.3.2-bin-hadoop3/conf/spark-defaults.conf
+sudo nano /home/cesgaxuser/spark-3.3.2-bin-hadoop3/conf/spark-defaults.conf
+```
+
+Dentro metemos la siguiente línea:
+``` bash
+spark.master yarn
+```
+
 No nodo master executamos:
 ``` bash
 sudo /home/cesgaxuser/spark-3.3.2-bin-hadoop3/sbin/start-master.sh
