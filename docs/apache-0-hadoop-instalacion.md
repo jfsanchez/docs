@@ -400,10 +400,10 @@ hadoop4
 
 Agora precisamos crear os directorios que almacenarán os datos:
 
-    ``` bash
-    mkdir -p /home/cesgaxuser/data/nameNode
-    mkdir -p /home/cesgaxuser/data/dataNode
-    ```
+``` bash
+mkdir -p /home/cesgaxuser/data/nameNode
+mkdir -p /home/cesgaxuser/data/dataNode
+```
 
 
 Con esto teríamos configurado **yarn** en *hadoop1* (master).
