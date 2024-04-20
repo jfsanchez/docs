@@ -155,7 +155,9 @@ Se mudásemos a liña que lista os hosts por esta: `$(cat /etc/hosts|grep hadoop
 - Copiamos a configuración a tódolos nodos:
 
     ``` bash
-    clush -l cesgaxuser -bw hadoop[2-4] --copy /home/cesgaxuser/.ssh --dest /home/cesgaxuser/
+    clush -l cesgaxuser -bw hadoop[2-4] \
+      --copy /home/cesgaxuser/.ssh \
+      --dest /home/cesgaxuser/
     ```
 
 ### Actualización de paquetes
@@ -365,7 +367,7 @@ No seguinte arquivo lembra substituir XXX.XXX.XXX.XXX pola IP do nodo master ou 
             <value>mapreduce_shuffle</value>
         </property>
 
-        <!-- Límite de uso de RAM (non poñer se temos alomenos 8GB por servidor -->
+        <!-- Límite de uso de RAM (non poñer se temos +8GB por servidor -->
         <property>
             <name>yarn.nodemanager.resource.memory-mb</name>
             <value>1536</value>
