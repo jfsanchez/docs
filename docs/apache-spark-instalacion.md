@@ -181,7 +181,7 @@ Outra opción se contas con pouco ancho de banda é baixar unha vez o arquivo de
 
     - ⚠️ Considera que quizás a mellor opción sexa instalar miniconda e dende ahí ter un contorno estable que poidas importar a tódolos nodos cunha versión concreta de funcional de: Python, ipython, pyspark, jupyterlab, ipykernel, nbclassic, nbconvert, py4j, pandas, numpy, pyarrow, fastparquet... 
 
-2. Lanzar pyspark
+2. Lanzar pyspark:
 
     ``` bash
     pyspark --master spark://hadoop1:7077
