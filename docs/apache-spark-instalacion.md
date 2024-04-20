@@ -166,11 +166,17 @@ Outra opción se contas con pouco ancho de banda é baixar unha vez o arquivo de
 
 ## Instalación de PySpark
 
-1. Instalamos Python:
+1. Instalamos Python 3.9:
 
     ``` bash
     clush -l cesgaxuser -bw hadoop[1-4] \
       sudo dnf install -y python39
+    ```
+    - Lembra que a nivel sistema podes seleccionar o python por defecto que queres cos comandos:
+
+    ``` bash
+    sudo /usr/sbin/alternatives --config python
+    sudo /usr/sbin/alternatives --config python3
     ```
 
     - ⚠️ Considera que quizás a mellor opción sexa instalar miniconda e dende ahí ter un contorno estable que poidas importar a tódolos nodos cunha versión concreta de funcional de: Python, ipython, pyspark, jupyterlab, ipykernel, nbclassic, nbconvert, py4j, pandas, numpy, pyarrow, fastparquet... 
@@ -203,117 +209,81 @@ Outra opción se contas con pouco ancho de banda é baixar unha vez o arquivo de
 
     ```
     @reboot /home/cesgaxuser/spark-bin-hadoop3/sbin/start-master.sh
+    @reboot /home/cesgaxuser/hadoop-3.2.4/sbin/start-yarn.sh
     ```
 
-## Comandos e outros
+5. Lembra darlle un reboot a tódalas máquinas para ver que todo se está a executar ben ao inicio:
 
-hdfs dfs -mkdir /user/
-
- hdfs dfs -mkdir /user/cesgaxuser
-
- hdfs dfs -put hadoop-3.2.4.tar.gz
-
- hdfs dfs -ls
-
-No nodo master:
-
-crontab -e
-
-e meter esta linea ao final para tamén iniciar yarn:
-
-@reboot /home/cesgaxuser/hadoop-3.2.4/sbin/start-yarn.sh
-
-sudo reboot
-
-yarn top
-
-En .bashrc debaixo de HADOOP_HOME, meter esta liña:
-
-export HADOOP_CONF_DIR=${HADOOP_HOME}/etc/hadoop
-
-En .bashrc, abaixo de todo, meter estas liñas ao final:
-
-export SPARK_HOME=/home/cesgaxuser/spark-3.3.2-bin-hadoop3
-export LD_LIBRARY_PATH=${HADOOP_HOME}/lib/native:$LD_LIBRARY_PATH
-
------
-
-Haberá que documentar (na práctica):
-
-yarn top
-
-yarn node -list
-
-yarn application (-list/-kill)
-
-jps -> De java (non spark ou hadoop)
-
-------
-
-Lanzar exemplos:
-
-yarn jar hadoop-3.2.4/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.2.4.jar wordcount "books/*" output
-
----
-
-Configurando Spark para que funcione con Hadoop:
-
-Editamos o arquivo .bashrc e lle engadimos ao final:
-
-export PATH=$PATH:$SPARK_HOME/sbin/:$SPARK_HOME/bin/
-
-Ao final do arquivo, depois de todas estas configuracións, debe quedar así:
-
-JAVA_HOME='/usr/lib/jvm/java-11-amazon-corretto/'
-export JAVA_HOME
-
-HADOOP_HOME='/home/cesgaxuser/hadoop-3.2.4'
-export HADOOP_CONF_DIR=${HADOOP_HOME}/etc/hadoop
-
-export PATH=${PATH}:${HADOOP_HOME}/bin:${HADOOP_HOME}/sbin
-export HADOOP_HOME
-
-export EDITOR=nano
-
-export SPARK_HOME=/home/cesgaxuser/spark-3.3.2-bin-hadoop3
-export LD_LIBRARY_PATH=${HADOOP_HOME}/lib/native:$LD_LIBRARY_PATH
-export PATH=$PATH:$SPARK_HOME/sbin/:$SPARK_HOME/bin/
-
-Copiamos o arquivo de template por defecto de Spark para empregalo:
-
-cp spark-3.3.2-bin-hadoop3/conf/spark-defaults.conf.template spark-3.3.2-bin-hadoop3/conf/spark-defaults.conf
-
-Editamos o arquivo: spark-3.3.2-bin-hadoop3/conf/spark-defaults.conf
-
-Metemos a liña:
-
-spark.master                     yarn
-
-Reiniciamos con clush tódolos nodos.
-
-Executamos dende o master con spark-submit un traballo, que debería enviarse ao hadoop.
-
- spark-submit --deploy-mode client --class org.apache.spark.examples.SparkPi $SPARK_HOME/examples/jars/spark-examples_2.12-3.3.2.jar 2
-
-Miramos nos logs de hadoop que se executara.
-
-Dende o nodo master temos (por mor de clustershell) python 3.6 pero temos python 3.9 no resto de nodos.
-
-Instalamos python3.9:
-
-sudo dnf install python39
-
-E metemos a versión 3.9 por defecto no master.
-
-sudo /usr/sbin/alternatives --config python
-
-sudo /usr/sbin/alternatives --config python3
+    ``` bash
+    clush -l cesgaxuser -bw hadoop[1-4] reboot
+    ```
 
 ![PySpark](images/spark/pyspark.png "PySpark")
 
+## Configurando Spark para que funcione con Hadoop:
 
-Para ler arquivos do HDFS dende yarn/jupyterlab hai que poñer a ruta completa:
+O arquivo `.bashrc` tamén debe ter a config de Apache Hadoop do exercicio anterior:
+En `.bashrc` asegúrate que tes:
 
-df = spark.read.csv("hdfs://host:9000/user/cesgaxuser/arquivo.csv")
+``` bash title=".bashrc"
+export HADOOP_HOME='/home/cesgaxuser/hadoop-3.2.4'
+export HADOOP_CONF_DIR=${HADOOP_HOME}/etc/hadoop
+export PATH=${PATH}:${HADOOP_HOME}/bin:${HADOOP_HOME}/sbin
+export LD_LIBRARY_PATH=${HADOOP_HOME}/lib/native:$LD_LIBRARY_PATH
+```
 
-Ollo! se probas dende pyspark, que acceda ao cluster e non cree un.
+E lembra ter todas as variables definidas nos arquivos **-env.sh** correspondentes.
+
+## Lanzando traballos con spark-submit
+
+Executamos dende o master con spark-submit un traballo, que debería enviarse ao hadoop.
+
+``` bash
+spark-submit --deploy-mode client --class org.apache.spark.examples.SparkPi $SPARK_HOME/examples/jars/spark-examples_2.12-3.3.2.jar 2
+```
+
+Miramos nos logs de hadoop que se executara.
+
+## Lendo arquivos do HDFS dende jupyterlab
+
+Para ler arquivos do HDFS dende yarn / jupyterlab / pyspark hai que:
+
+1. Crear o directorio de usuario no HDFS:
+
+    ´´´ bash
+    hdfs dfs -mkdir /user/
+    hdfs dfs -mkdir /user/cesgaxuser
+    ´´´
+
+2. Poñer a ruta completa no código:
+
+    ´´´ py title="ler_csv_dende_spark.py"
+    df = spark.read.csv("hdfs://hadoop1:9000/user/cesgaxuser/arquivo.csv")
+    ´´´
+
+    - Ollo! se probas dende pyspark, mira que acceda ao cluster e non cree unha instancia nova propia.
+
+## Lanzando exemplos
+
+Se tes Apache Hadoop instalado do paso anterior, lembra que tamén podes probar os exemplos con:
+
+``` bash
+yarn jar hadoop-3.2.4/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.2.4.jar wordcount "books/*" output
+```
+
+## Comandos e outros
+
+Haberá que documentar:
+
+- hdfs dfs -put ARQUIVO
+
+- hdfs dfs -ls
+
+- yarn top
+
+- yarn node -list
+
+- yarn application (-list/-kill)
+
+- jps -> De java (non Spark ou Hadoop)
+
