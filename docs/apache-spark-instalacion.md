@@ -192,6 +192,9 @@ sudo /usr/sbin/alternatives --config python
 
 sudo /usr/sbin/alternatives --config python3
 
+![PySpark](images/spark/pyspark.png "PySpark")
+
+
 Para ler arquivos do HDFS dende yarn/jupyterlab hai que poñer a ruta completa:
 
 df = spark.read.csv("hdfs://host:9000/user/cesgaxuser/arquivo.csv")
