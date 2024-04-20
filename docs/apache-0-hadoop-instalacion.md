@@ -77,19 +77,20 @@ Neste exemplo imaxinamos que este arquivo, gardado no directorio onde nos atopem
 - Copiamos o arquivo (ollo, hai que repetir o arquivo, unha vez para pasalo como chave a empregar e outra para copialo):
 
     ``` bash
-    scp -i ficheiro-chave-ssh.pem ficheiro-chave-ssh.pem cesgaxuser@hadoop1:/home/cesgaxuser/
+    scp -i ficheiro-chave-ssh.pem \
+      ficheiro-chave-ssh.pem cesgaxuser@hadoop1:/home/cesgaxuser/
     ```
 
 Se nos devolve un erro coma este:
 
 ````
-    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    @         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
-    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    Permissions 0755 for 'ficheiro-chave-ssh.pem' are too open.
-    It is required that your private key files are NOT accessible by others.
-    This private key will be ignored.
-    Load key "ficheiro-chave-ssh.pem": bad permissions
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Permissions 0755 for 'ficheiro-chave-ssh.pem' are too open.
+It is required that your private key files are NOT accessible by others.
+This private key will be ignored.
+Load key "ficheiro-chave-ssh.pem": bad permissions
 ````
 
 Deberemos dar permisos adecuados (só podemos ler a chave nos):
@@ -113,10 +114,10 @@ chmod 0600 ficheiro-chave-ssh.pem
 Preguntaranos se queremos conectar co servidor, xa que é a primeira vez e non coñece a chave:
 
 ```
-    [cesgaxuser@hadoop1 ~]$ ssh localhost
-    The authenticity of host 'localhost (::1)' can't be established.
-    ECDSA key fingerprint is SHA256:5aeqrZspd4Wev7IrUFH/KS8OXORpa614OEWXRHUG+yE.
-    Are you sure you want to continue connecting (yes/no/[fingerprint])? 
+[cesgaxuser@hadoop1 ~]$ ssh localhost
+The authenticity of host 'localhost (::1)' can't be established.
+ECDSA key fingerprint is SHA256:5aeqrZspd4Wev7IrUFH/KS8OXORpa614OEWXRHUG+yE.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? 
 ```
 
 Contestamos `yes` e damos a enter para que se cree a estrutura `.ssh`.
@@ -210,11 +211,10 @@ Editaremos o arquivo `/home/cesgaxuser/.bashrc` para configurar as variables de 
 nano .bashrc
 ```
 
-Metemos estas liñas ao final:
+Metemos esta liña ao final:
 
 ``` bash title=".bashrc"
-JAVA_HOME='/usr/lib/jvm/java-11-amazon-corretto/'
-export JAVA_HOME
+export JAVA_HOME='/usr/lib/jvm/java-11-amazon-corretto/'
 ```
 
 Esto configura a variable de contorna `JAVA_HOME`. Non debería ser necesario ao estar instalada a máquina dende un repositorio automatizado, pero é unha boa práctica para que o resto de scripts non dean fallos ou avisos.
