@@ -10,15 +10,15 @@ Instalaremos Spark e miraremos os procesos con permisos de administración:
 
 1. Activar repo:
 
-``` bash
-sudo yum --enablerepo=extras install epel-release
-```
+    ``` bash
+    sudo yum --enablerepo=extras install epel-release
+    ```
 
 2. Instalación de paquete:
 
-``` bash
-sudo yum install clustershell
-```
+    ``` bash
+    sudo yum install clustershell
+    ```
 
 ## Descargar a máquina de Java (Amazon Corretto)
 
