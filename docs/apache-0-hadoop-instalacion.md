@@ -180,13 +180,15 @@ En tódolos equipos debemos ter instalada a máquina virtual de Java OpenJDK ver
 Engadimos o respositorio:
 
 ``` bash
-clush -l cesgaxuser -bw hadoop[1-4] sudo curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
+clush -l cesgaxuser -bw hadoop[1-4] \
+  sudo curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
 ```
 
 Instalamos o paquete:
 
 ``` bash
-clush -l cesgaxuser -bw hadoop[1-4] sudo dnf install -y java-11-amazon-corretto-devel`
+clush -l cesgaxuser -bw hadoop[1-4] \
+  sudo dnf install -y java-11-amazon-corretto-devel`
 ```
 
 
@@ -345,7 +347,7 @@ Editamos os arquivos de configuración seguintes e os deixamos así:
 
 No seguinte arquivo lembra substituir XXX.XXX.XXX.XXX pola IP do nodo master ou mellor polo host: **hadoop1**:
 
- ``` xml title="hadoop-3.2.4/etc/hadoop/yarn-site.xml"
+``` xml title="hadoop-3.2.4/etc/hadoop/yarn-site.xml"
     <configuration>
         <property>
             <name>yarn.acl.enable</name>
