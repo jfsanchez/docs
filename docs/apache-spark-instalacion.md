@@ -33,27 +33,28 @@ Configuramos o repo de Amazon Corretto e instalamos o paquete de Java en tódolo
 
 2. Baixamos o repositorio e o configuramos nos nodos:
 
-``` bash
-  clush -l cesgaxuser -bw hadoop[1-4] \
-    sudo curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
-```
+    ``` bash
+      clush -l cesgaxuser -bw hadoop[1-4] \
+        sudo curl -L -o /etc/yum.repos.d/corretto.repo \
+        https://yum.corretto.aws/corretto.repo
+    ```
 
 3. Instalamos o paquete de Java deste novo repostorio:
    
-``` bash
-  clush -l cesgaxuser -bw hadoop[1-4] \
-    sudo dnf install -y java-11-amazon-corretto-devel
-```
+    ``` bash
+      clush -l cesgaxuser -bw hadoop[1-4] \
+        sudo dnf install -y java-11-amazon-corretto-devel
+    ```
 
 4. Configuramos as variables de contorno metendo no arquivo `.bashrc` as liñas:
 
-``` bash
-JAVA_HOME='/usr/lib/jvm/java-11-amazon-corretto/'
-export JAVA_HOME
-export EDITOR=nano
-PATH=$PATH:$JAVA_HOME/bin
-export PATH
-```
+    ``` bash
+    JAVA_HOME='/usr/lib/jvm/java-11-amazon-corretto/'
+    export JAVA_HOME
+    export EDITOR=nano
+    PATH=$PATH:$JAVA_HOME/bin
+    export PATH
+    ```
 
 ## Descarga de Apache Spark
 
@@ -65,12 +66,13 @@ Outra opción se contas con pouco ancho de banda é baixar unha vez e facer un -
 
 1. Baixamos Apache Spark (actualizado a 20 de abril de 2024):
 
-``` bash
-  clush -l cesgaxuser -bw hadoop[1-4] \
-    sudo curl -L -O https://dlcdn.apache.org/spark/spark-3.4.3/spark-3.4.3-bin-hadoop3.tgz \
-    -o /home/cesgaxuser/spark-bin-hadoop3.tar.gz
-```
-Gárdase no arquivo `spark-bin-hadoop3.tar.gz` para que futuras versións destes apuntes non teñan que ser mudados tódolos comandos por mor da versión.
+    ``` bash
+      clush -l cesgaxuser -bw hadoop[1-4] \
+        sudo curl -L -O https://dlcdn.apache.org/spark/spark-3.4.3/spark-3.4.3-bin-hadoop3.tgz \
+        -o /home/cesgaxuser/spark-bin-hadoop3.tar.gz
+    ```
+
+    - Gárdase no arquivo `spark-bin-hadoop3.tar.gz` para que futuras versións destes apuntes non teñan que ser mudados tódolos comandos por mor da versión.
 
 2. Descomprimimos simultáneamente en tódolos nodos:
 
