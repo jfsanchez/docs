@@ -57,11 +57,11 @@ sudo apt-get install clustershell
 Deberemos configurar o arquivo `/etc/hosts` cos nomes dos servidores:
 
 ~~~~ title="/etc/hosts"
-    X.Y.Z.T1 hadoop1 hadoop1.local
-    X.Y.Z.T2 hadoop2 hadoop2.local
-    X.Y.Z.T3 hadoop3 hadoop3.local
-    ...
-    [X.Y.Z.Tn hadoopN hadoopN.local]
+X.Y.Z.T1 hadoop1 hadoop1.local
+X.Y.Z.T2 hadoop2 hadoop2.local
+X.Y.Z.T3 hadoop3 hadoop3.local
+...
+[X.Y.Z.Tn hadoopN hadoopN.local]
 ~~~~
 
 Cada un destes servidores debe ter como mínimo 4 GB de RAM (8 é o mínimo recomendable máis imos aplicar restriccións na configuración).
