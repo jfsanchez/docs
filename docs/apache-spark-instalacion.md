@@ -1,10 +1,29 @@
 # 🧾 Apache Spark - Instalación
 
-Con ClusterShell.
+Faremos unha instalación de Apache Spark en 4 máquinas con **ClusterShell**, un programa que permite enviar á vez comandos a varias máquinas.
 
-A presente instalación contempla **4 máquinas**: 1 master e 3 nodos (ou 4 nodos de actuar o máster tamén como worker). Se tes un número diferente de máquinas, deberás mudar nos comandos a parte do **[1-4]** ou **[2-4]** adaptándoo ás túas necesidades.
+A presente instalación contempla 1 master e 3 nodos (ou 4 nodos de actuar o máster tamén como worker). Se tes un número diferente de máquinas, deberás mudar nos comandos a parte do **[1-4]** ou **[2-4]** adaptándoo ás túas necesidades.
 
-Instalaremos Spark e miraremos os procesos con permisos de administración:
+Consideraremos os seguintes nomes de máquinas:
+
+``` title="/etc/hosts"
+10.X.Y.101 hadoop1 hadoop1.local master1.local
+10.X.Y.102 hadoop2 hadoop2.local
+10.X.Y.103 hadoop3 hadoop3.local
+10.X.Y.104 hadoop4 hadoop4.local
+```
+
+Imos empregar **Rocky 8.5 v2**, sen embargo, en caso de empregar Debian, podemos empregar `apt` en lugar de `dnf`. Consideramos tamén o contorno do cesga con usuario por defecto: `cesgaxuser` e `$HOME` en `/home/cesgaxuser/`.
+
+Se estás nun contorno Cloud no que debes destruir as instancias por tema de custes e pódense asignar distintos enderezos IP, lembra sempre facer:
+
+1. Borrar o known_hosts:
+    ``` bash
+    rm ~/.ssh/known_hosts
+    ```
+
+2. Editar o arquivo `/etc/hosts` cos nomes que correspondan ás novas IP.
+
 
 ## Instalación de Clustershell
 
@@ -46,20 +65,20 @@ Configuramos o repo de Amazon Corretto e instalamos o paquete de Java en tódolo
       sudo dnf install -y java-11-amazon-corretto-devel
     ```
 
-4. Configuramos as variables de contorno metendo no arquivo `.bashrc` as liñas:
-
-    - Se non temos nano, podemos empregar vi. Lembra para gardar e sair en **nano**: Ctrl+O [ENTER], Ctrl + X. En **vi**: [ESC] :wq! [ENTER]
-
-    ``` bash
-    nano $HOME/.bashrc
-    ```
+4. Configuramos as variables do contorno: `nano .bashrc` as liñas:
 
     ``` bash title=".bashrc"
-    JAVA_HOME='/usr/lib/jvm/java-11-amazon-corretto/'
-    export JAVA_HOME
+    export JAVA_HOME='/usr/lib/jvm/java-11-amazon-corretto/'
     export EDITOR=nano
-    PATH=$PATH:$JAVA_HOME/bin
-    export PATH
+    export PATH=$PATH:$JAVA_HOME/bin
+    ```
+
+    - Se non temos o editor nano, podemos empregar vi. Lembra para gardar e sair en **nano**: Ctrl+O [ENTER], Ctrl + X. En **vi**: [ESC] :wq! [ENTER]
+
+    - Logo de gardar, lembra recargar as variables de contorno!
+
+    ``` bash
+    source ~/.bashrc
     ```
 
 5. Copia ao resto de nodos esta configuración:
@@ -93,75 +112,100 @@ Outra opción se contas con pouco ancho de banda é baixar unha vez o arquivo de
       sudo tar xzvf spark-bin-hadoop3.tgz
     ```
 
-3. Copiamos o template de configuración:
+3. Configuramos as variables de contorno por comodidade `nano .bashrc`:
 
-    ``` bash
-    sudo cp $HOME/spark-bin-hadoop3/conf/spark-defaults.conf.template \
-      $HOME/spark-bin-hadoop3/conf/spark-defaults.conf
+    ``` bash title=".bashrc"
+    export SPARK_HOME=$HOME/spark-bin-hadoop3
+    export PATH=$PATH:$SPARK_HOME/sbin/:$SPARK_HOME/bin/
     ```
 
-4. Editamos o arquivo:
+    - Logo de gardar, lembra recargar as variables do contorno!
 
     ``` bash
-    sudo nano $HOME/spark-bin-hadoop3/conf/spark-defaults.conf
+    source ~/.bashrc
     ```
 
-Dentro do arquivo, mudamos a configuración de Apache Spark para que empregue YARN (Yet Another Resource Negociator):
+4. Copia ao resto de nodos esta configuración:
 
-```
-spark.master yarn
-```
+    ``` bash
+    clush -l cesgaxuser -bw hadoop[2-4] --copy $HOME/.bashrc \
+      --dest $HOME/.bashrc
+    ```
 
-No nodo master executamos o script de inicio (estamos a executar todo como root):
+5. Copiamos o template de configuración:
 
-``` bash
-sudo /home/cesgaxuser/spark-bin-hadoop3/sbin/start-master.sh
-```
+    ``` bash
+    sudo cp $SPARK_HOME/conf/spark-defaults.conf.template \
+      $SPARK_HOME/conf/spark-defaults.conf
+    ```
 
-Nos nodos slaves executamos:
+6. Editamos o novo arquivo de configuración:
 
-``` bash
-clush -l cesgaxuser -bw hadoop[2-3] sudo /home/cesgaxuser/spark-3.3.2-bin-hadoop3/sbin/start-worker.sh spark://hadoop1:7077
-```
+    ``` bash
+    sudo nano $SPARK_HOME/conf/spark-defaults.conf
+    ```
 
-## Instalar pySpark
+    - Dentro do arquivo, mudamos a configuración de Apache Spark para que empregue YARN (Yet Another Resource Negociator):
 
-Paso 1: Instalar python
-``` bash
-clush -l cesgaxuser -bw hadoop[1-3] sudo dnf install -y python39
-```
+    ``` bash title="$SPARK_HOME/conf/spark-defaults.conf"
+    spark.master yarn
+    ```
 
-## Lanzar pyspark
+7. No nodo **master** executamos o script `start-master.sh` (estamos a executar todo como root):
 
-``` bash
-/home/cesgaxuser/spark-3.3.2-bin-hadoop3/bin/pyspark --master spark://hadoop1:7077
-```
+    ``` bash
+    sudo start-master.sh
+    ```
 
-## Configurar para que o worker arranque no inicio do servidor:
+8. Nos nodos **slaves** executamos o `start-worker.sh`:
 
-``` bash
-sudo crontab -e
-```
+    ``` bash
+    clush -l cesgaxuser -bw hadoop[2-4] \
+      sudo $SPARK_HOME/sbin/start-worker.sh spark://hadoop1:7077
+    ```
 
-Pulsar tecla INS (para habilitar inserción de texto no editor vi) e escribir a liña:
+## Instalación de PySpark
 
-```
-@reboot /home/cesgaxuser/spark-3.3.2-bin-hadoop3/sbin/start-worker.sh spark://hadoop1:7077
-```
+1. Instalamos Python:
 
-E agora pulsar a tecla ESC e despois o texto (sen as comillas) ":wq!" e logo premer ENTER.
+    ``` bash
+    clush -l cesgaxuser -bw hadoop[1-4] \
+      sudo dnf install -y python39
+    ```
 
-E no master o mesmo, pero con comando master:
+    - ⚠️ Considera que quizás a mellor opción sexa instalar miniconda e dende ahí ter un contorno estable que poidas importar a tódolos nodos cunha versión concreta de funcional de: Python, ipython, pyspark, jupyterlab, ipykernel, nbclassic, nbconvert, py4j, pandas, numpy, pyarrow, fastparquet... 
 
-``` bash
-sudo crontab -e
-```
+2. Lanzar pyspark
 
-E meter no arquivo:
+    ``` bash
+    pyspark --master spark://hadoop1:7077
+    ```
 
-```
-@reboot /home/cesgaxuser/spark-3.3.2-bin-hadoop3/sbin/start-master.sh
-```
+3. Configurar para que o worker arranque no inicio do servidor:
+
+    ``` bash
+    sudo crontab -e
+    ```
+
+    - De iniciarseche **vi**, preme a tecla INS para habilitar inserción de texto neste editor. Lembra que para gardar debes premer a tecla ESC e despois `:wq!` e logo premer ENTER.
+
+    ``` bash
+    @reboot /home/cesgaxuser/spark-bin-hadoop3/sbin/start-worker.sh spark://hadoop1:7077
+    ```
+
+4. E no master o mesmo, pero con comando master:
+
+    ``` bash
+    sudo crontab -e
+    ```
+
+    - E meter no arquivo:
+
+    ```
+    @reboot /home/cesgaxuser/spark-bin-hadoop3/sbin/start-master.sh
+    ```
+
+## Comandos e outros
 
 hdfs dfs -mkdir /user/
 
