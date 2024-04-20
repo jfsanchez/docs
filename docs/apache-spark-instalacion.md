@@ -2,48 +2,104 @@
 
 Con ClusterShell.
 
+A presente instalación contempla 4 máquinas: 1 master e 3 nodos (ou 1 master e 4 nodos actuando o máster tamén como nodo). Se tes un número diferente de máquinas, deberás mudar nos comandos o [1-4] ou [2-4] ás túas necesidades.
+
 Instalaremos Spark e miraremos os procesos con permisos de administración:
+
+## Instalación de Clustershell
+
+1. Activar repo:
 
 ``` bash
 sudo yum --enablerepo=extras install epel-release
 ```
 
+2. Instalación de paquete:
+
 ``` bash
 sudo yum install clustershell
 ```
 
+## Descargar a máquina de Java (Amazon Corretto)
+
+Configuramos o repo de Amazon Corretto e instalamos o paquete de Java en tódolos nodos:
+
+1. Importamos a chave do repositorio:
+
 ``` bash
-  clush -l cesgaxuser -bw hadoop[1-3] \
+  clush -l cesgaxuser -bw hadoop[1-4] \
     sudo rpm --import https://yum.corretto.aws/corretto.key
 ```
 
+2. Baixamos o repositorio e o configuramos nos nodos:
+
 ``` bash
-clush -l cesgaxuser -bw hadoop[1-3] sudo curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
-clush -l cesgaxuser -bw hadoop[1-3] sudo dnf install -y java-11-amazon-corretto-devel
+  clush -l cesgaxuser -bw hadoop[1-4] \
+    sudo curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
+```
+
+3. Instalamos o paquete de Java deste novo repostorio:
+   
+``` bash
+  clush -l cesgaxuser -bw hadoop[1-4] \
+    sudo dnf install -y java-11-amazon-corretto-devel
+```
+
+4. Configuramos as variables de contorno metendo no arquivo `.bashrc` as liñas:
+
+``` bash
+JAVA_HOME='/usr/lib/jvm/java-11-amazon-corretto/'
+export JAVA_HOME
+export EDITOR=nano
+PATH=$PATH:$JAVA_HOME/bin
+export PATH
+```
+
+## Descarga de Apache Spark
+
+Pode ser que teñas que averiguar a nova ruta de existir unha nova versión. Podes ir ao nivel superior da páxina e buscar a nova versión: <https://dlcdn.apache.org/spark/>.
+
+Segundo as túas necesidades podes ter que escoller entre a versión con ou sen Apache Hadoop.
+
+Outra opción se contas con pouco ancho de banda é baixar unha vez e facer un --copy  a --dest con Clustershell.
+
+1. Baixamos Apache Spark (actualizado a 20 de abril de 2024):
+
+``` bash
+  clush -l cesgaxuser -bw hadoop[1-4] \
+    sudo curl -L -O https://dlcdn.apache.org/spark/spark-3.4.3/spark-3.4.3-bin-hadoop3.tgz \
+    -o /home/cesgaxuser/spark-bin-hadoop3.tar.gz
+```
+Gárdase no arquivo `spark-bin-hadoop3.tar.gz` para que futuras versións destes apuntes non teñan que ser mudados tódolos comandos por mor da versión.
+
+2. Descomprimimos simultáneamente en tódolos nodos:
+
+``` bash
+  clush -l cesgaxuser -bw hadoop[1-4] \
+    sudo tar xzvf spark-bin-hadoop3.tgz
+```
+
+Copiamos o template de configuración e o editamos:
+
+``` bash
+  sudo cp $HOME/spark-bin-hadoop3/conf/spark-defaults.conf.template \
+    $HOME/spark-bin-hadoop3/conf/spark-defaults.conf
 ```
 
 ``` bash
-clush -l cesgaxuser -bw hadoop[1-3] sudo curl -L -O https://dlcdn.apache.org/spark/spark-3.3.2/spark-3.3.2-bin-hadoop3.tgz
+  sudo nano $HOME/spark-bin-hadoop3/conf/spark-defaults.conf
 ```
 
-``` bash
-clush -l cesgaxuser -bw hadoop[1-3] sudo tar xzvf spark-3.3.2-bin-hadoop3.tgz
-```
+Dentro do arquivo, mudamos a configuración de Apache Spark para que empregue YARN (Yet Another Resource Negociator):
 
-Copiamos el siguiente template y editamos el siguiente fichero:
-``` bash
-sudo cp /home/cesgaxuser/spark-3.3.2-bin-hadoop3/conf/spark-defaults.conf.template /home/cesgaxuser/spark-3.3.2-bin-hadoop3/conf/spark-defaults.conf
-sudo nano /home/cesgaxuser/spark-3.3.2-bin-hadoop3/conf/spark-defaults.conf
 ```
-
-Dentro metemos la siguiente línea:
-``` bash
 spark.master yarn
 ```
 
-No nodo master executamos:
+No nodo master executamos o script de inicio (estamos a executar todo como root):
+
 ``` bash
-sudo /home/cesgaxuser/spark-3.3.2-bin-hadoop3/sbin/start-master.sh
+sudo /home/cesgaxuser/spark-bin-hadoop3/sbin/start-master.sh
 ```
 
 Nos nodos slaves executamos:
