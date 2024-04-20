@@ -239,7 +239,9 @@ E lembra ter todas as variables definidas nos arquivos **-env.sh** correspondent
 Executamos dende o master con spark-submit un traballo, que debería enviarse ao hadoop.
 
 ``` bash
-spark-submit --deploy-mode client --class org.apache.spark.examples.SparkPi $SPARK_HOME/examples/jars/spark-examples_2.12-3.3.2.jar 2
+spark-submit --deploy-mode client \
+  --class org.apache.spark.examples.SparkPi \
+  $SPARK_HOME/examples/jars/spark-examples_2.12-3.3.2.jar 2
 ```
 
 Miramos nos logs de hadoop que se executara.
@@ -268,7 +270,8 @@ Para ler arquivos do HDFS dende yarn / jupyterlab / pyspark hai que:
 Se tes Apache Hadoop instalado do paso anterior, lembra que tamén podes probar os exemplos con:
 
 ``` bash
-yarn jar hadoop-3.2.4/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.2.4.jar wordcount "books/*" output
+yarn jar hadoop-3.2.4/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.2.4.jar \
+  wordcount "books/*" output
 ```
 
 ## Comandos e outros
