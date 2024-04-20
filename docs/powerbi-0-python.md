@@ -56,7 +56,7 @@ Descargar un arquivo concreto:
 
 Cambiar C:\Windows\system32\drivers\etc\hosts e meter a IP do master co nome:
 
-```
+``` title="C:\Windows\system32\drivers\etc\hosts"
 10.133.28.88 hadoop1
 ```
 
