@@ -250,16 +250,16 @@ Para ler arquivos do HDFS dende yarn / jupyterlab / pyspark hai que:
 
 1. Crear o directorio de usuario no HDFS:
 
-    ´´´ bash
+    ``` bash
     hdfs dfs -mkdir /user/
     hdfs dfs -mkdir /user/cesgaxuser
-    ´´´
+    ```
 
 2. Poñer a ruta completa no código:
 
-    ´´´ py title="ler_csv_dende_spark.py"
+    ``` py title="ler_csv_dende_spark.py"
     df = spark.read.csv("hdfs://hadoop1:9000/user/cesgaxuser/arquivo.csv")
-    ´´´
+    ```
 
     - Ollo! se probas dende pyspark, mira que acceda ao cluster e non cree unha instancia nova propia.
 
