@@ -13,7 +13,8 @@ sudo yum install clustershell
 ```
 
 ``` bash
-clush -l cesgaxuser -bw hadoop[1-3] sudo rpm --import https://yum.corretto.aws/corretto.key
+  clush -l cesgaxuser -bw hadoop[1-3] \
+    sudo rpm --import https://yum.corretto.aws/corretto.key
 ```
 
 ``` bash
