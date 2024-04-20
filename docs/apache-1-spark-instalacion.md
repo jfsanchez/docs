@@ -220,7 +220,7 @@ Outra opción se contas con pouco ancho de banda é baixar unha vez o arquivo de
 
 ![PySpark](images/spark/pyspark.png "PySpark")
 
-## Configurando Spark para que funcione con Hadoop:
+## Configurando Spark para que funcione con Hadoop
 
 O arquivo `.bashrc` tamén debe ter a config de Apache Hadoop do exercicio anterior:
 En `.bashrc` asegúrate que tes:
