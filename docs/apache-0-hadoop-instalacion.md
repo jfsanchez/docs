@@ -181,7 +181,8 @@ Engadimos o respositorio:
 
 ``` bash
 clush -l cesgaxuser -bw hadoop[1-4] \
-  sudo curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
+  sudo curl -L -o /etc/yum.repos.d/corretto.repo \
+  https://yum.corretto.aws/corretto.repo
 ```
 
 Instalamos o paquete:
@@ -412,7 +413,13 @@ Con esto teríamos configurado **yarn** en *hadoop1* (master).
 Podemos copiar simplemente a configuración ao resto de nodos:
 
 ``` bash
-clush -l cesgaxuser -bw hadoop[2-4] --copy hadoop-3.2.4/etc/hadoop/workers hadoop-3.2.4/etc/hadoop/yarn-site.xml hadoop-3.2.4/etc/hadoop/mapred-site.xml hadoop-3.2.4/etc/hadoop/hdfs-site.xml hadoop-3.2.4/etc/hadoop/core-site.xml --dest /home/cesgaxuser/hadoop-3.2.4/etc/hadoop
+clush -l cesgaxuser -bw hadoop[2-4] \
+  --copy hadoop-3.2.4/etc/hadoop/workers \
+  hadoop-3.2.4/etc/hadoop/yarn-site.xml \
+  hadoop-3.2.4/etc/hadoop/mapred-site.xml \
+  hadoop-3.2.4/etc/hadoop/hdfs-site.xml \
+  hadoop-3.2.4/etc/hadoop/core-site.xml \
+  --dest /home/cesgaxuser/hadoop-3.2.4/etc/hadoop
 ```
 
 ### Formatear o HDFS:
