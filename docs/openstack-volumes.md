@@ -132,16 +132,16 @@ Se o volume é de sistema, debemos apagar a máquina (realmente pódese facer co
 
 **Opción**: Se non é un volume de sistema, debemos desmontalo, cambiar o tamaño da partición e volvelo montar. Exemplo:
 
-    ``` bash
-    lsblk
-    df -h
-    sudo umount /mnt/vdb
-    sudo e2fsck -f /dev/vdb
-    sudo resize2fs /dev/vdb
-    sudo mount /dev/vdb /mnt/vdb
-    lsblk
-    df -h
-    ```
+``` bash
+lsblk
+df -h
+sudo umount /mnt/vdb
+sudo e2fsck -f /dev/vdb
+sudo resize2fs /dev/vdb
+sudo mount /dev/vdb /mnt/vdb
+lsblk
+df -h
+```
 
 ## Como clonar un volume.
 
