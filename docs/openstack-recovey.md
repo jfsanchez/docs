@@ -32,3 +32,5 @@ mount /dev/DISPOSITIVO /mnt/volume-a-recuperar
   ```
 
 Emprega os comandos con sentido. Debes adaptalos ao teu caso.
+
+Esta técnica pódese empregar tamén nos servicios de computación na nube como: Amazon AWS, Google Cloud Services, Microsoft Azure e outros.

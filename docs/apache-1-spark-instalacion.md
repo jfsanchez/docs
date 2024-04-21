@@ -17,12 +17,34 @@ Imos empregar **Rocky 8.5 v2**, sen embargo, en caso de empregar Debian, podemos
 
 Se estás nun contorno Cloud no que debes destruir as instancias por tema de custes e pódense asignar distintos enderezos IP, lembra sempre facer:
 
-1. Borrar o known_hosts:
+1. Editar o arquivo `/etc/hosts` cos nomes que correspondan ás novas IP.
+
+2. Borrar o known_hosts:
     ``` bash
     rm ~/.ssh/known_hosts
     ```
 
-2. Editar o arquivo `/etc/hosts` cos nomes que correspondan ás novas IP.
+3. Rexenerar o `/etc/hosts`:
+
+    ``` bash
+    for servidor in $(cat /etc/hosts|grep hadoop); do \
+      ssh-keyscan -H $servidor; done >> /home/cesgaxuser/.ssh/known_hosts
+    ``` 
+
+4. Copialo ao resto de nodos:
+
+    ``` bash
+    clush -l cesgaxuser -bw hadoop[1-4] \
+      --copy $HOME/.ssh/known_hosts \
+      --dest $HOME/.ssh/known_hosts
+    ```
+
+5. Copia o `/etc/hosts` ao resto de nodos:
+
+    ``` bash
+    clush -l cesgaxuser -bw hadoop[2-4] --copy /etc/hosts --dest /tmp
+    clush -l cesgaxuser -bw hadoop[2-4] sudo cp /tmp/hosts /etc/hosts
+    ```
 
 
 ## Instalación de Clustershell
