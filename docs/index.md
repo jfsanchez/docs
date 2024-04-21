@@ -4,7 +4,7 @@ Podes mirar outros apuntes feitos con [revealjs](https://revealjs.com/) na miña
 
 <div class="grid cards" markdown>
 
-- :fontawesome-database [Conceptos de informática básica que debes ter claros](https://jfsanchez.es/docencia/informatica-basica/)
+- [Conceptos de informática básica que debes ter claros](https://jfsanchez.es/docencia/informatica-basica/)
 
 - [Modos de Rede no VirtualBox](https://jfsanchez.es/docencia/virtualbox/)
 

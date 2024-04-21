@@ -28,7 +28,6 @@ markdown_extensions:
       alternate_style: true
   - attr_list
   - md_in_html
-  - fontawesome_markdown
 
 site_name: JFSanchez
 site_url: https://jfsanchez.es/docs
