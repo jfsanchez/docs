@@ -14,9 +14,9 @@ Se executas os teus servizos, programas, máquinas virtuais ou contedores en ser
 
 ### Desvantaxes
 
-- **Custos**: Manter un gran número de recursos a medio/longo prazo é moito máis caro, incluso contando os custos de persoal. Este punto é controvertido, posto que soe dicirse o contrario. Hia que analizar a situación en cada caso, non basearse nunha opinión.
-- **Protección de datos**: Normalmente os acordos para a protección de datos, que permiten mover os datos a datacenters de fora de Europa, adoitan ser **efémeros e esotéricos**. Exemplos desto son: Safe Harbour e Privacy Seal, que demostran unha vez máis a grande diferencia de concepto de protección de dato e o distinto tratamento entre Europa e EEUU.
-- **Dependencia dun terceiro**: cambios de condicións, fallos, prohibición de uso dos seus servizos (sic), bloqueos...
+- **Custos**: Manter un gran número de recursos a medio/longo prazo é moito máis caro, incluso contando os custos de persoal. Este punto é controvertido, posto que soe dicirse o contrario. Hai que analizar a situación en cada caso particular e non basearse só nunha opinión dun comercial.
+- **Protección de datos**: Normalmente os acordos para a protección de datos, que permiten mover os datos a datacenters de fóra de Europa, adoitan ser **efémeros e esotéricos**. Exemplos desto son: Safe Harbour e Privacy Seal, que demostran unha vez máis a grande diferencia de concepto de protección de datos e o distinto tratamento entre Europa e EEUU.
+- **Dependencia dun terceiro**: Cambios de condicións unilaterais, fallos, prohibición de uso dos seus servizos (sic), bloqueos...
 
 
 ## Principais proveedores de Cloud Computing / Computación na nube
@@ -25,7 +25,7 @@ Se executas os teus servizos, programas, máquinas virtuais ou contedores en ser
 - Microsoft Azure: <https://azure.microsoft.com/>
 - Google Cloud: <https://cloud.google.com/>
 
-Segundo varios informes de operadoras, as grandes tecnolóxicas xeran entre o **55% e o 80%** do tráfico das redes mundiais. Estes informes son adoitan a forma de notas de prensa e poden ofrecer resultados interesados, máis probablemente se supere o 50% do tráfico mundial total dado o tamaño destas megacorporacións.
+Segundo varios informes de operadoras, as grandes tecnolóxicas xeran entre o **55% e o 80%** do tráfico das redes mundiais. Estes informes adoitan a forma de notas de prensa e poden ofrecer resultados interesados, máis probablemente se supere o 50% do tráfico mundial total dado o tamaño destas megacorporacións.
 
 Habitualmente escóitase falar do termo **GAFAM** polos nomes das principais empresas tecnolóxicas: Google, Apple, Facebook, Amazon e Microsoft para referirse ao tráfico e conexións que proveñen delas.
 
@@ -56,7 +56,7 @@ As correspondencias cos nomes poden non ser exactas xa que as veces o concepto c
 
 - Computación (CPU+RAM):
     - Amazon Web Services (AWS):
-        - **Amazon EC2**: Amazon Elasctic Compute Cloud.
+        - **Amazon EC2**: Amazon Elastic Compute Cloud.
         - Lightsail: Tipo VPS (Virtual Private Server). Facturación simplificada, elección limitada.
     - Google Cloud Platform (GCP):
         - **GCE**: Google Compute Engine.
@@ -107,7 +107,7 @@ Europa trata de reducir a dependencia das grandes tecnolóxicas estadounidenses.
 - [EU. Futures of big tech in Europe. Scenarios and policy implications: Foresight](https://op.europa.eu/en/publication-detail/-/publication/db955dcf-af69-11ee-b164-01aa75ed71a1/language-en)
 
 
-En China terás oído falar seguramente das prohibicións en internet ás que se enfrentan os seus cidadáns e do "Gran Firewall Chinés". Este movemento dalles tamén unha vantaxe competitiva e permítelles desenvolver os seus propios servizos e redes sociais: QQ, Tiktok, etc.
+En China terás oído falar seguramente das prohibicións en internet ás que se enfrentan os seus cidadáns e do "Gran Firewall Chinés". Este movemento dalles tamén unha certa vantaxe competitiva e permítelles desenvolver os seus propios servizos e redes sociais: QQ, Tiktok, etc.
 
 Estamos nunha economía global, os prezos da nube dependen da enerxía, comunicacións, redes, custos de persoal e políticas de cada país. Na ecuación tamén entran os datos.
 
@@ -147,9 +147,11 @@ Un dos activos máis importantes das empresas son os datos. En Europa e EEUU xog
 
 ### Elixindo unha compañía de cloud computing
 
+Elixir unha compañía (ou varias) non é tarefa sinxela. Seguramente terás oído comentarios de todo tipo. Por exemplo:
+
 No caso de OVH ten tido problemas no pasado: incendios e incidentes en materia de datos persoais, ademáis non ten moi boa publicidade nas comunidades en internet por algúns erros e formas.
 
-Hetzner tamén ten tido algún problema, parece que moito máis limitado coa súa KonsoleH. 
+Hetzner tamén ten tido algún problema, parece que moito máis limitado coa súa KonsoleH nalgúns servidores fóra de Europa.
 
 1&1, agora Ionos tamén ten tido mala publicidade por algunhas das súas políticas cos contratos.
 
