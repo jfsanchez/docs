@@ -4,17 +4,17 @@ Podes mirar outros apuntes feitos con [revealjs](https://revealjs.com/) na miña
 
 <div class="grid cards" markdown>
 
-- [🖥️ Conceptos de informática básica que debes ter claros](https://jfsanchez.es/docencia/informatica-basica/)
+- [🖥️ Conceptos de informática básica](https://jfsanchez.es/docencia/informatica-basica/)
 
 - [🕸️ Modos de Rede no VirtualBox](https://jfsanchez.es/docencia/virtualbox/)
 
-- [⌛ Uso básico de git para estudantes sen tempo](https://jfsanchez.es/docencia/git/)
+- [⌛ Uso básico de git](https://jfsanchez.es/docencia/git/)
 
-- [🐍 Conda e pip. Instalando o contorno sen sufrir](https://jfsanchez.es/docencia/conda-pip-virtualenv/)
+- [🐍 Conda e pip](https://jfsanchez.es/docencia/conda-pip-virtualenv/)
 
-- [🛣️ O camiño de XPATH para uso con Selenium](https://jfsanchez.es/docencia/xpath/)
+- [🛣️ XPATH para uso con Selenium](https://jfsanchez.es/docencia/xpath/)
 
-- [🗃️ MongoDB: O mínimo que debes saber e logo un pouquiño máis](https://jfsanchez.es/docencia/mongodb)
+- [🗃️ MongoDB](https://jfsanchez.es/docencia/mongodb)
 
 </div>
 
@@ -25,3 +25,18 @@ Non se permite o seu uso para incorporación en materiales a distancia (oficiais
 Tampouco se permite o seu uso a editoriais.
 
 Se atopas erros, por favor, ponte en contacto conmigo (preme nunha das presentacións e mira o correo na última diapositiva).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
