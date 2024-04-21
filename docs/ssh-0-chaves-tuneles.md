@@ -1,4 +1,7 @@
-# 🔑 SSH e túneles sen cavar nin picar pedra
+# 🔑 SSH e túneles
+
+E todo sen cavar nin picar pedra. Con pouco esforzo comprenderás dunha vez como funciona SSH, os erros máis habituais e como facer un túnel e os tipos que hai. Comprenderás a potencia que esconden e aprenderás a explotala.
+
 ## ◼️ Qué é SSH
 
 Un protocolo cifrado (**S**ecure **SH**ell) para conectar cun servidor e poder enviarlle comandos en modo texto. Permite moitas máis opcións, como por exemplo, redirixir portos.
