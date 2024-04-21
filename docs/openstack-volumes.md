@@ -1,4 +1,4 @@
-# ☁️ OpenStack: Operacións sobre volumes
+# ☁️ OpenStack: Volumes
 
 Normalmente os servizos de virtualización na nube cobran polo uso de recursos: Procesador, memoria RAM, rede, GPU, espacio en disco...
 
