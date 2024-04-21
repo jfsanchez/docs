@@ -28,9 +28,9 @@ Se non existe, podemos facer unha das seguintes cousas para crealo:
 
 Abrimos PowerShell e executamos:
 
-~~~~
+``` bash
 ssh-keygen
-~~~~
+```
 
 Vídeo de Youtube
 
@@ -41,9 +41,9 @@ Vídeo de Youtube
 
 Abrimos unha consola xterm ou similar e executamos:
 
-~~~~
+``` bash
 ssh-keygen
-~~~~
+```
 
 Vídeo en ASCIINEMA
 
@@ -66,12 +66,20 @@ Se precisamos acceder a un recurso que está detrás dun firewall ou ben non é 
 
 Nunha consola, chamando SSH directamente podemos facer:
 
-~~~~
+``` bash
 ssh teuser@10.133.X.X -L 1337:172.17.X.X:3306
-~~~~
+```
 
 Sintaxe: **-L**: Indica **l**ocal. O número: 1337 representa o porto local que se abrirá no noso equipo. De conectamos a él, levaranos á IP: 172.17.X.X e porto 3306 a través do servidor ao que nos estamos a conectar.
 
+#### Quitar/Mudar o contrasinal ou frase a unha chave
 
+``` bash
+ssh-keygen -p -f .ssh/id_rsa
+```
 
+#### Xerar a chave pública a partires dunha privada
 
+``` bash
+ssh-keygen -y -f .ssh/id_rsa > .ssh/id_rsa.pub
+```
