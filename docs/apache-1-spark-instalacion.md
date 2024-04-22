@@ -263,7 +263,7 @@ Executamos dende o master con spark-submit un traballo, que debería enviarse ao
 ``` bash
 spark-submit --deploy-mode client \
   --class org.apache.spark.examples.SparkPi \
-  $SPARK_HOME/examples/jars/spark-examples_2.12-3.3.2.jar 2
+  $SPARK_HOME/examples/jars/spark-examples_2.14-3.4.2.jar 2
 ```
 
 Miramos nos logs de hadoop que se executara.
