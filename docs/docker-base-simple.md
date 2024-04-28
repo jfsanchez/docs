@@ -59,9 +59,12 @@ Podemos gardar os datos en volumes ou directorios compartidos. Se non especifica
 - Ver contedores en execución: ```docker ps```
 - Ver tódolos contedores: ```docker ps -a```
 - Crear un contedor: ```docker run hello-world```
+    - ```-d```: modo dettached (execución en segundo plano).
+    - ```--rm```: borra a instancia cando se para.
 - Parar un contedor: ```docker stop [ID ou NOME]```
 - Iniciar un contedor: ```docker start [ID ou NOME]```
 - Executar un comando dentro do contenedor: ```docker exec -it [ID ou NOME] [COMANDO]```
+    - ```-it```: Modo interactivo
 - Ver tódalas opcións do contedor: ```docker inspect [ID ou NOME]```
 - Borrar un contedor: ```docker rm [ID ou NOME]```
 
