@@ -40,7 +40,7 @@ Non confundamos estes modos de operación coa licencia ou version de mongo:
 
     ``` bash
     docker exec -it mongo mongosh \
-  "mongodb://mongoadmin:abc123Secret@localhost:27017/?directConnection=true&serverSelectionTimeoutMS=2000"
+      "mongodb://mongoadmin:abc123Secret@localhost:27017/?directConnection=true&serverSelectionTimeoutMS=2000"
     ```
 
 No docker de instalación, podes mapear un cartafol co host para ver como almacena mongo os datos coa opción: `-v /root/mongo:/data/db`, máis o recomendado é gardar os datos nun volume.
