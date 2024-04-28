@@ -45,7 +45,7 @@ Non confundamos estes modos de operación coa licencia ou version de mongo:
 
 No docker de instalación, podes mapear un cartafol co host para ver como almacena mongo os datos coa opción: `-v /root/mongo:/data/db`, máis o recomendado é gardar os datos nun volume.
 
-**Bibliografía**:
+**Webgrafía**:
 
 - <https://hub.docker.com/_/mongo>
 - <https://www.mongodb.com/docs/mongodb-shell/connect/>
@@ -90,7 +90,7 @@ Instruccións para GNU/Linux Debian 12 Bookworm:
 
 Coidado co ulimit! O número de arquivos abertos máximos debe ser superior a 64.000.
 
-**Bibliografía**:
+**Webgrafía**:
 - <https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-debian/>
 
 ### (GUI) Conectar con Compass
@@ -195,7 +195,7 @@ docker exec -it mongoAzul mongosh --eval "rs.status()"
 ```
 
 
-**Bibliografía:**
+**Webgrafía:**
 
 - <https://www.mongodb.com/resources/products/compatibilities/deploying-a-mongodb-cluster-with-docker>
 - <https://www.mongodb.com/docs/manual/tutorial/convert-standalone-to-replica-set/>
