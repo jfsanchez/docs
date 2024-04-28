@@ -50,79 +50,6 @@ No docker de instalación, podes mapear un cartafol co host para ver como almace
 - <https://hub.docker.com/_/mongo>
 - <https://www.mongodb.com/docs/mongodb-shell/connect/>
 
-## Creando un cluster/replica set de mongo en docker
-
-Fai falta seguir uns pasos lóxicos: Crear una nova rede en docker para que se comuniquen os contedores entre eles, executar alomenos tres contedores de mongo asociados a esa rede e finalmente facer que se unan entre eles nun replica set.
-
-### Crear a rede en docker
-
-Como en calquer caso, creamos unha nova rede cun nome que nos guste:
-
-``` bash
-docker network create mongoReplicado
-```
-
-### Lanzar os contedores
-
-``` bash
-docker run -d -p 27017:27017 --name mongoVermello --network mongoReplicado mongo mongod --replSet replicados --bind_ip localhost,mongoVermello
-docker run -d -p 27027:27017 --name mongoVerde --network mongoReplicado mongo mongod --replSet replicados --bind_ip localhost,mongoVerde
-docker run -d -p 27037:27017 --name mongoAzul --network mongoReplicado mongo mongod --replSet replicados --bind_ip localhost,mongoAzul
-```
-
-Os portos redirixidos do anfitrión ao contedor van ser os seguintes:
-
-- 27017: mongoVermello (o por defecto)
-- 27027: mongoVerde
-- 27037: mongoAzul
-
-### Unir os servidores
-
-``` bash
-docker exec -it mongoVermello mongosh --eval "rs.initiate({
- _id: \"replicados\",
- members: [
-   {_id: 0, host: \"mongoVermello\"},
-   {_id: 1, host: \"mongoVerde\"},
-   {_id: 2, host: \"mongoAzul\"}
- ]
-})"
-```
-
-### Probar que estean funcionando en modo replica set
-
-``` bash
-docker exec -it mongoVermello mongosh --eval "rs.status()"
-```
-
-E se paramos o "principal":
-
-``` bash
-docker stop mongoVermello
-``` 
-
-E consultamos os outros, todo debería seguir funcionando igual, os datos seguen dispoñibles:
-
-``` bash
-docker exec -it mongoVerde mongosh --eval "rs.status()"
-docker exec -it mongoAzul mongosh --eval "rs.status()"
-```
-
-
-**Bibliografía:**
-
-- <https://www.mongodb.com/resources/products/compatibilities/deploying-a-mongodb-cluster-with-docker>
-- <https://www.mongodb.com/docs/manual/tutorial/convert-standalone-to-replica-set/>
-- <https://www.mongodb.com/docs/manual/reference/replica-configuration/#std-label-replica-set-configuration-document>
-
-## Conversión do Replica Set a Sharded Cluster
-
-O principal obxectivo deste tipo de configuración é ter particionado os datos cunha [shard key](https://www.mongodb.com/docs/manual/core/sharding-choose-a-shard-key/#std-label-sharding-shard-key-selection).
-
-Hai un titorial na web oficial de mongodb sobre como pasar dun replica set (con autenticación habilitada) a un sharded cluster:
-
-- <https://www.mongodb.com/docs/manual/tutorial/convert-replica-set-to-replicated-shard-cluster/>
-
 
 ## Conexión a mongodb (cliente)
 
@@ -206,4 +133,79 @@ Lembra premer no botón de "Save and connect" para gardar a conexión co usuario
 - [Apuntes de MongoDB en formato presentación](https://jfsanchez.es/docencia/mongodb/)
 - [Conectar a MongoDB dende Python (notebook)](https://github.com/jfsanchez/SBD/blob/main/notebooks/bbdd/mongodb.ipynb)
 - [Como securizar un servidor mongo accesible en internet (inglés, páxina oficial)](https://www.mongodb.com/docs/manual/administration/security-checklist/#std-label-security-checklist)
+
+## Creando un cluster/replica set de mongo en docker
+
+Fai falta seguir uns pasos lóxicos: Crear una nova rede en docker para que se comuniquen os contedores entre eles, executar alomenos tres contedores de mongo asociados a esa rede e finalmente facer que se unan entre eles nun replica set.
+
+### Crear a rede en docker
+
+Como en calquer caso, creamos unha nova rede cun nome que nos guste:
+
+``` bash
+docker network create mongoReplicado
+```
+
+### Lanzar os contedores
+
+``` bash
+docker run -d -p 27017:27017 --name mongoVermello --network mongoReplicado mongo mongod --replSet replicados --bind_ip localhost,mongoVermello
+docker run -d -p 27027:27017 --name mongoVerde --network mongoReplicado mongo mongod --replSet replicados --bind_ip localhost,mongoVerde
+docker run -d -p 27037:27017 --name mongoAzul --network mongoReplicado mongo mongod --replSet replicados --bind_ip localhost,mongoAzul
+```
+
+Os portos redirixidos do anfitrión ao contedor van ser os seguintes:
+
+- 27017: mongoVermello (o por defecto)
+- 27027: mongoVerde
+- 27037: mongoAzul
+
+### Unir os servidores
+
+``` bash
+docker exec -it mongoVermello mongosh --eval "rs.initiate({
+ _id: \"replicados\",
+ members: [
+   {_id: 0, host: \"mongoVermello\"},
+   {_id: 1, host: \"mongoVerde\"},
+   {_id: 2, host: \"mongoAzul\"}
+ ]
+})"
+```
+
+### Probar que estean funcionando en modo replica set
+
+``` bash
+docker exec -it mongoVermello mongosh --eval "rs.status()"
+```
+
+E se paramos o "principal":
+
+``` bash
+docker stop mongoVermello
+``` 
+
+E consultamos os outros, todo debería seguir funcionando igual, os datos seguen dispoñibles:
+
+``` bash
+docker exec -it mongoVerde mongosh --eval "rs.status()"
+docker exec -it mongoAzul mongosh --eval "rs.status()"
+```
+
+
+**Bibliografía:**
+
+- <https://www.mongodb.com/resources/products/compatibilities/deploying-a-mongodb-cluster-with-docker>
+- <https://www.mongodb.com/docs/manual/tutorial/convert-standalone-to-replica-set/>
+- <https://www.mongodb.com/docs/manual/reference/replica-configuration/#std-label-replica-set-configuration-document>
+
+## Conversión do Replica Set a Sharded Cluster
+
+O principal obxectivo deste tipo de configuración é ter particionado os datos cunha [shard key](https://www.mongodb.com/docs/manual/core/sharding-choose-a-shard-key/#std-label-sharding-shard-key-selection).
+
+Hai un titorial na web oficial de mongodb sobre como pasar dun replica set (con autenticación habilitada) a un sharded cluster:
+
+- <https://www.mongodb.com/docs/manual/tutorial/convert-replica-set-to-replicated-shard-cluster/>
+
+
 
