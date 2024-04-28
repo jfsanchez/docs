@@ -95,7 +95,7 @@ Coidado co ulimit! O número de arquivos abertos máximos debe ser superior a 64
 
 ### (GUI) Conectar con Compass
 
-Compass é un cliente gráfico gratuito oficial que nos permite conectar con Mongo e mesmo ver algunhas estatísticas do servidor. Debido a que mongodb é ampliamente empregado no mundo empresarial, moitos clientes de base de datos que teñen versión community soen ser de pago con mongo (exemplo: DBeaver).
+Compass é un cliente gráfico gratuito oficial que nos permite conectar con Mongo e mesmo ver algunhas estatísticas do servidor. Debido a que mongodb é amplamente empregado no mundo empresarial, moitos clientes de base de datos que teñen versión community soen ser de pago con mongo (exemplo: DBeaver).
 
 Podes baixar compass da súa páxina oficial:
 - <https://www.mongodb.com/products/tools/compass>
