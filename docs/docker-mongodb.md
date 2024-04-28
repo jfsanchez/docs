@@ -53,6 +53,8 @@ No docker de instalación, podes mapear un cartafol co host para ver como almace
 
 ## Conexión a mongodb (cliente)
 
+Estas instrucción son só no caso de querer instalar o cliente en local. Lembremos que sempre podemos conectar co cliente mongosh de dentro do contedor.
+
 Instruccións para GNU/Linux Debian 12 Bookworm:
 
 1. Instalación de dependencias:
