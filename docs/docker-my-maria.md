@@ -28,12 +28,14 @@ docker run -p 9906:3306 --name contedor_mysql \
   --restart unless-stopped \# (6)!
   -d mysql:8
 ```
+
 1.  Volume para os datos.
 2.  Contrasinal de root.
 3.  Crea a base de datos `basededatos`.
 4.  Crea o usuario `usuario` con acceso de superusaurio a `basededatos`.
 5.  Establece o contrasinal de `usuario` (é preciso para que se cree o usuario).
 6.  Para que inicie automáticamente o contedor tras un reinicio de docker ou da máquina.
+
 
 **Aclaracións**:
 
@@ -101,12 +103,14 @@ docker run -p 9907:3306 --name contedor_mariadb \
   --restart unless-stopped \# (6)!
   -d mariadb:latest
 ```
+
 1.  Volume para os datos.
 2.  Elexir un contrasinal de root aleatorio.
 3.  Crea a base de datos `demaria`.
 4.  Crea o usuario `usuariamaria` con acceso de superusaurio a `demaria`.
 5.  Establece o contrasinal de `usuariamaria` (é preciso para que se cree o usuario).
 6.  Para que inicie automáticamente o contedor tras un reinicio de docker ou da máquina.
+
 
 **Aclaracións**:
 
@@ -261,7 +265,7 @@ netstat -atun
 
 En docker podes ver as redireccións de portos don `docker inspect`.
 
-Se ves que non tes aberto o 9906 no anfitrión (no caso de docker) ou o 3306 onde teñas MySQL, probablemente debas cambiar o bind-address na configuración de MySQL oy MariaDB.
+No caso de instalación con docker, se ves que non tes aberto o 9906/9907 (segundo o exemplo) no anfitrión ou o 3306 onde teñas MySQL, probablemente debas cambiar o bind-address na configuración de MySQL oy MariaDB.
 
 Edita o arquivo correspondente (en MySQL: /etc/mysql/mysql.conf.d/mysqld.cnf) e mete ou descomenta esta liña:
 
