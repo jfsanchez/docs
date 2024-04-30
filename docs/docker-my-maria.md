@@ -20,12 +20,12 @@ E logo crear o contedor asociado a ese volume:
 
 ``` bash
 docker run -p 9906:3306 --name contedor_mysql \
-  -v datosmysql:/var/lib/mysql \# (1)!
-  -e MYSQL_RANDOM_ROOT_PASSWORD=1 \# (2)!
-  -e MYSQL_DATABASE=basededatos \# (3)!
-  -e MYSQL_USER=usuario \# (4)!
-  -e MYSQL_PASSWORD=Contrasinal123. \# (5)!
-  --restart unless-stopped \# (6)!
+  -v datosmysql:/var/lib/mysql \ # (1)!
+  -e MYSQL_RANDOM_ROOT_PASSWORD=1 \ # (2)!
+  -e MYSQL_DATABASE=basededatos \ # (3)!
+  -e MYSQL_USER=usuario \ # (4)!
+  -e MYSQL_PASSWORD=Contrasinal123. \ # (5)!
+  --restart unless-stopped \ # (6)!
   -d mysql:8
 ```
 
@@ -35,6 +35,12 @@ docker run -p 9906:3306 --name contedor_mysql \
 4.  Crea o usuario `usuario` con acceso de superusaurio a `basededatos`.
 5.  Establece o contrasinal de `usuario` (é preciso para que se cree o usuario).
 6.  Para que inicie automáticamente o contedor tras un reinicio de docker ou da máquina.
+
+Copia de aquí o comando para que non fallen as novas liñas e espacios:
+
+```
+docker run -p 9906:3306 --name contedor_mysql -v datosmysql:/var/lib/mysql -e MYSQL_RANDOM_ROOT_PASSWORD=1 -e MYSQL_DATABASE=basededatos -e MYSQL_USER=usuario -e MYSQL_PASSWORD=Contrasinal123. --restart unless-stopped -d mysql:8
+```
 
 
 **Aclaracións**:
@@ -95,12 +101,12 @@ docker volume create datosmariadb
 
 ``` bash
 docker run -p 9907:3306 --name contedor_mariadb \
-  -v datosmariadb:/var/lib/mysql \# (1)!
-  --env MARIADB_RANDOM_ROOT_PASSWORD=1 \# (2)!
-  --env MARIADB_DATABASE=demaria \# (3)!
-  --env MARIADB_USER=usuariamaria \# (4)!
-  --env MARIADB_PASSWORD=DonaMaria123456 \# (5)!
-  --restart unless-stopped \# (6)!
+  -v datosmariadb:/var/lib/mysql \ # (1)!
+  --env MARIADB_RANDOM_ROOT_PASSWORD=1 \ # (2)!
+  --env MARIADB_DATABASE=demaria \ # (3)!
+  --env MARIADB_USER=usuariamaria \ # (4)!
+  --env MARIADB_PASSWORD=DonaMaria123456 \ # (5)!
+  --restart unless-stopped \ # (6)!
   -d mariadb:latest
 ```
 
@@ -111,6 +117,11 @@ docker run -p 9907:3306 --name contedor_mariadb \
 5.  Establece o contrasinal de `usuariamaria` (é preciso para que se cree o usuario).
 6.  Para que inicie automáticamente o contedor tras un reinicio de docker ou da máquina.
 
+Copia de aquí o comando para que non fallen as novas liñas e espacios:
+
+```
+docker run -p 9907:3306 --name contedor_mariadb -v datosmariadb:/var/lib/mysql --env MARIADB_RANDOM_ROOT_PASSWORD=1 --env MARIADB_DATABASE=demaria --env MARIADB_USER=usuariamaria --env MARIADB_PASSWORD=DonaMaria123456 --restart unless-stopped -d mariadb:latest
+```
 
 **Aclaracións**:
 
