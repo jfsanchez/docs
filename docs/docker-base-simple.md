@@ -78,7 +78,28 @@ Podemos gardar os datos en volumes ou directorios compartidos. Se non especifica
 - Ver volume: ```docker volume ls```
 - Borrar volume: ```docker volume rm [ID ou NOME]```
 
+# Volumes en cada contedor
+
+Se queremos ver qué volumes están asociados a que contedor:
+
+``` bash
+docker ps -a --no-trunc --format "{{.Names}}: {{.Mounts}}"
+```
+
+### Recuperando datos dun volume
+
 👁️ Se queremos ver os datos dun volume que xa non está asociado a un contedor, podemos crear un contedor temporal para velos: ```docker run -it --rm -v [ID do volume]:/vol busybox ls -l /vol```
+
+### Asociar un volume previo a un contedor
+
+``` bash
+docker run -p 9907:3306 --name contedor_mariadb \
+  -v ID_VOLUME:/var/lib/mysql \
+  --restart unless-stopped \
+  -d mariadb:latest
+```
+
+Se `ID_VOLUME` o cambiamos por un directorio, estaríamos a mapear un directorio do anfitrión.
 
 ## Estados dun contedor
 
