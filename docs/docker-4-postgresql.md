@@ -1,4 +1,4 @@
-# 🧾 PostgreSQL (docker)
+# 🧾 PostgreSQL
 
 - Baseado na imaxe oficial: <https://hub.docker.com/_/postgres>
 

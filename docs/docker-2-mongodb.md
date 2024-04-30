@@ -1,4 +1,4 @@
-# 🧾 MongoDB (docker)
+# 🧾 MongoDB
 
  - Baseado na imaxe oficial: <https://hub.docker.com/_/mongo>
 

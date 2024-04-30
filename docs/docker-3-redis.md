@@ -1,4 +1,4 @@
-# 🧾 Redis (docker)
+# 🧾 Redis
 
  - Baseado na imaxe oficial: <https://hub.docker.com/r/redis/redis-stack-server>
 

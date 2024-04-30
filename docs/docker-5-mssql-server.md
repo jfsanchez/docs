@@ -1,4 +1,4 @@
-# 🧾 MS-SQL (docker)
+# 🧾 Microsoft SQL Server
 
 ## Microsoft SQL Server en Ubuntu (con docker).
 

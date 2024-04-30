@@ -1,4 +1,4 @@
-# 🧾 Oracle Free (docker)
+# 🧾 Oracle Free
 
 ⚠️ **AVISO:** Apuntes en elaboración. Incompletos.
 
