@@ -30,7 +30,7 @@ docker run -d --name redis-stack -v redis-data:/data -e REDIS_ARGS="--requirepas
 ### (CLI) Conectando a redis dende o propio docker:
 
 ``` bash
-docker exec -it redis-stack-server \
+docker exec -it redis-stack \
     redis-cli -h localhost -p 6379 -a 123quetal123
 ```
 
@@ -43,7 +43,7 @@ acl setuser usuarioredis >contrasinal123inseguro on allchannels allkeys +get +se
 ```
 
 ``` bash
-docker exec -it redis-stack-server \
+docker exec -it redis-stack \
     redis-cli --user usuarioredis --pass contrasinal123inseguro
 ```
 
