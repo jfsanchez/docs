@@ -39,7 +39,7 @@ Se non especificamos o contrasinal con `-a 123quetal123` en liña de comandos, p
 Dentro da consola de texto de redis, creamos un usuario:
 
 ```
-acl setuser usuarioredis >contrasinal123inseguro on allchannels allkeys +get +set +del +info +scan
+acl setuser usuarioredis >contrasinal123inseguro on allchannels allkeys +get +set +del +info +scan +exists +hset +type +hlen +hscan +slowlog|get +config|get
 ```
 
 ``` bash
