@@ -68,8 +68,44 @@ Por exemplo, se quixéramos persistir os datos no **RedisTimeSeries**, podemos e
  - **Recuperar unha clave**: `get clave`
  - **Establecer ou mudar o contrasinal**: `config set requirepass 123quetal123`
  - **Crear un usuario**: `acl setuser ...`
+ - **Pedir clave no CLI**: `config set requirepass 123quetal123`
 
-## Máis información para uso con Python:
+## Uso con Python
+
+**Instalar** as librarías con conda para poder conectar a redis:
+
+``` bash
+!conda install -y -c conda-forge redis-py sqlalchemy
+```
+
+**Código** de python:
+
+``` python title="redis.py"
+#from redis import Redis
+empregamos_docker=True
+
+import redis
+
+data = {
+    'dog': {
+        'scientific-name' : 'Canis familiaris'
+    }
+}
+
+r = redis.Redis(password="123quetal123")
+#r.auth("123quetal123")
+r.ping()
+#Non instalado no escenario a extensión JSON
+
+if (empregamos_docker):
+    r.json().set('doc', '$', data)
+    doc = r.json().get('doc', '$')
+    dog = r.json().get('doc', '$.dog')
+    scientific_name = r.json().get('doc', '$..scientific-name')
+    print(scientific_name)
+```
+
+**Podes descargar o notebook de**:
 
 - <https://github.com/jfsanchez/SBD/blob/main/notebooks/bbdd/redis.ipynb>
 
