@@ -47,6 +47,12 @@ docker exec -it redis-stack-server \
     redis-cli --user usuarioredis --pass contrasinal123inseguro
 ```
 
+### (GUI) Conexión contra redisinsight
+
+Se empregaches a configuración de docker de enriba, só tes que conectar á IP da máquina do docker ao porto 8081. Por exemplo: <http://localhost:8081>. Inicia sesión co usuario `usuarioredis` e o contrasinal `contrasinal123inseguro`.
+
+## Outras variables de contorno do docker
+
 Segundo a documentación da imaxe oficial, temos acceso a modificar as seguintes variables de contorno:
 
 - **REDIS_ARGS**: Redis
