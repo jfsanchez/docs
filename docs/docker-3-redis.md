@@ -2,48 +2,72 @@
 
  - Baseado na imaxe oficial: <https://hub.docker.com/r/redis/redis-stack-server>
 
-Se non queremos poñer contrasinal:
+Creamos o volume para persisitir os datos (**opcional**):
 
 ``` bash
-docker run -d --name redis-stack-server \
-    -p 6379:6379 redis/redis-stack-server:latest
+docker create volume redis-data
 ```
 
-Con contrasinal:
+### Creamos o docker:
 
 ``` bash
-docker run -d --name redis-stack-server -p 6379:6379 \
-    -e REDIS_ARGS="--requirepass 123quetal123" \
-    redis/redis-stack-server:latest
+docker run -d --name redis-stack \
+    -v redis-data:/data \ # (1)!
+    -e REDIS_ARGS="--requirepass 123quetal123" \ # (2)!
+    -p 6379:6379 -p 8001:8001 \
+    redis/redis-stack:latest
 ```
 
-Para conectarse dende docker co cliente por defecto:
+1.  Nome do volume, no caso que queiramos persistir os datos.
+2.  Contrasinal.
 
-Sen contrasinal:
+Copia de aquí o comando se tes problemas coas novas liñas:
+
 ``` bash
-docker exec -it redis-stack-server redis-cli
+docker run -d --name redis-stack -v redis-data:/data -e REDIS_ARGS="--requirepass 123quetal123" -p 6379:6379 -p 8001:8001 redis/redis-stack:latest
 ```
 
-Despois, para autenticarnos (se temos configurado contrasinal):
-
-~~~~
-AUTH 123quetal123
-~~~~
-
-Directamente co contrasinal na liña de comandos (inseguro):
+### (CLI) Conectando a redis dende o propio docker:
 
 ``` bash
 docker exec -it redis-stack-server \
     redis-cli -h localhost -p 6379 -a 123quetal123
 ```
 
+Se non especificamos o contrasinal con `-a 123quetal123` en liña de comandos, para autenticarnos deberemos poñer o comando: `AUTH 123quetal123` dentro do cliente de redis.
+
+Dentro da consola de texto de redis, creamos un usuario:
+
+```
+acl setuser usuarioredis >contrasinal123inseguro on allchannels allkeys +get +set +del +info +scan
+```
+
+``` bash
+docker exec -it redis-stack-server \
+    redis-cli --user usuarioredis --pass contrasinal123inseguro
+```
+
+Segundo a documentación da imaxe oficial, temos acceso a modificar as seguintes variables de contorno:
+
+- **REDIS_ARGS**: Redis
+- **REDISEARCH_ARGS**: RediSearch
+- **REDISJSON_ARGS**: RedisJSON
+- **REDISGRAPH_ARGS**: RedisGraph
+- **REDISTIMESERIES_ARGS**: RedisTimeSeries
+- **REDISBLOOM_ARGS**: RedisBloom
+
+Por exemplo, se quixéramos persistir os datos no **RedisTimeSeries**, podemos engadir unha variable de contorno á creación do docker:
+
+`-e REDISTIMESERIES_ARGS="RETENTION_POLICY=20"`
+
 ## Comandos útiles:
 
- - **Autenticarse**: *AUTH contrasinal*
- - **Probar se estamos conectados**: *PING*
- - **Almacenar unha clave (KEY-VALUE)**: *set clave valor*
- - **Recuperar unha clave**: *get clave*
- - **Establecer ou mudar o contrasinal**: *config set requirepass 123quetal123*
+ - **Autenticarse**: `AUTH contrasinal`
+ - **Probar se estamos conectados**: `PING`
+ - **Almacenar unha clave (KEY-VALUE)**: `set clave valor`
+ - **Recuperar unha clave**: `get clave`
+ - **Establecer ou mudar o contrasinal**: `config set requirepass 123quetal123`
+ - **Crear un usuario**: `acl setuser ...`
 
 ## Máis información para uso con Python:
 
