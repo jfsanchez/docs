@@ -49,7 +49,7 @@ docker exec -it redis-stack \
 
 ### (GUI) Conexión contra redisinsight
 
-Se empregaches a configuración de docker de enriba, só tes que conectar á IP da máquina do docker ao porto 8081. Por exemplo: <http://localhost:8081>. Inicia sesión co usuario `usuarioredis` e o contrasinal `contrasinal123inseguro`.
+Se empregaches a configuración de docker de enriba, só tes que conectar á IP da máquina do docker ao porto 8081. Por exemplo: <http://localhost:8001>. Inicia sesión co usuario `usuarioredis` e o contrasinal `contrasinal123inseguro`.
 
 ## Outras variables de contorno do docker
 
