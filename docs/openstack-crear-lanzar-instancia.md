@@ -64,3 +64,49 @@ Cando lanzamos unha instancia, esta debe ter un firewall.
 Paso a paso
 
 Computación &rarr; Instancias &rarr; Botón "Lanzar instancia"
+
+![OpenStack. Visión xeral](images/openstack/vision-general.png "OpenStack. Visión xeral")
+
+**Paso 1**: Nome da instancia, número de instancias a lanzar
+
+![OpenStack. Paso: 1. Nome da instancia, número de instancias a lanzar](images/openstack/instancia/nueva-instancia-paso1.png "OpenStack. Paso: 1. Nome da instancia, número de instancias a lanzar")
+
+**Paso 2**: Escollendo a imaxe base
+
+![OpenStack. Paso: 2. Escollendo a imaxe base](images/openstack/instancia/nueva-instancia-paso2.png "OpenStack. Paso: 2. Escollendo a imaxe base")
+
+**Paso 3**: Sabor da instancia (recursos)
+
+![OpenStack. Paso: 3. Sabor da instancia (recursos)](images/openstack/instancia/nueva-instancia-paso3.png "OpenStack. Paso: 3. Sabor da instancia (recursos)")
+
+**Paso 4**: Redes ás que se conectará
+
+![OpenStack. Paso: 4. Redes ás que se conectará](images/openstack/instancia/nueva-instancia-paso4.png "OpenStack. Paso: 4. Redes ás que se conectará")
+
+**Paso 5**: Portos de rede
+
+![OpenStack. Paso: 5. Portos de rede](images/openstack/instancia/nueva-instancia-paso5.png "OpenStack. Paso: 5. Portos de rede")
+
+**Paso 6**: Grupos de seguridade
+
+![OpenStack. Paso: 6. Grupos de seguridade](images/openstack/instancia/nueva-instancia-paso6.png "OpenStack. Paso: 6. Grupos de seguridade")
+
+**Paso 7**: Autenticación. Elexindo o par de chaves
+
+![OpenStack. Paso: 7. Autenticación. Elexindo o par de chaves](images/openstack/instancia/nueva-instancia-paso7.png "OpenStack. Paso: 7. Autenticación. Elexindo o par de chaves")
+
+**Paso 8**: Script de configuración tras a instalación
+
+![OpenStack. Paso: 8. Script de configuración tras a instalación](images/openstack/instancia/nueva-instancia-paso8.png "OpenStack. Paso: 8. Script de configuración tras a instalación")
+
+**Paso 9**: Grupo de servidores
+
+![OpenStack. Paso: 9. Grupo de servidores](images/openstack/instancia/nueva-instancia-paso9.png "OpenStack. Paso: 9. Grupo de servidores")
+
+**Paso 10**: Sugerencias de planificación
+
+![OpenStack. Paso: 10. Sugerencias de planificación](images/openstack/instancia/nueva-instancia-paso10.png "OpenStack. Paso: 10. Sugerencias de planificación")
+
+**Paso 11**: Metadatos e executar instancia
+
+![OpenStack. Paso: 11. Metadatos e executar instancia](images/openstack/instancia/nueva-instancia-paso11.png "OpenStack. Paso: 11. Metadatos e executar instancia")
