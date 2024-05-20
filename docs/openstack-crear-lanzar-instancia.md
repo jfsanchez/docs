@@ -45,6 +45,8 @@ Inicia sesión no panel de control.
 
 Se estás no contorno do CESGA lembra empregar o dominio `hpc` e autenticar mediante `KeyStone Credentials`.
 
+ANtes de lanzar unha instancia é unha boa práctica e aforrarás traballo se creas antes un par de chaves e defines correctamente un grupo de seguridade.
+
 
 ### Creación do par de chaves
 
@@ -52,12 +54,61 @@ Imos conectar sen contrasinal, cun par de claves pública/privada. Podes ler má
 
 Temos dúas formas de crear este par de chaves. O habitual sería telas xa creadas e empregar o comando `ssh-keygen` dende GNU/Linux ou dende PowerShell en Microsoft Windows. Este comando encárgase xa de crear os arquivos de chave pública e privada cos permisos adecuados. Despois de creadas, poderíamos subir a chave pública (arquivo que rematará en .pub) que estaría dentro do directorio .ssh do noso directorio de usuario.
 
-Sen embargo, desta vez, imos facer que nos autoxenere unha clave SSH o propio panel web.
+Sen embargo, desta vez, imos facer que nos autoxenere unha clave SSH o propio panel web. Unha vez iniciemos sesión imos á: **Computación &rarr; Pares de claves**.
+
+![OpenStack. Chaves SSH](images/openstack/pares-claves/openstack-llaves-ssh.png "OpenStack. Chaves SSH")
+
+Nesta páxina podemos ver a lista de chaves (a parte pública) que podemos asociar na creación de instancias. As chaves que asociemos serán as que se poñan ao final do arquivo **📄 $HOME/.ssh/authorized_keys** para que poidamos conectar coas instancias que creemos.
+
+Se queremos crear un par novo, prememos no botón "*Crear Par de Claves*" e seleccionamos en **"Tipo de clave"** a opción "*Clave SSH*" e en **Nombre de Par de Claves** un nome calquera que nos sirva para identificar a clave.
+
+![OpenStack. Chaves SSH](images/openstack/pares-claves/openstack-creacion-par-claves.png "OpenStack. Chaves SSH")
+
+Esto debería baixarnos un arquivo co nome que lle teñamos dado rematado en .pem. Debemos gardalo, xa que contén a chave privada e non se poderá volver a baixar. O que se envía ao servidor é a parte pública da chave.
+
+Podemos ter tantos pares de chaves como queiramos. É recomendable empregar ou ben un xestor de chaves como KeepassXC conectado a un axente e sincronizar as chaves entre os equipos que traballemos ou ben xerar unha chave por equipo.
 
 ### Creación do grupo de seguridade
 
-Cando lanzamos unha instancia, esta debe ter un firewall.
+Cando lanzamos unha instancia, esta debe ter un firewall. O grupo de seguridade é o equivalente na nube a este firewall.
 
+Un grupo de seguridade ten un conxunto de regras de filtrado por protocolo, IP de orixe/destino e porto/s. Cada grupo de seguridade pode ter as súas propias regras.
+
+Unha instancia ten alomenos un grupo de seguridade.
+
+Imaxinemos un exemplo onde temos servidores de base de datos e servidores web. Probablemente non queiramos expoñer o porto 3306 dun MySQL a internet, pero si a algúns servidores web. Neste exemplo poderíamos crear dous grupos de seguridade:
+
+- **Servidores_web**:
+    - Porto **TCP 80** entrante aberto a *0.0.0.0/0*.
+    - Porto **TCP 3306** saínte aberto a *0.0.0.0/0*.
+    - Protocolo **ICMP** aberto a *0.0.0.0/0*.
+    - Porto **TCP 22** aberto a: *172.18.0.1/24*.
+
+- **Servidores_bbdd**:
+    - Porto **TCP 3306** entrante aberto a *10.133.1.1/24*.
+    - Protocolo **ICMP** aberto a *10.133.1.1/24* e *1.2.3.4/32*.
+    - Porto **UDP 1194** aberto a *1.2.3.4/32*.
+    - Porto **TCP 22** aberto a: *172.18.0.1/24*.
+
+Para crear estes dous grupos de seguridade de proba, debemos ir a: **Red &rarr; Grupos de Seguridad**.
+
+![OpenStack. Listaxe de grupos de seguridade](images/openstack/grupos-seguridad/openstack-grupos-seguridad-listado.png "OpenStack. Listaxe de grupos de seguridade")
+
+Prememos no botón: **➕ Crear grupo de seguridad**.
+
+![OpenStack. Crear grupo de seguridade](images/openstack/grupos-seguridad/openstack-crear-grupo-seguridad.png "OpenStack. Crear grupo de seguridade")
+
+Por defecto creará dúas regras básicas que permiten todo o tráfico saínte, pero non o entrante. Hai que ter en conta ambos protocolos de rede: IPv4 e IPv6.
+
+![OpenStack. Regras por defecto do grupo de seguridade](images/openstack/grupos-seguridad/openstack-grupo-por-defecto.png "OpenStack. Regras por defecto do grupo de seguridade").
+
+Se queremos engadir unha nova regra, prememos no botón **Agregar regla**.
+
+![OpenStack. Agregar regra](images/openstack/grupos-seguridad/openstack-grupos-seguridad-agregar-regla.png "OpenStack. Agregar regra").
+
+Podemos elexir as opcións da dirección (entrante ou saínte) porto ou rango de portos e os remotos, que tamén poden ser outros grupos de seguridade.
+
+Unha vez engadida a regra, podemos borrala, pero non editala.
 
 ## Lanzando unha ou varias instancias
 
