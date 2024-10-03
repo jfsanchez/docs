@@ -34,7 +34,7 @@ wsl --list --online
 E instalar a versión desexada, por exemplo:
 
 ``` bash
-wsl --install Debian
+wsl --install -d Debian
 ```
 
 ## Entrar no sistema
