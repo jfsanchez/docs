@@ -33,6 +33,26 @@ sudo su - $USER
 ``` bash
 docker run hello-world
 ```
+
+Se estás nun contorno **WSL** coa distribución GNU/Debian instalada e recibes o erro:
+
+~~~~ title="/var/log/docker.log"
+failed to start daemon: Error initializing network controller: error obtaining controller instance: failed to register "bridge" driver: unable to add return rule in DOCKER-ISOLATION-STAGE-1 chain:  (iptables failed: iptables --wait -A DOCKER-ISOLATION-STAGE-1 -j RETURN: iptables v1.8.9 (nf_tables):  RULE_APPEND failed (No such file or directory): rule in chain DOCKER-ISOLATION-STAGE-1
+~~~~
+
+É debido a que docker emprega iptables cunha versión modificada de nftables. Para arranxalo, podemos empregar as legacy iptables:
+
+``` bash
+sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
+sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
+```
+
+Despois de cambialas, dockerd debería iniciarse correctamente (Fonte: [GitHub](https://github.com/WhitewaterFoundry/Pengwin/issues/485)).
+
+``` bash
+sudo service docker restart
+```
+
 ## Conceptos básicos de dockers
 
 ⚠️ Este resumo contén imprecisións porque pretende ser breve.
