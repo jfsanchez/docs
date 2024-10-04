@@ -79,8 +79,14 @@ wsl --update
 
 Imaxinemos que queremos borrar a distribución **Ubuntu**:
 
-~~~~
+~~~~ bash
 wsl --uninstall -d Ubuntu
+~~~~
+
+Ou Debian:
+
+~~~~ bash
+wsl --unregister Debian
 ~~~~
 
 ## Erros comúns
