@@ -57,13 +57,29 @@ Se temos máis dunha distribución, debemos seleccionar cal queremos executar (o
 wsl -d Debian
 ```
 
-## Actualización de wsl
+## Acceso aos arquivos
+
+Abrir un explorador de arquivos e no enderezo, introduce: **\\wsl$\DISITRIBUCIÓN**. Exemplo con Ubuntu:
+
+~~~~
+\\wsl$\Ubuntu
+~~~~
+
+## Actualización de WSL
 
 Abrimos unha consola de PowerShell e escribimos o comando:
 
 ``` bash
 wsl --update
 ```
+
+## Borrar unha distribución de WSL
+
+Imaxinemos que queremos borrar a distribución **Ubuntu**:
+
+~~~~
+wsl --uninstall -d Ubuntu
+~~~~
 
 ## Erros comúns
 
