@@ -1,15 +1,15 @@
 # 🌪️ WSL
-Windows Subsystem for Linux (WSL)
+**W**indows **S**ubsystem for **L**inux (WSL)
 
 ## Requisitos previos
 
-Considérase unha máquina con Microsoft Windows 10/11
+Considérase unha máquina con Microsoft Windows 10/11.
 
 ## Instalación
 
 Require permisos de administrador ou root para instalar por primeira vez o compoñente no sistema.
 
-Abrimos unha consola de PowerShell e escribimos o comando
+Abrimos unha consola de PowerShell e escribimos o comando:
 
 ``` bash
 wsl --install
@@ -17,7 +17,7 @@ wsl --install
 
 Por defecto instalaranos unha máquina de Ubuntu.
 
-Tras a instalación é preciso reiniciar, avísanos coa mensaxe: *La operación solicitada se realizó correctamente. Los cambios se aplicarán una vez que se reinicie el sistema.*
+Tras a instalación é preciso reiniciar, avísanos coa mensaxe: *La operación solicitada se realizó correctamente. Los cambios se aplicarán una vez que se reinicie el sistema.*.
 
 Tras reiniciar, se non nos entra cun simple comando *wsl*, volvemos a unha consola de PowerShell como usuarios e volvemos escribir:
 
@@ -39,7 +39,7 @@ wsl --install -d Debian
 
 ## Entrar no sistema
 
-Abrimos unha consola de PowerShell e executamos
+Abrimos unha consola de PowerShell e executamos:
 
 ``` bash
 wsl
@@ -59,7 +59,7 @@ wsl -d Debian
 
 ## Actualización de wsl
 
-Abrimos unha consola de PowerShell e escribimos o comando
+Abrimos unha consola de PowerShell e escribimos o comando:
 
 ``` bash
 wsl --update
