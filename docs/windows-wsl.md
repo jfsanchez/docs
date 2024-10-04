@@ -86,5 +86,5 @@ Press any key to continue...
 
 Teremos que asegurarnos que:
 
-. Virtualización activada na BIOS
-. en *"Inicio"* -> *"Funciones de Windows"* -> *"Activar o desactivar las funciones de Windows"* -> En *"características"* busca a *"Plataforma de máquina virtual"* e mira que estea seleccionada. Preme en aceptar e reinicia o equipo.
+  1. Virtualización activada na BIOS
+  2. En *"Inicio"* -> *"Funciones de Windows"* -> *"Activar o desactivar las funciones de Windows"* -> En *"características"* busca a *"Plataforma de máquina virtual"* e mira que estea seleccionada. Preme en aceptar e reinicia o equipo.
