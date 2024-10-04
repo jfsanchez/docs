@@ -86,8 +86,9 @@ Press any key to continue...
 
 Teremos que asegurarnos que:
 
-  1. Virtualización activada na BIOS.
-  2. Dependendo do SO:
-     2.1. Para Microsoft Windows 10: En *"Inicio"* -> *"Aplicaciones y características"* -> *"Programas y características"* -> *"Activar o desactivar las funciones de Windows"* -> En *"características"*.
-     2.2. Para Microsoft Windows 11: *"Inicio"* -> *"Activar o desactivar las características de Windows"*.
-  3. Busca a *"Plataforma de máquina virtual"* e mira que estea seleccionada. Preme en aceptar e reinicia o equipo.
+1. Virtualización activada na BIOS.
+2. Dependendo do SO:
+    1. Para Microsoft Windows 10: En *"Inicio"* -> *"Aplicaciones y características"* -> *"Programas y características"* -> *"Activar o desactivar las funciones de Windows"* -> En *"características"*.
+    2. Para Microsoft Windows 11: *"Inicio"* -> *"Activar o desactivar las características de Windows"*.
+3. Busca a *"Plataforma de máquina virtual"* e mira que estea seleccionada. Preme en aceptar e reinicia o equipo.
+
