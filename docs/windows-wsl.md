@@ -65,7 +65,7 @@ Abrir un explorador de arquivos e no enderezo, introduce: **\\wsl$\DISITRIBUCIÓ
 \\wsl$\Ubuntu
 ~~~~
 
-Os arquivos gárdanse nun ficheiro vhdx dentro do cartafol: **%LOCALAPPDATA%\Packages\**, nese cartafol localizamos a nosa distribución: TheDebian... ou CanonicalGroupLimited.Ubuntu... e dentro do cartafol da distro en: **LocalState**.
+Os arquivos gárdanse nun ficheiro .vhdx dentro do cartafol: %LOCALAPPDATA%\Packages\ nese cartafol localizamos a nosa distribución: TheDebian... ou CanonicalGroupLimited.Ubuntu... e dentro do cartafol da distro en: **LocalState**.
 
 ## Actualización de WSL
 
