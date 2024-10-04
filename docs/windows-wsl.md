@@ -67,10 +67,24 @@ wsl --update
 
 ## Erros comúns
 
-Se da un erro do tipo: 
+### Erro CreateProcessParseCommon
 
 ~~~~
 <3>WSL (10) ERROR: CreateProcessParseCommon:711: Failed to translate X:\
 ~~~~
 
 Trata de executar os comandos de WSL na unidade por defecto onde está instalado o sistema operativo (habitualmente C:\).
+
+### Erro 0x80370102
+
+~~~~
+WslRegisterDistribution failed with error: 0x80370102
+Please enable the Virtual Machine Platform Windows feature and ensure virtualization is enabled in the BIOS.
+For information please visit: https://aka.ms/enablevirtualization
+Press any key to continue...
+~~~~
+
+Teremos que asegurarnos que:
+
+. Virtualización activada na BIOS
+. en *"Inicio"* -> *"Funciones de Windows"* -> *"Activar o desactivar las funciones de Windows"* -> En *"características"* busca a *"Plataforma de máquina virtual"* e mira que estea seleccionada. Preme en aceptar e reinicia o equipo.
