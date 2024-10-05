@@ -31,6 +31,8 @@ Se queremos outro sabor de GNU/Linux podemos executar:
 wsl --list --online
 ```
 
+![Lista de distribucións dispoñibles. Outubro 2024](images/wsl/2024-10-lista-distros.jpg "Lista de distribucións dispoñibles. Outubro 2024")
+
 E instalar a versión desexada, por exemplo:
 
 ``` bash
@@ -80,14 +82,24 @@ wsl --update
 Imaxinemos que queremos borrar a distribución **Ubuntu**:
 
 ~~~~ bash
-wsl --uninstall -d Ubuntu
+wsl --unregister Ubuntu
 ~~~~
 
-Ou Debian:
+## Exportar e importar unha distribución
+
+Pode ser útil gardar unha copia de seguridade dunha distribución e restaurala.
 
 ~~~~ bash
-wsl --unregister Debian
+wsl --export Debian debian.tar
 ~~~~
+
+Podemos borrar a distribución con: ```wsl --unregister Debian```
+
+~~~~ bash
+wsl --import Debian C:\Users\jose\distros\Debian C:\Users\jose\debian.tar 
+~~~~
+
+Normalmente a ruta de instalación por defecto adoita estar baixo: ```C:\Users\**USUARIO**\AppData\Local\Packages\TheDebian...```. Neste exemplo creamos dentro do cartafol de usuario outro chamado "distros" para localizar o arquivo de disco virtual **ext4.vhdx** máis fácilmente.
 
 ## Erros comúns
 
