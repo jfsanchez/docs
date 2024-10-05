@@ -19,7 +19,7 @@ Por defecto instalaranos unha máquina de Ubuntu.
 
 Tras a instalación é preciso reiniciar, avísanos coa mensaxe: *La operación solicitada se realizó correctamente. Los cambios se aplicarán una vez que se reinicie el sistema.*.
 
-Tras reiniciar, se non nos entra cun simple comando *wsl*, volvemos a unha consola de PowerShell como usuarios e volvemos escribir:
+Tras reiniciar, se non nos entra cun simple comando *wsl*, volvemos a unha consola de PowerShell **como usuarios** e volvemos escribir:
 
 ``` bash
 wsl --install
@@ -58,6 +58,8 @@ Se temos máis dunha distribución, debemos seleccionar cal queremos executar (o
 ``` bash
 wsl -d Debian
 ```
+
+Dentro da máquina entrará por defecto co usuario creado, con ese usuario podémonos facer root con comando sudo: ```sudo su```. Pedirache o contrasinal que elixiches ao crear a máquina, non o contrasinal da conta de Microsoft Windows.
 
 ## Acceso aos arquivos
 
@@ -100,6 +102,8 @@ wsl --import Debian C:\Users\jose\distros\Debian C:\Users\jose\debian.tar
 ~~~~
 
 Normalmente a ruta de instalación por defecto adoita estar baixo: ```C:\Users\**USUARIO**\AppData\Local\Packages\TheDebian...```. Neste exemplo creamos dentro do cartafol de usuario outro chamado "distros" para localizar o arquivo de disco virtual **ext4.vhdx** máis fácilmente.
+
+Ollo, se WSL non detecta o usuario tras unha importación do sistema, devolveranos unha consola de root.
 
 ## Erros comúns
 
