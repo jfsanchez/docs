@@ -39,6 +39,12 @@ E instalar a versión desexada, por exemplo:
 wsl --install -d Debian
 ```
 
+Recomendación: Empregar systemd no inicio (para que inicie os demos/servizos):
+
+``` bash
+echo -e "[boot]\nsystemd=true"| sudo tee /etc/wsl.conf
+```
+
 ## Entrar no sistema
 
 Abrimos unha consola de PowerShell e executamos:
@@ -60,6 +66,12 @@ wsl -d Debian
 ```
 
 Dentro da máquina entrará por defecto co usuario creado, con ese usuario podémonos facer root con comando sudo: ```sudo su```. Pedirache o contrasinal que elixiches ao crear a máquina, non o contrasinal da conta de Microsoft Windows.
+
+## Apagar un WSL
+
+``` bash
+wsl --shutdown -d DISTRO
+```
 
 ## Acceso aos arquivos
 
@@ -132,3 +144,16 @@ Teremos que asegurarnos que:
     2. Para **Microsoft Windows 11**: *"Inicio"* -> *"Activar o desactivar las características de Windows"*.
 3. Busca a *"Plataforma de máquina virtual"* e mira que estea seleccionada. Preme en aceptar e reinicia o equipo.
 
+### Erro: Non inicia os demos/servizos
+
+Hai que indicarlle que empregue systemd: 
+
+``` bash
+echo -e "[boot]\nsystemd=true"| sudo tee /etc/wsl.conf
+```
+
+Se segue sen funcionar, compre actualizar wsl:
+
+``` bash
+wsl --update
+```
