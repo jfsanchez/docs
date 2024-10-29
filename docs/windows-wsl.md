@@ -39,11 +39,20 @@ E instalar a versión desexada, por exemplo:
 wsl --install -d Debian
 ```
 
-Recomendación: Empregar systemd no inicio (para que inicie os demos/servizos):
+**Recomendación 1**: Empregar systemd no inicio (para que inicie os demos/servizos):
 
 ``` bash
 echo -e "[boot]\nsystemd=true"| sudo tee /etc/wsl.conf
 ```
+
+**Recomendación 2**: Permitir o uso de máis memoria RAM
+Podes crear no teu cartafol de usuario un arquivo **.wslconfig** que se aplicaría en global a tódalas máquinas ou ben poñer o seguinte contido no arquivo **/etc/wsl.conf** dentro de cada máquina.
+
+``` bash
+[wsl]
+memory=12G
+```
+Podes atopar máis información e opcións de configuración do wsl en: <https://learn.microsoft.com/en-us/windows/wsl/wsl-config>
 
 ## Entrar no sistema
 
@@ -127,7 +136,7 @@ Ollo, se WSL non detecta o usuario tras unha importación do sistema, devolveran
 
 Trata de executar os comandos de WSL na unidade por defecto onde está instalado o sistema operativo (habitualmente C:\).
 
-### Erro 0x80370102
+### Erros: 0x80370102 ou 0x8007019e (WslRegisterDistribution)
 
 ~~~~
 WslRegisterDistribution failed with error: 0x80370102
@@ -142,7 +151,9 @@ Teremos que asegurarnos que:
 2. Dependendo do SO:
     1. Para **Microsoft Windows 10**: En *"Inicio"* -> *"Aplicaciones y características"* -> *"Programas y características"* -> *"Activar o desactivar las funciones de Windows"* -> En *"características"*.
     2. Para **Microsoft Windows 11**: *"Inicio"* -> *"Activar o desactivar las características de Windows"*.
-3. Busca a *"Plataforma de máquina virtual"* e mira que estea seleccionada. Preme en aceptar e reinicia o equipo.
+3. Busca a *"Plataforma de máquina virtual"* e mira que estea seleccionada.
+4. Busca o *"Subsistema de Windows para Linux"* e mira que estea seleccionado.
+5. Preme en aceptar e reinicia o equipo.
 
 ### Erro: Non inicia os demos/servizos
 
