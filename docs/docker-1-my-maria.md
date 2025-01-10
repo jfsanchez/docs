@@ -244,6 +244,7 @@ Se estás a traballar coa versión: employees_db-full-1.0.6.tar.bz2 pode ser que
 **Webgrafía**:
 
 - <https://github.com/datacharmer/test_db>
+- <https://downloads.mysql.com/docs/world-db.tar.gz>
 - <https://dev.mysql.com/doc/employee/en/employees-installation.html>
 
 ## Comando mysqldump para backup (dende shell)
