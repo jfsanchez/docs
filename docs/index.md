@@ -16,6 +16,8 @@ Podes mirar outros apuntes feitos con [revealjs](https://revealjs.com/) na miña
 
 - [🗃️ MongoDB](https://jfsanchez.es/docencia/mongodb)
 
+- [🏷 Funcionamento da FP en Galicia. Desactualizado!](https://jfsanchez.es/docencia/funcionamentofp/)
+
 </div>
 
 Os materiais publicanse con copyright. Permítese o seu uso en docencia, pero non para formación de formadores.
