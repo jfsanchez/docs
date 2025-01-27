@@ -1,4 +1,4 @@
-# 📕 Apuntes
+# 📚 Apuntes
 
 Podes mirar outros apuntes feitos con [revealjs](https://revealjs.com/) na miña web principal [JFSanchez.es](https://jfsanchez.es).
 
@@ -8,7 +8,7 @@ Podes mirar outros apuntes feitos con [revealjs](https://revealjs.com/) na miña
 
 - [🕸️ Modos de Rede no VirtualBox](https://jfsanchez.es/docencia/virtualbox/)
 
-- [⌛ Uso básico de git](https://jfsanchez.es/docencia/git/)
+- [🏷 Uso básico de git](https://jfsanchez.es/docencia/git/)
 
 - [🐍 Conda e pip](https://jfsanchez.es/docencia/conda-pip-virtualenv/)
 
@@ -16,7 +16,9 @@ Podes mirar outros apuntes feitos con [revealjs](https://revealjs.com/) na miña
 
 - [🗃️ MongoDB](https://jfsanchez.es/docencia/mongodb)
 
-- [🏷 Funcionamento da FP en Galicia. Desactualizado!](https://jfsanchez.es/docencia/funcionamentofp/)
+- [📦 Docker / Contedores](https://jfsanchez.es/docencia/docker)
+
+- [📕 Funcionamento da FP en Galicia. Desactualizado!](https://jfsanchez.es/docencia/funcionamentofp/)
 
 </div>
 
@@ -27,18 +29,3 @@ Non se permite o seu uso para incorporación en materiales a distancia (oficiais
 Tampouco se permite o seu uso a editoriais.
 
 Se atopas erros, por favor, ponte en contacto conmigo (preme nunha das presentacións e mira o correo na última diapositiva).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
