@@ -60,3 +60,19 @@ docker exec --interactive -it kafkiano \
 ```
 
 Se deixamos aberta esta consola e noutra lanzamos un produtor que envíe datos ao **topicprimeiro**, deberían reflectirse nesta primeira consola en pouco tempo.
+
+## Traballando en Python con Apache Kafka
+
+## Ligazóns a máis información
+
+### Descargas oficiais do software
+- <http://kafka.apache.org>
+- <https://hub.docker.com/r/apache/kafka>
+
+### Librarías de conexión en Python
+- <https://github.com/dpkp/kafka-python>
+- <https://github.com/confluentinc/confluent-kafka-python>
+
+### Outros
+- <https://developer.confluent.io/get-started/python>
+

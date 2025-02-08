@@ -233,7 +233,7 @@ Estas instruccións son para un servidor MariaDB/MySQL executándose dentro dout
     ssh -i chave-ssh.key usuario@IP-DO-SERVIDOR
 	sudo su -
 	cd /tmp
-	tar -xvjf employees_db-full-1.0.7.tar.gz
+	tar -xvzf employees_db-full-1.0.7.tar.gz
 	mysql -h localhost
 		source /tmp/employees_db/employees.sql
 		show tables;
