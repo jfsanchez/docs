@@ -24,7 +24,7 @@ O HOME de Hadoop normalmente estará en: **/user/usuario** e para acceder a él 
 O programa **hdfs** danos unha interfaz e operacións útiles para acceder ao HDFS de Hadoop. Os comandos seguen unha sintaxe de tipo:
 
 ``` bash
-hdfs dfs# (1)! -COMANDO
+hdfs dfs -COMANDO # (1)!
 ```
 
 1.  dfs: Indica que a operación é de arquivos sobre o sistema de arquivos.
