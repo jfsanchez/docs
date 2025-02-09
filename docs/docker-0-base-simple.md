@@ -1,4 +1,4 @@
-# 🔵 DOCKERS (Guía básica)
+# 🍏 Docker — Guía básica
 
 - Baseado en: <https://docs.docker.com/engine/install/debian/>
 
@@ -54,6 +54,8 @@ sudo service docker restart
 ```
 
 ## Conceptos básicos de dockers
+
+Podes ver a presentación de: [📦 Docker / Contedores](https://jfsanchez.es/docencia/docker)
 
 ⚠️ Este resumo contén imprecisións porque pretende ser breve.
 

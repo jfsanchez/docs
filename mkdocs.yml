@@ -11,7 +11,23 @@ theme:
   features:
     - content.code.copy
     - content.code.annotate
-
+    - navigation.indexes
+    - toc.follow
+#    - toc.integrate
+    - navigation.top
+    - navigation.path
+    - navigation.prune
+  palette:
+  - scheme: default
+    toggle:
+      icon: material/toggle-switch-off-outline
+      name: Modo oscuro (da calambre)
+  - scheme: slate
+    toggle:
+      icon: material/toggle-switch
+      name: Modo normal
+      primary: green
+      accent: ambe
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
@@ -23,14 +39,52 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+#          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - attr_list
   - md_in_html
-
+nav:
+  - "📚 Inicio": "index.md"
+  - "🪶 Apache Hadoop":
+    - "🧾 Instalación": "apache-hadoop-0-instalacion.md"
+    - "🔲 Comandos": "apache-hadoop-1-comandos.md"
+  - "⚝ Apache Spark":
+    - "🧾 Instalación": "apache-spark-0-instalacion.md"
+  - "🏞️ Apache NIFI":
+    - "🧾 Instalación": "apache-nifi-0-instalacion.md"
+  - "🐍 Conda e Python":
+    - "🧾 Contorno BigData": "conda-0-config-basica.md"
+    - "🪄 Ipython máxico": "python-1-maxias.md"
+    - "💊 Arquivos en Python": "python-0-conceptos-previos.md"
+  - "🦫 DBeaver e túneles SSH": "dbeaver-tunel-ssh.md"
+  - "🔵 Docker":
+    - "🍏 Guía básica": "docker-0-base-simple.md"
+    - "🧾 MySQL / MariaDB": "docker-1-my-maria.md"
+    - "🧾 MongoDB": "docker-2-mongodb.md"
+    - "🧾 Redis": "docker-3-redis.md"
+    - "🧾 PostgreSQL": "docker-4-postgresql.md"
+    - "🧾 Microsoft SQL Server": "docker-5-mssql-server.md"
+    - "🧾 Oracle Free": "docker-6-oracle.md"
+    - "🧾 Kafka": "docker-7-kafka.md"
+    - "📘 La guía refinitiva": "docker-z-guia-refinitiva.md"
+  - "☁️ Nube/Cloud/Openstack":
+    - "☁️ Introdución": "nube-0-intro.md"
+    - "➕ Crear Instancia": "nube-1-openstack-crear-lanzar-instancia.md"
+    - "💿 Volúmenes": "nube-2-openstack-volumes.md"
+    - "🛡️ Grupos de seguridade": "nube-3-openstack-grupos-seguridade.md"
+    - "⛈️ Recuperación": "nube-4-openstack-recovey.md"
+    - "🐢 SWAP": "nube-5-openstack-crear-swap.md"
+  - "🧐 PowerBi e Python": "powerbi-0-python.md"
+  - "🔑 SSH e túneles": "ssh-0-chaves-tuneles.md"
+  - "🌪️ WSL": "windows-wsl.md"
+extra_css:
+  - _res/extra.css
+#   - _res/prism.css
+# extra_javascript:
+#   - _res/prism.js
 site_name: JFSanchez
-site_url: https://jfsanchez.es/docs
+site_url: https://jfsanchez.es/
 repo_url: https://github.com/jfsanchez/
 site_author: Jose Sánchez
 copyright: 2025 - Jose Sánchez
