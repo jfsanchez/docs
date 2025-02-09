@@ -70,13 +70,13 @@ nav:
     - "📘 La guía refinitiva": "docker-z-guia-refinitiva.md"
   - "☁️ Nube/Cloud/Openstack":
     - "☁️ Introdución": "nube-0-intro.md"
+    - "🔑 SSH e túneles": "ssh-0-chaves-tuneles.md"
     - "➕ Crear Instancia": "nube-1-openstack-crear-lanzar-instancia.md"
     - "💿 Volúmenes": "nube-2-openstack-volumes.md"
     - "🛡️ Grupos de seguridade": "nube-3-openstack-grupos-seguridade.md"
     - "⛈️ Recuperación": "nube-4-openstack-recovey.md"
     - "🐢 SWAP": "nube-5-openstack-crear-swap.md"
   - "🧐 PowerBi e Python": "powerbi-0-python.md"
-  - "🔑 SSH e túneles": "ssh-0-chaves-tuneles.md"
   - "🌪️ WSL": "windows-wsl.md"
 extra_css:
   - _res/extra.css
