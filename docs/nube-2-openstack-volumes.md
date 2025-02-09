@@ -4,7 +4,7 @@ Normalmente os servizos de virtualización na nube cobran polo uso de recursos: 
 
 Non sempre necesitamos todos os servizos activos, polo que se queremos aforrar custos, debemos reducir recursos.
 
-Un volume é o disco duro virtual onde se almacenan os datos das instancias en [OpenStack]((https://www.openstack.org/)).
+Un volume é o disco duro virtual onde se almacenan os datos das instancias en [OpenStack](https://www.openstack.org/).
 
 Imos ver unhas operacións básicas sobre volumes en [OpenStack](https://www.openstack.org/) empregando o interfaz web Horizon de [Nova](https://docs.openstack.org/nova/latest/).
 

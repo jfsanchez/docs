@@ -2,7 +2,7 @@
 
 Imos aprender a lanzar unha ou varias instancias en Openstack, un contorno de nube/cloud empregado en varias empresas e tamén no [CESGA](https://www.cesga.es).
 
-Se buscas **recuperar** unha instancia destruída en base a un volume gardado, consulta a sección **☁️ OpenStack: Volumes** &rarr; [Como lanzar unha instancia a partir dun volume](/docs/openstack-volumes/#como-lanzar-unha-instancia-a-partir-dun-volume).
+Se buscas **recuperar** unha instancia destruída en base a un volume gardado, consulta a sección **☁️ OpenStack: Volumes** &rarr; [Como lanzar unha instancia a partir dun volume](nube-2-openstack-volumes.md#como-lanzar-unha-instancia-a-partir-dun-volume).
 
 ## Configuración previa
 

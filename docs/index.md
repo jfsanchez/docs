@@ -18,7 +18,7 @@ As presentacións están feitas con [revealjs](https://revealjs.com/).
 
 - [📦 Docker / Contedores](https://jfsanchez.es/docencia/docker)
 
-- [📕 Funcionamento da FP en Galicia. Desactualizado!](https://jfsanchez.es/docencia/funcionamentofp/)
+- [📕 FP en Galicia. Desactualizado!](https://jfsanchez.es/docencia/funcionamentofp/)
 
 </div>
 
