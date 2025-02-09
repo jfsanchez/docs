@@ -1,6 +1,6 @@
-# 📚 Apuntes
+# 📚 Inicio
 
-Podes mirar outros apuntes feitos con [revealjs](https://revealjs.com/) na miña web principal [JFSanchez.es](https://jfsanchez.es).
+As presentacións están feitas con [revealjs](https://revealjs.com/).
 
 <div class="grid cards" markdown>
 
