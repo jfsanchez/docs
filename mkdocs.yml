@@ -78,6 +78,7 @@ nav:
     - "🐢 SWAP": "nube-5-openstack-crear-swap.md"
   - "🧐 PowerBi e Python": "powerbi-0-python.md"
   - "🌪️ WSL": "windows-wsl.md"
+  - "🖨️ Plantillas docencia": "https://github.com/jfsanchez/docencia/tree/main/libreta"
 extra_css:
   - _res/extra.css
 #   - _res/prism.css
