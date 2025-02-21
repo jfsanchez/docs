@@ -66,6 +66,7 @@ nav:
     - "🧾 Redis": "docker-3-redis.md"
     - "🧾 PostgreSQL": "docker-4-postgresql.md"
     - "🧾 Microsoft SQL Server": "docker-5-mssql-server.md"
+    - "🧾 Apache Nifi": "docker-8-apache-nifi.md"
     - "🧾 Oracle Free": "docker-6-oracle.md"
     - "🧾 Kafka": "docker-7-kafka.md"
     - "📘 La guía refinitiva": "docker-z-guia-refinitiva.md"

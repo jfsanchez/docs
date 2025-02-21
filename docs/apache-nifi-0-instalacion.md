@@ -19,7 +19,7 @@ Ten en conta que Nifi abrirá un porto e exporá o seu servizo https á rede que
 
 **AVISO**: A versión 23 de amazon-corretto é necesaria para executar a última versión 2 de Apache Nifi.
 
-Se só queres probar Nifi, emprega a imaxe "oficial" non-oficial:
+Se só queres probar Nifi, emprega a imaxe "oficial" non-oficial <https://hub.docker.com/r/apache/nifi>:
 
 ``` bash
 docker run --name nifi \
