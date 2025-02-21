@@ -11,7 +11,7 @@ Lanzamos un novo contedor **kafkiano** que escoita no porto 9092.
 
 ``` bash
 docker run -d  \
-  --name broker \
+  --name kafkiano \
   -p 9092:9092 -p 9093:9093 \
   -e KAFKA_NODE_ID=1 \
   -e KAFKA_PROCESS_ROLES=broker,controller \
