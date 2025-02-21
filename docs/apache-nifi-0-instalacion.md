@@ -15,6 +15,21 @@ Cando conectamos con algún servizo do CESGA por SSH, en realidade estamos nun n
 
 Ten en conta que Nifi abrirá un porto e exporá o seu servizo https á rede que lle indiquemos. Precisarás coñecer a IP cando esteas a cambiar os arquivos de configuración.
 
+### Aviso previo
+
+**AVISO**: A versión 23 de amazon-corretto é necesaria para executar a última versión 2 de Apache Nifi.
+
+Se só queres probar Nifi, emprega a imaxe oficial:
+
+``` bash
+docker run --name nifi \
+  -p 8443:8443 \
+  -d \
+  -e SINGLE_USER_CREDENTIALS_USERNAME=admin \
+  -e SINGLE_USER_CREDENTIALS_PASSWORD=ctsBtRBKHRAx69EqUghvvgEvjnaLjFEB \
+  apache/nifi:latest
+```
+
 ### Descarga, verificación e outras operacións
 
 Precisamos unha versión de Java máis recente, imos empregar a versión 11 de Amazon Corretto (A versión 21 de Corretto en decembro de 2023, está a dar problemas coa execución de Nifi na contorna do CESGA).
