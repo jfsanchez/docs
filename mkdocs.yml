@@ -53,6 +53,7 @@ nav:
     - "🧾 Instalación": "apache-spark-0-instalacion.md"
   - "🏞️ Apache NIFI":
     - "🧾 Instalación": "apache-nifi-0-instalacion.md"
+  - "🇸 Apache sqoop": "apache-sqoop-0-resumo.md"
   - "🐍 Conda e Python":
     - "🧾 Contorno BigData": "conda-0-config-basica.md"
     - "🪄 Ipython máxico": "python-1-maxias.md"
