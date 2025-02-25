@@ -1,4 +1,4 @@
-# 💻 Presentacións
+# Presentacións
 
 <div class="grid cards" markdown>
 
@@ -6,15 +6,15 @@
 
 - [🕸️ Modos de Rede no VirtualBox](https://jfsanchez.es/docencia/virtualbox/){:target="_blank"}
 
-- [🏷 Uso básico de git](https://jfsanchez.es/docencia/git/){:target="_blank"}
+- [🐱 Uso básico de git](https://jfsanchez.es/docencia/git/){:target="_blank"}
 
 - [🐍 Conda e pip](https://jfsanchez.es/docencia/conda-pip-virtualenv/){:target="_blank"}
 
-- [🛣️ XPATH para uso con Selenium](https://jfsanchez.es/docencia/xpath/){:target="_blank"}
+- [❎ XPATH para uso con Selenium](https://jfsanchez.es/docencia/xpath/){:target="_blank"}
 
-- [🗃️ MongoDB](https://jfsanchez.es/docencia/mongodb){:target="_blank"}
+- [🪶 MongoDB](https://jfsanchez.es/docencia/mongodb){:target="_blank"}
 
-- [📦 Docker / Contedores](https://jfsanchez.es/docencia/docker){:target="_blank"}
+- [🐳 Docker / Contedores](https://jfsanchez.es/docencia/docker){:target="_blank"}
 
 - [📕 FP en Galicia. Desactualizado!](https://jfsanchez.es/docencia/funcionamentofp/){:target="_blank"}
 

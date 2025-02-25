@@ -1,4 +1,4 @@
-# 🌪️ WSL
+# 🐧 WSL
 **W**indows **S**ubsystem for **L**inux (WSL)
 
 ## Requisitos previos

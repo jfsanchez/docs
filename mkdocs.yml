@@ -45,22 +45,22 @@ markdown_extensions:
   - attr_list
   - md_in_html
 nav:
-  - "📚 Inicio": "index.md"
-  - "🪶 Apache Hadoop":
+  - "📚 Inicio — Presentacións": "index.md"
+  - "🐘 Apache Hadoop":
     - "🧾 Instalación": "apache-hadoop-0-instalacion.md"
     - "🔲 Comandos": "apache-hadoop-1-comandos.md"
   - "⚝ Apache Spark":
     - "🧾 Instalación": "apache-spark-0-instalacion.md"
-  - "🏞️ Apache NIFI":
+  - "💧 Apache NIFI":
     - "🧾 Instalación": "apache-nifi-0-instalacion.md"
   - "🇸 Apache sqoop": "apache-sqoop-0-resumo.md"
   - "🐍 Conda e Python":
     - "🧾 Contorno BigData": "conda-0-config-basica.md"
     - "🪄 Ipython máxico": "python-1-maxias.md"
-    - "💊 Arquivos en Python": "python-0-conceptos-previos.md"
+    - "🗂️ Arquivos en Python": "python-0-conceptos-previos.md"
   - "🦫 DBeaver e túneles SSH": "dbeaver-tunel-ssh.md"
-  - "🔵 Docker":
-    - "🍏 Guía básica": "docker-0-base-simple.md"
+  - "🐳 Docker":
+    - "🔵 Guía básica": "docker-0-base-simple.md"
     - "🧾 MySQL / MariaDB": "docker-1-my-maria.md"
     - "🧾 MongoDB": "docker-2-mongodb.md"
     - "🧾 Redis": "docker-3-redis.md"
@@ -78,9 +78,9 @@ nav:
     - "🛡️ Grupos de seguridade": "nube-3-openstack-grupos-seguridade.md"
     - "⛈️ Recuperación": "nube-4-openstack-recovey.md"
     - "🐢 SWAP": "nube-5-openstack-crear-swap.md"
-  - "🧐 PowerBi e Python": "powerbi-0-python.md"
-  - "🌪️ WSL": "windows-wsl.md"
-  - "🖨️ Plantillas docencia": "https://github.com/jfsanchez/docencia/tree/main/libreta"
+  - "🕴️ PowerBi e Python": "powerbi-0-python.md"
+  - "🐧 WSL": "windows-wsl.md"
+  - "🗒️ Plantillas docencia": "https://github.com/jfsanchez/docencia/tree/main/libreta"
 extra_css:
   - _res/extra.css
 #   - _res/prism.css

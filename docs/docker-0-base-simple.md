@@ -1,6 +1,7 @@
-# 🍏 Docker — Guía básica
+# 🔵 Docker — Guía básica
 
 - Baseado en: <https://docs.docker.com/engine/install/debian/>
+- Tamén hai dispoñible unha presentación de [🐳 Docker / Contedores](https://jfsanchez.es/docencia/docker){:target="_blank"}
 
 ## Instalación de docker en Debian
 

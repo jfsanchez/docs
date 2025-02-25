@@ -1,4 +1,4 @@
-# ☁️ OpenStack: Instancias
+# ➕ OpenStack: Instancias
 
 Imos aprender a lanzar unha ou varias instancias en Openstack, un contorno de nube/cloud empregado en varias empresas e tamén no [CESGA](https://www.cesga.es).
 

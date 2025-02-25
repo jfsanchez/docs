@@ -1,4 +1,4 @@
-# 🧾 Apache Spark - Instalación
+# ⚝ Apache Spark - Instalación
 
 Faremos unha instalación de Apache Spark en 4 máquinas con **ClusterShell**, un programa que permite enviar á vez comandos a varias máquinas.
 
