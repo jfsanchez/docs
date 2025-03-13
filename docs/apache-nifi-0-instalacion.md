@@ -1,9 +1,12 @@
 # 💧 Apache Nifi - Instalación
 
-Web Oficial: <https://nifi.apache.org/>
 ![Apache Nifi](images/nifi/Apache-nifi-logo.svg "Nifi")
 
-É un software adicado a automatizar o fluxo de datos entre sistemas.
+Web Oficial: <https://nifi.apache.org/>
+
+É un software adicado a automatizar o fluxo de datos entre sistemas. Tamén é considerado unha ferramenta ETL (Extract/Load/Transform).
+
+# A [primeira instalación recomendada de Apache Nifi é en local con docker](docker-8-apache-nifi.md)
 
 Empregaremos o software integrándoo co Apache Hadoop do CESGA, de xeito que poidamos ler e escribir do HDFS.
 
@@ -18,17 +21,6 @@ Ten en conta que Nifi abrirá un porto e exporá o seu servizo https á rede que
 ### Aviso previo
 
 **AVISO**: A versión 23 de amazon-corretto é necesaria para executar a última versión 2 de Apache Nifi.
-
-Se só queres probar Nifi, emprega a imaxe "oficial" non-oficial <https://hub.docker.com/r/apache/nifi>:
-
-``` bash
-docker run --name nifi \
-  -p 8443:8443 \
-  -d \
-  -e SINGLE_USER_CREDENTIALS_USERNAME=admin \
-  -e SINGLE_USER_CREDENTIALS_PASSWORD=EsteEunContrasinalMoiLongo1234567890 \
-  apache/nifi:latest
-```
 
 ### Descarga, verificación e outras operacións
 
