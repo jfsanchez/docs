@@ -58,7 +58,7 @@ Damos os permisos sobre a BBDD ao usuario:
 GRANT ALL PRIVILEGES ON DATABASE sobremesa to lambon;
 ```
 
-Conectamos á base de datos:
+⚠️ **Conectamos** á base de datos: ⚠️⚠️⚠️ **EXECUTA ESTE COMANDO OU NON ASIGNARÁS PERMISOS NO SEGUINTE**
 
 ``` sql
 \c sobremesa
