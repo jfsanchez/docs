@@ -2,6 +2,8 @@
 
  - Baseado na imaxe oficial: <https://hub.docker.com/_/mongo>
 
+ - Se queres [instalar mongo en modo replica set ou sharded cluster, consulta a presentación](/docencia/mongodb#instalacionpro).
+
 ## Introdución
 
 Podemos executar MongoDB de tres modos diferentes:
