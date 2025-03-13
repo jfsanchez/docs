@@ -1,4 +1,4 @@
-# 🕴️ PowerBi e Python
+# 📶 PowerBi e Python
 
 ## Crear un novo contorno de conda para Microsoft PowerBi
 

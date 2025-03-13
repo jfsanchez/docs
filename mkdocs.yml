@@ -79,7 +79,7 @@ nav:
     - "🛡️ Grupos de seguridade": "nube-3-openstack-grupos-seguridade.md"
     - "⛈️ Recuperación": "nube-4-openstack-recovey.md"
     - "🐢 SWAP": "nube-5-openstack-crear-swap.md"
-  - "🕴️ PowerBi e Python": "powerbi-0-python.md"
+  - "📶 PowerBi e Python": "powerbi-0-python.md"
   - "🐧 WSL": "windows-wsl.md"
   - "🗒️ Plantillas docencia": "https://github.com/jfsanchez/docencia/tree/main/libreta"
 extra_css:
