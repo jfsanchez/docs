@@ -1,10 +1,8 @@
-# 🧾 Apache Nifi
+# 🧾 Apache Nifi &mdash; Instalación
 
-## Apache Nifi empregando Docker
+## Instalación rápida de Apache Nifi empregando Docker
 
  - Baseado no repositorio do proxecto Apache coa imaxe "non" oficial de Apache Nifi: <https://hub.docker.com/r/apache/nifi/>
-
-## Instalación rápida con docker
 
 Imos a crear un contedor que terá acceso a un directorio compartido para meter os drivers JDBC e os datasets que precisemos.
 
@@ -51,9 +49,11 @@ rm -rf $HOME/nifi-compartido/jdbc/mysql-connector-j-9.2.0 $HOME/nifi-compartido/
 rm mysql-connector-j-8.4.0.tar.gz mysql-connector-j-9.2.0.tar.gz
 ~~~~
 
-### Metendo un driver nun docker xa lanzado sen directorio compartido
+## Metendo un driver nun docker xa lanzado sen directorio compartido
 
-O máis cómodo de non ter un cartafol compartido é copialo directamente, non é recomendable máis funciona.
+⚠️ Moi probablemente **non** che faga falta se seguiches as instruccións anteriores.
+
+Se non temos metido un cartafol compartido no noso contedor, o máis cómodo é copiar directamente o driver, non é recomendable máis funciona.
 
 ~~~~
 wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-j-9.2.0.tar.gz

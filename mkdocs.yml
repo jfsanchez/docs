@@ -53,6 +53,7 @@ nav:
     - "🧾 Instalación": "apache-spark-0-instalacion.md"
   - "💧 Apache NIFI":
     - "🧾 Instalación": "apache-nifi-0-instalacion.md"
+    - "👣 Primeiros pasos": "apache-nifi-1-primeiros-pasos.md"
   - "♾️ Apache Superset": "apache-superset.md"
   - "🇸 Apache Sqoop": "apache-sqoop-0-resumo.md"
   - "🐍 Conda e Python":
