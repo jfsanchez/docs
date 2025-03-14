@@ -43,13 +43,7 @@ CREATE TABLE tronoPers(
 
 CREATE TABLE tronoCont(
     id INTEGER,
-    firstName VARCHAR(100),
-    lastName VARCHAR(100),
-    fullName VARCHAR(100),
-    title VARCHAR(100),
-    family VARCHAR(100),
-    image VARCHAR(255),
-    imageUrl VARCHAR(255)
+    name VARCHAR(100)
 );
 
 CREATE TABLE estrenosNet(
