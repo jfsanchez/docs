@@ -159,8 +159,8 @@ Para averiguar **Driver Class Name**, [se temos instalado DBeaver](dbeaver-tunel
 - **Database Connection URL**: jdbc:mysql://172.17.0.4:3306/nifi
 - **Database Driver Class Name**: com.mysql.cj.jdbc.Driver
 - **Database Driver Location(s)**:
-    - Para versión 8: /opt/nifi/jdbc/mysql-connector-j-8.4.0.tar.gz
-    - Para versión 9: /opt/nifi/jdbc/mysql-connector-j-9.2.0.jar
+    - Para versión 8: /opt/nifi/compartido/jdbc/mysql-connector-j-8.4.0.jar
+    - Para versión 9: /opt/nifi/compartido/jdbc/mysql-connector-j-9.2.0.jar
 - **Database User**: nifi
 - **Password**: Nifi.Abc123
 
