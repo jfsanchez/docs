@@ -17,6 +17,7 @@ mkdir -p $HOME/nifi-compartido/{jdbc,datasets}
 
 docker run --name nifi \
   -p 8443:8443 \
+  -e NIFI_WEB_HTTPS_PORT=8443 \
   -e SINGLE_USER_CREDENTIALS_USERNAME=admin \
   -e SINGLE_USER_CREDENTIALS_PASSWORD=EsteEunContrasinalMoiLongo1234567890 \
   -v $HOME/nifi-compartido:/opt/nifi/compartido \
