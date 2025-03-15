@@ -4,7 +4,7 @@
 
 Web Oficial: <https://nifi.apache.org/>
 
-É un software adicado a automatizar o fluxo de datos entre sistemas. Tamén é considerado unha ferramenta ETL (Extract/Load/Transform).
+É un software adicado a automatizar o fluxo de datos entre sistemas. Tamén pode ser considerado unha ferramenta **ETL** (**E**xtract/**L**oad/**T**ransform).
 
 ## Instalación rápida de Apache Nifi empregando Docker
 
@@ -55,18 +55,7 @@ rm -rf $HOME/nifi-compartido/jdbc/mysql-connector-j-9.2.0 $HOME/nifi-compartido/
 rm mysql-connector-j-8.4.0.tar.gz mysql-connector-j-9.2.0.tar.gz
 ~~~~
 
-## Metendo un driver nun docker xa lanzado sen directorio compartido
-
-⚠️ Moi probablemente **non** che faga falta se seguiches as instruccións anteriores.
-
-Se non temos metido un cartafol compartido no noso contedor, o máis cómodo é copiar directamente o driver, non é recomendable máis funciona.
-
-~~~~
-wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-j-9.2.0.tar.gz
-tar -xzf https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-j-9.2.0.tar.gz
-docker exec -it nifi mkdir -p /opt/nifi/jdbc
-docker cp mysql-connector-j-9.2.0/mysql-connector-j-9.2.0.jar nifi:/opt/nifi/jdbc/
-~~~~
+Poderíase empregar dentro dun contexto un parámetro coa ruta completa ao JDBC para engadila rápidamente cando fose preciso.
 
 ## Instalación manual
 
@@ -221,7 +210,7 @@ nifi.web.https.host=10.10.10.101
 nifi.web.https.port=64801
 ```
 
-## Inicio de Nifi
+### Inicio de Nifi
 
 Dentro de nifi hai un directorio bin que contén os scripts de lanzamento. En cocnreto interésanos:
 

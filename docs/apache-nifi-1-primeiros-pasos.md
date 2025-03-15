@@ -5,6 +5,8 @@
 
 Lembra seguir a [guía de instalación de Apache Nifi](docker-8-apache-nifi.md) antes de continuar con este documento.
 
+Imos ver un par de exemplos simples para demostrar o funcionamento de Apache Nifi.
+
 ## Creando contedores coas bases de datos
 
 Creamos un servidor de MySQL
@@ -70,13 +72,7 @@ FLUSH PRIVILEGES;
 use nifi;
 ```
 
-### Barra de ferramentas de Apache Nifi
-
-A seguinte documentación foi elaborada empregando a versión: **2.2.0**.
-
-![Barra de ferramentas de Apache Nifi](images/nifi/nifi-toolbar.png "Barra de ferramentas de Apache Nifi")
-
-### InvokeHTTP: Lendo arquivos JSON remotos
+### Lendo dúas APIs de exemplo
 
 Imos facer dúas probas, unha cunha API chamada [ThronesAPI](https://thronesapi.com/) e outra real, a de [Netflix](https://about.netflix.com/es/new-to-watch).
 
@@ -129,7 +125,6 @@ Podemos baixar o arquivo JSON a man e subilo a un servidor web noso para probar 
 
 Ollo! Non tódolos datos que son públicos teñen licencia para ser empregados e voltos a publicar.
 
-
 ## Montar un servidor web para meter arquivos
 
 Pode serche útil para non saturar os servidores dos que queiras baixarte información ou se che prohíben o acceso dende Nifi ou curl.
@@ -143,8 +138,35 @@ docker run --name nginx -p 80:80 \
   -v $HOME/web:/usr/share/nginx/html:ro \
   --restart unless-stopped -d nginx
 ```
+## Conexión coas diferentes bases de datos
+
+Imos ver un par de exemplos de conexión:
+
+- **DBCPConnectionPool**: Para conectar por JDBC a unha base de datos relacional.
+- **MongoDBControllerService**: Para conectar a MongoDB, unha BBDD NO-SQL.
 
 ### DBCPConnectionPool: Conexión coa BBDD
+
+Os controles mínimos que precisamos para transformar de modo sinxelo os datos descargados dun servizo web en JSON e pasalos á nosa base de datos relacional son:
+
+![Conexión a RDBMS](images/nifi/JSON-to-RDBMS.png "Conexión a RDBMS")
+
+- Procesador **InvokeHTTP** / **GetFile** / **GetFileResource** / **...** /: Precisamos un procesador que nos devolva un JSON en formato **FlowFile**. As propiedades do exemplo son para o **InvokeHTTP**:
+    - Lapela **Properties** &rarr; **HTTP URL**: https://thronesapi.com/api/v2/Characters
+    - En **Relationships** en todo o que non sexa Response marca **Terminate**.
+- Procesador **ConvertRecord**: Para pasar de JSON a CSV.
+    - Lapela **Properties**:
+        - Record Reader: Tres puntos &rarr; **Create New Service** &rarr; **JsonTreeReader**.
+        - Record Writer: Tres puntos &rarr; **Create New Service** &rarr; **CSVRecordSetWriter**.
+    - En **Relationships**, en **Failure** marca **Terminate**.
+- Procesador **PutDatabaseRecord**: Para meter o Recordset na base de datos.
+    - Lapela **Properties**:
+        - Record Reader: Tres puntos &rarr; **Create New Service** &rarr; **CSVReader**.
+        - Database Type: **MySQL**.
+        - Statement Type: **INSERT**.
+        - Database Connection Pooling Service: **DBCPConnectionPool**.
+        - Table Name: **nifi**.
+    - En **Relationships**, en **Failure** e **Retry** marca **Terminate**.
 
 Precisamos saber a IP do servidor de base de datos:
 
@@ -156,6 +178,8 @@ Neste exemplo imaxinamos que é: **172.17.0.4**.
 
 Para averiguar **Driver Class Name**, [se temos instalado DBeaver](dbeaver-tunel-ssh.md) podemos facer unha nova conexión de base de datos e premer en "Editar conexión", logo premeremos no botón "Driver settings" e miramos despois o nome de clase.
 
+Agora teremos que facer click dereito no canvas (dentro do grupo de procesamento) e ir a **Controller Services** en **DBCPConnectionPool** configuraremos o seguinte:
+
 - **Database Connection URL**: jdbc:mysql://172.17.0.4:3306/nifi
 - **Database Driver Class Name**: com.mysql.cj.jdbc.Driver
 - **Database Driver Location(s)**:
@@ -164,6 +188,44 @@ Para averiguar **Driver Class Name**, [se temos instalado DBeaver](dbeaver-tunel
 - **Database User**: nifi
 - **Password**: Nifi.Abc123
 
+Despois de aplicar os cambios, debemos meternos en cada un dos Controller Services facendo click nos tres puntos e logo en **Edit** e premer no check ao lado de **Verification**. Se todo funciona correctamente, prememos no botón **Close**, volvemos aos tres puntos e seleccionamos **Enable** e logo confirmamos con botón **Enable** de novo.
+
+Para volver á pantalla anterior, prememos en **Back to Proccess Group**.
+
+![Controller Services](images/nifi/nifi-controller-services.png "Controller Services")
+
+### MongoDBControllerService: Conexión con Atlas
+
+Para poder conectar ao noso servicio de Mongo na nube (Atlas) teremos que configurar unha conexión.
+
+Neste exemplo veremos un procesador **PutMongoRecord** conectado a través dun **MongoDBControllerService** a atlas a unha BBDD chamada nifi.
+
+![Conexión a MongoDB](images/nifi/JSON-To-MongoDB.png "Conexión a MongoDB")
+
+1. Conectamos a [atlas](https://www.mongodb.com/products/platform/cloud) &rarr; Sign In.
+2. Se non temos un cluster gratuito, creámolo e engadimos o dataset de exemplo.
+3. Imos a **Security** &rarr; **Network Access** e engadimos a IP externa saínte ou rango de IPs saintes **do servidor Apache Nifi**. Se non sabes qué IP de saída estás a empregar podes empregar calquera destes servizos:
+    ``` bash
+    curl ifconfig.me
+    curl icanhazip.com
+    curl api.ipify.org
+    ```
+4. En **Security** &rarr; **Database Access** &rarr; Prememos no botón **Add new database user** e seleccionamos:
+    1. **Authentication Method**: Password.
+    2. **Password authentication** &rarr; Escollemos un usuario e un contrasinal.
+    3. **Builtin role** &rarr; **Atlas Admin**. Esto farémolo como proba, máis deberíase seleccionar só a base de datos a que necesitemos ter acceso e os permisos necesarios (lectura, escritura, ambos...).
+    4. Marcamos **temporary user** e lle damos **6 horas** de duración ao usuario.
+    5. ⚠️ Cando teñas todo configurado e funcionando, deberás volver aquí e crear un usuario definitivo con acceso ás bases de datos que precises.
+5. En **Cluster** &rarr; Botón **Connect** &rarr; Prememos na opción **Drivers** &rarr; E copiamos o servizo sen usuario e contrasinal que será de tipo: 
+    ``` 
+    mongodb+srv://NomeElexidoPorTi.SubdominioAleatorio.mongodb.net
+    ```
+6. Imos a **Cluster** &rarr; **Browse collections**. Logo prememos no botón **+ Create Database**. Poñemos en **Database Name** *nifi* e en **Collection** *proba*.
+7. En Apache Nifi arrastramos un novo procesador de tipo: **PutMongoRecord**.
+    1. En **Client Service** &rarr; Nos tres puntos &rarr; **+ Create New Service**... &rarr; *MongoDBControllerService*.
+    2. **Mongo Database Name**: *nifi*.
+    3. **Mongo Collection Name**: *nomeDaColeccion*.
+    4. **Record Reader**: *JsonTreeReader*.
 
 ## Ligazóns para mais información
 
