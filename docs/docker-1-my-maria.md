@@ -4,54 +4,75 @@
      - MySQL: <https://hub.docker.com/_/mysql>
      - MariaDB: <https://hub.docker.com/_/mariadb>
 
-Imos ver e instalar dous sabores deste servidor SQL tan popular.
+### Instalación
 
-## MySQL
+E recomendable crear un volume previamente cun nome para ter localizado onde temos os datos e que non se borre se executmaos un prune.
 
-### Instalación de MySQL
-
-E recomendable crear un volume previamente cun nome para ter localizado onde temos os datos:
+Tamén imos crear un directorio compartido, deste xeito resultará máis fácil importar as bases de datos de proba sen ter que instalar outro cliente ou ter problemas por non estar no directorio correcto durante a importación.
 
 ``` bash
-docker volume create datosmysql
+docker volume create bbddvol
+mkdir -p $HOME/bd
 ```
 
-E logo crear o contedor asociado a ese volume:
+Agora creamos o contedor. O volume estará asociado ao directorio coa base de datos:
 
-``` bash
-docker run -p 9906:3306 --name contedor_mysql \
-  -v datosmysql:/var/lib/mysql \ # (1)!
-  -e MYSQL_RANDOM_ROOT_PASSWORD=1 \ # (2)!
-  -e MYSQL_DATABASE=basededatos \ # (3)!
-  -e MYSQL_USER=usuario \ # (4)!
-  -e MYSQL_PASSWORD=Contrasinal123. \ # (5)!
-  --restart unless-stopped \ # (6)!
-  -d mysql:8
-```
+⚠️ Emprega o botón copiar da dereita para que non fallen os saltos de liñas e caracteres especiais nas diferentes terminais.
 
-1.  Volume para os datos.
-2.  Contrasinal de root.
-3.  Crea a base de datos `basededatos`.
-4.  Crea o usuario `usuario` con acceso de superusaurio a `basededatos`.
-5.  Establece o contrasinal de `usuario` (é preciso para que se cree o usuario).
-6.  Para que inicie automáticamente o contedor tras un reinicio de docker ou da máquina.
+=== "MySQL"
 
-Copia de aquí o comando para que non fallen as novas liñas e espacios:
+    ``` bash
+    docker run -p 9906:3306 --name bbdd \
+      -v bbddvol:/var/lib/mysql \
+      -v $HOME/bd:/bd \
+      -e MYSQL_RANDOM_ROOT_PASSWORD=1 \
+      -e MYSQL_DATABASE=basededatos \
+      -e MYSQL_USER=usuario \
+      -e MYSQL_PASSWORD=ContrasinalMariano123. \
+      --restart unless-stopped \
+      -d mysql:8
+    ```
 
-```
-docker run -p 9906:3306 --name contedor_mysql -v datosmysql:/var/lib/mysql -e MYSQL_RANDOM_ROOT_PASSWORD=1 -e MYSQL_DATABASE=basededatos -e MYSQL_USER=usuario -e MYSQL_PASSWORD=Contrasinal123. --restart unless-stopped -d mysql:8
-```
+=== "MariaDB"
 
+    ``` bash
+    docker run -p 9906:3306 --name bbdd \
+      -v bbddvol:/var/lib/mysql \
+      -v $HOME/bd:/bd \
+      -e MARIADB_RANDOM_ROOT_PASSWORD=1 \
+      -e MARIADB_DATABASE=basededatos \
+      -e MARIADB_USER=usuario \
+      -e MARIADB_PASSWORD=ContrasinalMariano123. \
+      --restart unless-stopped \
+      -d mariadb:latest
+    ```
 
 **Aclaracións**:
 
 - `-p 9906:3306` redirixe o porto `9906` do anfitrión ao porto `3306` do contedor.
 - `--env` ou `-e` serven para definir variables de entorno (configuración) presentes na imaxe.
-- `-v` permite asociar (montar) un directorio local a un directorio de dentro do contedor. Poderíamos asociado un directorio local `/root/mysqldatos` ao contedor en `/var/lib/mysql` co parámetro: `-v /root/mysqldatos:/var/lib/mysql`. Tamén poderíamos mapear un volume anterior con: `-v ID_DO_VOLUME:/var/lib/mysql`.
-- Para saber o contrasinal de root asignado aleatoriamente debemos buscar nos logs unha liña que conteña: "[Note] [Entrypoint]: GENERATED ROOT PASSWORD:":
-    ``` bash
-    docker logs contedor_mysql
-    ```
+- `-v` permite asociar (montar) un directorio local a un directorio de dentro do contedor. Poderíamos asociado un directorio local `/home/user/mysqldatos` ao contedor en `/var/lib/mysql` co parámetro: `-v /home/user/mysqldatos:/var/lib/mysql`. Tamén poderíamos mapear un volume anterior con: `-v ID_DO_VOLUME:/var/lib/mysql`.
+- `--restart unless-stopped` Recupera no reinicio o estado do contedor (volve arrancalo) salvo que se parase explícitamente.
+- `-d` Executa o contedor en modo dettached (devolve o control á consola tras a súa execución).
+
+⚠️⚠️⚠️ **NON ESQUEZAS APUNTAR O CONTRASINAL DE ROOT**:
+
+Para saber o contrasinal de root asignado aleatoriamente debemos buscar nos logs unha liña que conteña: `"[Note] [Entrypoint]: GENERATED ROOT PASSWORD:"`. Tras executar o contedor, dalle 20 segundos para que arranque de todo e executa:
+
+``` bash
+docker logs bbdd
+```
+Tamén precisaremos o enderezo IP do contedor, pódelo averiguar con:
+
+``` bash
+docker inspect bbdd
+```
+
+E buscar a liña "IPAddress": "XXX.XXX.XXX.XXX" dentro de **"NetworkSettings"** (as X son números).
+
+Apunta nun arquivo o enderezo IP e o contrasinal de root. Vas necesitalo varias veces!
+
+Se estás executando unha instancia ou máquina, tamén é conveniente que averigues e apuntes o seu enderezo IP.
 
 Por último comprobamos que teñamos correctamente asociado o volume de datos ao noso contedor:
 
@@ -63,108 +84,56 @@ docker ps -a --no-trunc --format "{{.Names}}: {{.Mounts}}"
 
 Se queremos recuperar unha instancia borrada, sempre e cando non borrásemos o seu volume de datos, anterior (non fai falta especificar usuarios ou contrasinais):
 
-``` bash
-docker run -p 9906:3306 --name contedor_mysql \
-  -v datosmysql:/var/lib/mysql \
-  --restart unless-stopped \
-  -d mysql:8
-```
-
-### (CLI) Conexión con MySQL
-
-=== "Conectar co cliente do docker"
+=== "MySQL"
 
     ``` bash
-    docker exec -it contedor_mysql mysql -uusuario -pContrasinal123.
+    docker run -p 9906:3306 --name bbdd \
+      -v bbddvol:/var/lib/mysql \
+      -v $HOME/bd:/bd \
+      --restart unless-stopped \
+      -d mysql:8
+    ```
+
+=== "MariaDB"
+
+    ``` bash
+    docker run -p 9906:3306 --name bbdd \
+      -v bbddvol:/var/lib/mysql \
+      -v $HOME/bd:/bd \
+      --restart unless-stopped \
+      -d mariadb:latest
+    ```
+
+### (CLI) Conexión directa co cliente
+
+=== "Conectar co cliente do docker (MySQL)"
+
+    ``` bash
+    docker exec -it bbdd mysql -uusuario -pContrasinal123.
     ```
 
     - Podemos engadir `-hX.X.X.X` para conectar con outro equipo.
 
-=== "Conectar cun cliente doutro host"
+=== "Conectar cun cliente doutro host (MySQL)"
 
     ``` bash
-    mysql -hX.X.X.X -P9907 -uusuario -pContrasinal123.
+    mysql -hX.X.X.X -P9906 -uusuario -pContrasinal123.
     ```
 
     - `X.X.X.X` é a IP do servidor ao que queremos conectar.
 
-
-## MariaDB
-
-### Instalación de MariaDB
-
-E recomendable crear un volume previamente cun nome para ter localizado onde temos os datos:
-
-``` bash
-docker volume create datosmariadb
-```
-
-``` bash
-docker run -p 9907:3306 --name contedor_mariadb \
-  -v datosmariadb:/var/lib/mysql \ # (1)!
-  --env MARIADB_RANDOM_ROOT_PASSWORD=1 \ # (2)!
-  --env MARIADB_DATABASE=demaria \ # (3)!
-  --env MARIADB_USER=usuariamaria \ # (4)!
-  --env MARIADB_PASSWORD=DonaMaria123456 \ # (5)!
-  --restart unless-stopped \ # (6)!
-  -d mariadb:latest
-```
-
-1.  Volume para os datos.
-2.  Elexir un contrasinal de root aleatorio.
-3.  Crea a base de datos `demaria`.
-4.  Crea o usuario `usuariamaria` con acceso de superusaurio a `demaria`.
-5.  Establece o contrasinal de `usuariamaria` (é preciso para que se cree o usuario).
-6.  Para que inicie automáticamente o contedor tras un reinicio de docker ou da máquina.
-
-Copia de aquí o comando para que non fallen as novas liñas e espacios:
-
-```
-docker run -p 9907:3306 --name contedor_mariadb -v datosmariadb:/var/lib/mysql --env MARIADB_RANDOM_ROOT_PASSWORD=1 --env MARIADB_DATABASE=demaria --env MARIADB_USER=usuariamaria --env MARIADB_PASSWORD=DonaMaria123456 --restart unless-stopped -d mariadb:latest
-```
-
-**Aclaracións**:
-
-- `-p 9906:3306` redirixe o porto `9906` do anfitrión ao porto `3306` do contedor.
-- `--env` ou `-e` serven para definir variables de entorno (configuración) presentes na imaxe.
-- `-v` permite asociar (montar) un directorio local a un directorio de dentro do contedor. Poderíamos asociado un directorio local `/root/mariadbdatos` ao contedor en `/var/lib/mysql` co parámetro: `-v /root/mariadbdatos:/var/lib/mysql`
-- A imaxe xa executa o script: `/usr/bin/mariadb-secure-installation` que equivale ao `mysql_secure_installation`.
-- Para saber o contrasinal de root asignado aleatoriamente debemos buscar nos logs unha liña que conteña: "[Note] [Entrypoint]: GENERATED ROOT PASSWORD:":
-    ``` bash
-    docker logs contedor_mariadb
-    ```
-Por último comprobamos que teñamos correctamente asociado o volume de datos ao noso contedor:
-
-``` bash
-docker ps -a --no-trunc --format "{{.Names}}: {{.Mounts}}"
-```
-
-### Recuperar instancia de MariaDB co seu volume 
-
-Se queremos recuperar unha instancia borrada, sempre e cando non borrásemos o seu volume de datos, anterior (non fai falta especificar usuarios ou contrasinais):
-
-``` bash
-docker run -p 9907:3306 --name contedor_mariadb \
-  -v datosmariadb:/var/lib/mysql \
-  --restart unless-stopped \
-  -d mariadb:latest
-```
-
-
-### (CLI) Conexión con MariaDB
-
-=== "Conectar co cliente do docker"
+=== "Conectar co cliente do docker (MariaDB)"
 
     ``` bash
-    docker exec -it contedor_mariadb mariadb -uusuariamaria -pDonaMaria123456
+    docker exec -it bbdd mariadb -uusuario -pContrasinal123.
     ```
 
     - Podemos engadir `-hX.X.X.X` para conectar con outro equipo.
 
-=== "Conectar cun cliente doutro host"
+=== "Conectar cun cliente doutro host (MariaDB)"
 
     ``` bash
-    mariadb -hX.X.X.X -P9907 -uusuariamaria -pDonaMaria123456
+    mariadb -hX.X.X.X -P9906 -uusuario -pContrasinal123.
     ```
 
     - `X.X.X.X` é a IP do servidor ao que queremos conectar.
@@ -180,9 +149,7 @@ Na lapela Driver properties lembra mudar o valor de **allowPublicKeyRetrieval** 
 Podes acceder a un manual máis detallado en [🦫 DBeaver e túneles SSH](https://jfsanchez.es/docs/dbeaver-tunel-ssh/) onde tamén aprenderás como realizar un túnel SSH. Este túnel pode ser necesario si o servidor de base de datos está detrás dun firewall.
 
 
-## Comandos útiles dende consola MySQL/MariaDB
-
-### Comandos simples
+## Comandos básicos
 
 - Ver as bases de datos:
     ``` sql
@@ -197,11 +164,19 @@ Podes acceder a un manual máis detallado en [🦫 DBeaver e túneles SSH](https
      show tables;
      ```
 - Ver información do estado do servidor:
-    ```\s```
+    ```
+    \s
+    ```
 - Saír do cliente. Tamén funcionaría: ```quit``` ou ```Crtl+D```:
-    ```\q```
+    ```
+    \q
+    ```
+- Executar un arquivo .sql (útil para recuperar un backup)
+    ``` sql
+    source /ruta/ao/arquivo.sql
+    ```
 
-### Crear usuario e conceder permisos a base de datos
+## Crear usuario, BBDD e permisos
 
 ``` sql
 CREATE USER 'usuario-a-crear'@'%' IDENTIFIED BY 'contrasinal-abc123.';
@@ -209,45 +184,51 @@ GRANT ALL PRIVILEGES ON base-de-datos.* TO 'usuario-a-crear'@'%';
 FLUSH PRIVILEGES;
 ```
 
-### Executar un arquivo .sql (útil para recuperar un backup)
+## Importar BBDD de proba
 
-``` sql
-source /ruta/ao/arquivo.sql
+Debes saber o contrasinal de root (mira arriba).
+
+Este exemplo funciona se seguiches as instruccións e hai un directorio compartido no contedor.
+
+Descargamos dende a máquina as dúas bases de datos de proba
+
+``` bash
+cd $HOME/bd
+wget https://github.com/datacharmer/test_db/releases/download/v1.0.7/test_db-1.0.7.tar.gz
+wget https://downloads.mysql.com/docs/world-db.tar.gz
+tar -xzf test_db-1.0.7.tar.gz
+tar -xzf world-db.tar.gz
+cd test_db
+docker exec -it bbdd /bin/bash
 ```
 
-### Importar unha base de datos de proba
+Agora estamos dentro do docker, conectamos co cliente:
 
-Estas instruccións son para un servidor MariaDB/MySQL executándose dentro doutra máquina (real ou virtual) en caso que instalases MariaDB/MySQL nun docker, estas instruccións debes adaptalas. Probablemente se tes instalado con dockers seríache máis cómodo facer a importación con DBeaver.
+``` bash
+cd /bd/test_db
+mysql -hlocalhost -uroot -p
+```
 
-1. Descargar a BD employees: <https://github.com/datacharmer/test_db/releases/tag/v1.0.7>
+Escribe o contrasinal que tes apuntado para acceder e entrarás na consola de MySQL/MariaDB, despois executa os scripts para crear as bases de datos, os usuarios e dar permisos.
 
-2. Copiar a BBDD ao servidor que teñamos montado (neste exemplo copiamos de local ao servidor con scp, se instalaches con docker o comando cambiará):
-
-    ``` bash
-    scp -i chave-ssh.key employees_db-full-1.0.7.tar.gz usuario@IP-DO-SERVIDOR:/tmp/
-    ```
-
-3. Conectamos co servidor (neste exemplo conectamos por SSH, pero si tes montado un docker, pode que precises engadir/mudar os comandos)
-
-    ``` bash
-    ssh -i chave-ssh.key usuario@IP-DO-SERVIDOR
-	sudo su -
-	cd /tmp
-	tar -xvzf employees_db-full-1.0.7.tar.gz
-	mysql -h localhost
-		source /tmp/employees_db/employees.sql
-		show tables;
-    ```
-
-Se estás a traballar coa versión: employees_db-full-1.0.6.tar.bz2 pode ser que teñas algún problema co **engine**. Neste caso, engadir "default_" diante das dúas liñas en employees.sql axuda. Fonte: [stackoverflow](https://stackoverflow.com/questions/36322903/error-1193-when-following-employees-database-install-tutorial-with-mysql-5-7-1).
+``` sql
+SOURCE employees.sql
+CREATE USER 'empregado'@'%' IDENTIFIED BY 'Exemplar.123';
+GRANT ALL PRIVILEGES ON employees.* TO 'empregado'@'%';
+SOURCE ../world-db/world.sql
+CREATE USER 'mundo'@'%' IDENTIFIED BY 'MundoMundial.456';
+GRANT ALL PRIVILEGES ON world.* TO 'mundo'@'%';
+FLUSH PRIVILEGES;
+SHOW DATABASES;
+```
 
 **Webgrafía**:
 
-- <https://github.com/datacharmer/test_db>
+- <https://dev.mysql.com/doc/employee/en/employees-installation.html> (<https://github.com/datacharmer/test_db>)
 - <https://downloads.mysql.com/docs/world-db.tar.gz>
-- <https://dev.mysql.com/doc/employee/en/employees-installation.html>
 
-## Comando mysqldump para backup (dende shell)
+
+## Backup con MySQLdump
 
 === "Backup dunha BBDD"
 
@@ -260,14 +241,28 @@ Se estás a traballar coa versión: employees_db-full-1.0.6.tar.bz2 pode ser que
     mysqldump -uUSUARIO -pCLAVE --all-databases > YYYY-mm-dd_mysql_backup.sql
     ```
 
-### Conectar a MySQL dende Python
+## Conectar a MySQL dende Python
 
 - <https://github.com/jfsanchez/SBD/blob/main/notebooks/bbdd/mysql.ipynb>
 
 
 ⚠️ **AVISO**: Esta configuración NON pretende ser segura, o seu obxectivo é montar de xeito rápido un contorno para a aprendizaxe. Entre outras cousas deberíamos deshabilitar o usuario root para conexións remotas, borrar as BBDD de proba e impedir o acceso directo ao servidor de base de datos.
 
-## Adicional: Porto aberto?
+## Adicional
+
+**Envío de arquivo a servidor remoto por scp**
+
+Se estiveras a conectar a un servidor remoto que non permite descargar arquivos externos, deberás baixar o script en local e logo copialo ao servidor:
+
+``` bash
+scp -i chave-ssh.key employees_db-full-1.0.7.tar.gz usuario@IP-DO-SERVIDOR:/tmp/
+```
+
+**Problemas de versión (engine)**
+
+Se estás a traballar coa versión: employees_db-full-1.0.6.tar.bz2 pode ser que teñas algún problema co **engine**. Neste caso, engadir "default_" diante das dúas liñas en employees.sql axuda. Fonte: [stackoverflow](https://stackoverflow.com/questions/36322903/error-1193-when-following-employees-database-install-tutorial-with-mysql-5-7-1).
+
+**Porto aberto?**
 
 En GNU/Linux podes ver qué portos están abertos con:
 
@@ -277,7 +272,7 @@ netstat -atun
 
 En docker podes ver as redireccións de portos don `docker inspect`.
 
-No caso de instalación con docker, se ves que non tes aberto o 9906/9907 (segundo o exemplo) no anfitrión ou o 3306 onde teñas MySQL, probablemente debas cambiar o bind-address na configuración de MySQL oy MariaDB.
+No caso de instalación con docker, se ves que non tes aberto o 9906/9907 (segundo o exemplo) no anfitrión ou o 3306 onde teñas MySQL, probablemente debas cambiar o bind-address na configuración de MySQL ou MariaDB.
 
 Edita o arquivo correspondente (en MySQL: /etc/mysql/mysql.conf.d/mysqld.cnf) e mete ou descomenta esta liña:
 

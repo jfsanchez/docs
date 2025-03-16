@@ -13,37 +13,24 @@ Hai dúas operacións básicas que nos interesan:
 
 ## Instalación
 
-0. Precisamos Java 1.8 ou [Amazon Corretto](https://aws.amazon.com/es/corretto).
-
-``` bash
+1. **Descargamos** e **instalamos** Java 1.8 ou [Amazon Corretto](https://aws.amazon.com/es/corretto)
+  ``` bash
   wget https://corretto.aws/downloads/latest/amazon-corretto-21-x64-linux-jdk.deb
   sudo dpkg -i amazon-corretto-21-x64-linux-jdk.deb
-```
+  ```
 
-1. Baixamos a versión 1.4.7:
-
-``` bash
+2. **Baixamos** a versión 1.4.7, **descomprimímola** e metémola no **PATH**:
+  ``` bash
   wget https://archive.apache.org/dist/sqoop/1.4.7/sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz
-```
-
-2. Descomprimimos:
-
-``` bash
   tar -xzf sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz
-```
-
-3. Metemos no PATH:
-
-``` bash
-echo PATH=\$PATH:\$HOME/sqoop-1.4.7.bin__hadoop-2.6.0/bin/ >> $HOME/.bashrc
-```
-
-4. Agora, se executamos sqoop teremos que configurar o **$HADOOP_COMMON_HOME:**
-
-~~~
+  echo PATH=\$PATH:\$HOME/sqoop-1.4.7.bin__hadoop-2.6.0/bin/ >> $HOME/.bashrc
+  source ~/.bashrc
+  ```
+3. Agora, se executamos **sqoop** teremos que configurar o **$HADOOP_COMMON_HOME:**
+  ~~~
   Error: /home/user/sqoop-1.4.7.bin__hadoop-2.6.0/bin/../../hadoop does not exist!
   Please set $HADOOP_COMMON_HOME to the root of your Hadoop installation.
-~~~
+  ~~~
 
 ## Manexo
 
@@ -60,64 +47,90 @@ Imos probar a conectar coa BBDD **world**. Todos os exemplos inclúen esa BBDD. 
 
     ``` bash
     sqoop list-tables --username USUARIO-BD \
-       -P --connect jdbc:mysql://IP-SERVIDOR-MYSQL/world
+       -P --connect jdbc:mysql://IP-SERVIDOR/world
     ```
 
 === "PostgreSQL"
 
     ``` bash
     sqoop list-tables --username USUARIO-BD \
-       -P --connect jdbc:postgresql://IP-SERVIDOR-MYSQL/world
+       -P --connect jdbc:postgresql://IP-SERVIDOR/world
     ```
 
-### Importar datos
+### Importar datos no HDFS
 
-Dirección: RDBMS (BBDD) &rarr; HDFS
+Dirección: RDBMS (BBDD) &rarr; HDFS.
 
-~~~ bash
-sqoop import --username USUARIO-BD --password abc123. \
-  --connect jdbc:mysql://IP-SERVIDOR-MYSQL/world \
-  --table country \
-  --target-dir /user/USUARIO-HADOOP/world \
-  --num-mappers 1
-~~~
+=== "MySQL"
 
-#### Importar en HIVE
+    ``` bash
+    sqoop import --username USUARIO-BD --password abc123. \
+      --connect jdbc:mysql://IP-SERVIDOR/world \
+      --table country \
+      --target-dir /user/USUARIO-HADOOP/world \
+      --num-mappers 1
+    ```
 
-##### Crear táboas en HIVE
+=== "PostgreSQL"
+
+    ``` bash
+    sqoop import --username USUARIO-BD --password abc123. \
+      --connect jdbc:postgresql://IP-SERVIDOR/world \
+      --table country \
+      --target-dir /user/USUARIO-HADOOP/world \
+      --num-mappers 1
+    ```
+
+### Importar compatible con HIVE
+
+#### Crear táboas en HIVE
 
 ~~~ bash
 sqoop create-hive-table \
   --username USUARIO-BD --password PASSWORD-BD \
-  --connect jdbc:mysql://IP-SERVIDOR-MYSQL/world \
+  --connect jdbc:mysql://IP-SERVIDOR/world \
   --table country
 ~~~
 
-##### Meter os datos na estrutura creada
+#### Meter os datos na estrutura creada
 
 ~~~ bash
 sqoop import \
   --username USUARIO-BD --password PASSWORD-BD \
-  --connect jdbc:mysql://IP-SERVIDOR-MYSQL/world \
+  --connect jdbc:mysql://IP-SERVIDOR/world \
   --table country \
   --target-dir /user/USUARIO-HADOOP/country \
   --num-mappers 1 \
   --hive-import
 ~~~
 
-### Exportar datos
+### Exportar datos do HDFS
 
-Dirección: HDFS &rarr; RDBMS (BBDD)
+Dirección: HDFS &rarr; RDBMS (BBDD).
 
-~~~ bash
-sqoop export \
-  --username USUARIO-BD --password PASSWORD-BD \
-  --connect jdbc:mysql://IP-SERVIDOR-MYSQ/world \
-  --table country \
-  --export-dir /user/USUARIO-HADOOP/country \
-  --input-fields-terminated-by ',' \
-  --num-mappers 1
-~~~
+=== "PostgreSQL"
+
+    ``` bash
+    sqoop export \
+      --username USUARIO-BD --password PASSWORD-BD \
+      --connect jdbc:mysql://IP-SERVIDOR/world \
+      --table country \
+      --export-dir /user/USUARIO-HADOOP/country \
+      --input-fields-terminated-by ',' \
+      --num-mappers 1
+    ```
+
+=== "PostgreSQL"
+
+    ``` bash
+    sqoop export \
+      --username USUARIO-BD --password PASSWORD-BD \
+      --connect jdbc:postgresql://IP-SERVIDOR/world \
+      --table country \
+      --export-dir /user/USUARIO-HADOOP/country \
+      --input-fields-terminated-by ',' \
+      --num-mappers 1
+    ```
 
 Resultado (HADOOP):
 

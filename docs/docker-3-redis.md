@@ -12,19 +12,10 @@ docker create volume redis-data
 
 ``` bash
 docker run -d --name redis-stack \
-    -v redis-data:/data \ # (1)!
-    -e REDIS_ARGS="--requirepass 123quetal123" \ # (2)!
+    -v redis-data:/data \
+    -e REDIS_ARGS="--requirepass 123quetal123" \
     -p 6379:6379 -p 8001:8001 \
     redis/redis-stack:latest
-```
-
-1.  Nome do volume, no caso que queiramos persistir os datos.
-2.  Contrasinal.
-
-Copia de aquí o comando se tes problemas coas novas liñas:
-
-``` bash
-docker run -d --name redis-stack -v redis-data:/data -e REDIS_ARGS="--requirepass 123quetal123" -p 6379:6379 -p 8001:8001 redis/redis-stack:latest
 ```
 
 ### (CLI) Conectando a redis dende o propio docker:

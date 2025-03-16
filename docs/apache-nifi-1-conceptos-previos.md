@@ -8,19 +8,20 @@ A seguinte documentación foi elaborada empregando a versión: **2.2.0**.
 
 ![Barra de ferramentas de Apache Nifi](images/nifi/nifi-toolbar.png "Barra de ferramentas de Apache Nifi")
 
-
 ## Procesadores
 
 ### Tipos de procesadores
 
-- Inxesta de datos
-- Enrutamento
-- Base de datos
-- De interacción co sistema operativo
-- Transformación de datos
-- Envío de datos
-- División e agregación
+Poden clasificarse de moitas maneiras, sen embargo os máis relevantes poderían resumirse en:
 
+- **Inxesta de datos**: GetFile, GetFTP, GetKAFKA, GetHTTP, InvokeHTTP, PostHTTP, ListenHTTP...
+- **Enrutamento**: RouteOnAttribute, RouteOnContent, ControlRate, RouteText...
+- **Base de datos**: ExecuteSQL, PutSQL, PutDatabaseRecord, ListDatabaseTables...
+- **De interacción co sistema operativo**: ExecuteScript, ExecuteProcess, ExecuteGroovyScript, ExecuteStreamCommand...
+- **Transformación de datos**: ReplaceText, JoltTransformJSON...
+- **Extracción de atributos**: UpdateAttribute, EvaluateJSONPath, ExtractText, AttributesToJSON...
+- **Envío de datos**: PutEmail, PutKafka, PutSFTP, PutFile, PutFTP...
+- **División e agregación**: SplitText, SplitJson, SplitXml, MergeContent, SplitContent...
 
 ### Estados dun procesador
 
@@ -28,7 +29,6 @@ A seguinte documentación foi elaborada empregando a versión: **2.2.0**.
 - **En execución** &rarr; Activo, realizando unha tarefa.
 - **Deshabilitado** &rarr; Non se pode iniciar a non ser que se active. Útil para modificar.
 - **Con erros/advertencias** &rarr; Falta ou falla algo na configuración.
-
 
 ## Grupos de procesadores/procesamento
 
