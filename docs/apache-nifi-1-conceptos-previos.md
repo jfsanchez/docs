@@ -2,6 +2,10 @@
 
 (documentación en elaboración)
 
+![Apache Nifi](images/nifi/Apache-nifi-logo.svg "Nifi")
+
+Apache Nifi é un software adicado a automatizar o fluxo de datos entre sistemas. Tamén pode ser considerado unha ferramenta **ETL** (**E**xtract/**L**oad/**T**ransform). Web Oficial: <https://nifi.apache.org/>
+
 ## Barra de ferramentas de Apache Nifi
 
 A seguinte documentación foi elaborada empregando a versión: **2.2.0**.

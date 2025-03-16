@@ -52,9 +52,11 @@ nav:
   - "⚝ Apache Spark":
     - "🧾 Instalación": "apache-spark-0-instalacion.md"
   - "💧 Apache NIFI":
-    - "🧾 Instalación": "apache-nifi-0-instalacion.md"
+    - "🧾 Instalación docker": "apache-nifi-0-instalacion.md"
+    - "🧾 Instalación manual": "apache-nifi-0-instalacion-manual.md"
     - "◾ Conceptos previos": "apache-nifi-1-conceptos-previos.md"
     - "👣 Primeiros pasos": "apache-nifi-1-primeiros-pasos.md"
+    - "🎯 Parámetros": "apache-nifi-2-parametros.md"
     - "😼 Control de versións": "apache-nifi-z-control-versions.md"
   - "♾️ Apache Superset": "apache-superset.md"
   - "🇸 Apache Sqoop": "apache-sqoop-0-resumo.md"
