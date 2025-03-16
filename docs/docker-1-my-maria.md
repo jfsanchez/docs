@@ -109,7 +109,7 @@ Se queremos recuperar unha instancia borrada, sempre e cando non borrásemos o s
 === "Conectar co cliente do docker (MySQL)"
 
     ``` bash
-    docker exec -it bbdd mysql -uusuario -pContrasinal123.
+    docker exec -it bbdd mysql -uusuario -pContrasinalMariano123.
     ```
 
     - Podemos engadir `-hX.X.X.X` para conectar con outro equipo.
@@ -117,7 +117,7 @@ Se queremos recuperar unha instancia borrada, sempre e cando non borrásemos o s
 === "Conectar cun cliente doutro host (MySQL)"
 
     ``` bash
-    mysql -hX.X.X.X -P9906 -uusuario -pContrasinal123.
+    mysql -hX.X.X.X -P9906 -uusuario -pContrasinalMariano123.
     ```
 
     - `X.X.X.X` é a IP do servidor ao que queremos conectar.
@@ -125,7 +125,7 @@ Se queremos recuperar unha instancia borrada, sempre e cando non borrásemos o s
 === "Conectar co cliente do docker (MariaDB)"
 
     ``` bash
-    docker exec -it bbdd mariadb -uusuario -pContrasinal123.
+    docker exec -it bbdd mariadb -uusuario -pContrasinalMariano123.
     ```
 
     - Podemos engadir `-hX.X.X.X` para conectar con outro equipo.
@@ -133,10 +133,12 @@ Se queremos recuperar unha instancia borrada, sempre e cando non borrásemos o s
 === "Conectar cun cliente doutro host (MariaDB)"
 
     ``` bash
-    mariadb -hX.X.X.X -P9906 -uusuario -pContrasinal123.
+    mariadb -hX.X.X.X -P9906 -uusuario -pContrasinalMariano123.
     ```
 
     - `X.X.X.X` é a IP do servidor ao que queremos conectar.
+
+**Nota**: Dende consola, en caso de certos caracteres especiais, pódense escapar con barra invertida ou poñer todo o contrasinal entre comillas simples.
 
 ## (GUI) Conectar a MariaDB/MySQL con DBeaver
 
@@ -204,10 +206,17 @@ docker exec -it bbdd /bin/bash
 
 Agora estamos dentro do docker, conectamos co cliente:
 
-``` bash
-cd /bd/test_db
-mysql -hlocalhost -uroot -p
-```
+=== "MySQL"
+    ``` bash
+    cd /bd/test_db
+    mysql -hlocalhost -uroot -p
+    ```
+
+=== "MariaDB"
+    ``` bash
+    cd /bd/test_db
+    mariadb -hlocalhost -uroot -p
+    ```
 
 Escribe o contrasinal que tes apuntado para acceder e entrarás na consola de MySQL/MariaDB, despois executa os scripts para crear as bases de datos, os usuarios e dar permisos.
 
