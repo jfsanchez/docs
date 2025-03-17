@@ -25,7 +25,20 @@ Dentro da lapela **Settings**, en **Parameter Context** poderemos seleccionar o 
 
 Dentro do grupo de procesamento &rarr; click dereito nunha parte libre do canvas &rarr; **Controller Services** e editamos o **DBCPConnectionPool**. Na lapela **Properties** en **Database Driver Location(s)** escribimos #{ e logo prememos Ctrl+Espacio para poder ver a lista de parámetros a seleccionar. Escollemos: `#{MYSQL8_JDBC}`.
 
-Agora, se por calquer motivo mudamos a ruta onde gardamos o JDBC e dita ruta está en varios controis, bastaría con cambiar unha soa vez o paráemtro. Ademáis, para meter esta ruta en novos controis, se nos autocompletaría.
+Agora, se por calquer motivo mudamos a ruta onde gardamos o JDBC e dita ruta está en varios controis, bastaría con cambiar unha soa vez o parámetro. Ademáis, para meter esta ruta en novos controis, se nos autocompletaría.
+
+Por exemplo, sería útil definir:
+
+- MONGO_SERVERmongodb+srv://xxx.yyy.mongodb.net
+- MONGO_USER
+- *MONGO_PASSWORD* 
+- MYSQL_CLASSNAME com.mysql.cj.jdbc.Driver
+- MYSQL_SERVER jdbc:mysql://X.X.X.X:3306/nifi
+- MYSQL_USER
+- *MYSQL_PASSWORD*
+- MYSQL8_JDBC /opt/nifi/compartido/jdbc/mysql-connector-j-8.4.0.jar
+- MYSQL9_JDBC /opt/nifi/compartido/jdbc/mysql-connector-j-9.2.0.jar
+
 
 ## Xestor de parámetros / Xestión de segredos
 
