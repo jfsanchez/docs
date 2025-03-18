@@ -5,7 +5,7 @@
 Creamos o volume para persisitir os datos (**opcional**):
 
 ``` bash
-docker create volume redis-data
+docker volume create redis-data
 ```
 
 ### Creamos o docker:
