@@ -61,11 +61,15 @@ Por exemplo, se quixéramos persistir os datos no **RedisTimeSeries**, podemos e
 
  - **Autenticarse**: `AUTH contrasinal`
  - **Probar se estamos conectados**: `PING`
- - **Almacenar unha clave (KEY-VALUE)**: `set clave valor`
+ - **Almacenar unha clave (KEY-VALUE)**: `set clave valor` 
  - **Recuperar unha clave**: `get clave`
+ - **Almacenar datos JSON**: `JSON.SET clave_redis ruta_json($) valor_json`
+ - **Recuperar datos JSON**: `JSON.GET clave_redis ruta_json($)`
  - **Establecer ou mudar o contrasinal**: `config set requirepass 123quetal123`
  - **Crear un usuario**: `acl setuser ...`
  - **Pedir clave no CLI**: `config set requirepass 123quetal123`
+
+
 
 ## Uso con Python
 
