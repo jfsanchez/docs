@@ -61,8 +61,10 @@ Por exemplo, se quixéramos persistir os datos no **RedisTimeSeries**, podemos e
 
  - **Autenticarse**: `AUTH contrasinal`
  - **Probar se estamos conectados**: `PING`
- - **Almacenar unha clave (KEY-VALUE)**: `set clave valor`
+ - **Almacenar unha clave (KEY-VALUE)**: `set clave valor` 
  - **Recuperar unha clave**: `get clave`
+ - **Almacenar datos JSON**: `JSON.SET clave $ valor_json`
+ - **Recuperar datos JSON**: `JSON.GET clave $`
  - **Establecer ou mudar o contrasinal**: `config set requirepass 123quetal123`
  - **Crear un usuario**: `acl setuser ...`
  - **Pedir clave no CLI**: `config set requirepass 123quetal123`
