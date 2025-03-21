@@ -6,7 +6,13 @@ Este contorno permite facer os exercicios da clase. Imos instalar algunhas libra
 
 Pasos:
 
-1. Baixa miniconda <https://docs.conda.io/projects/miniconda/en/latest/> e instálao no teu equipo.
+1. Baixa miniconda <https://repo.anaconda.com/miniconda/> e instálao no teu equipo.
+    ``` bash
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    chmod a+rx Miniconda3-latest-Linux-x86_64.sh
+    ./Miniconda3-latest-Linux-x86_64.sh
+    ```
+
 2. (*Opcional*) Mete miniconda no **PATH** de Microsoft Windows. O instalador di que pode dar problemas, pero é só se temos configuracións previas que empreguen Python e nalgúns casos moi especiais (mira os pasos abaixo).
 3. Actualiza tódolos paquetes do contorno base para que non dea problemas:
     ``` bash
@@ -32,6 +38,9 @@ Pasos:
        psycopg2
     ```
 
+    ``` bash
+    conda install pip
+    ```
 
 ## Engadir miniconda ao PATH
 
