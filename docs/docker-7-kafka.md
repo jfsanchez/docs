@@ -101,6 +101,10 @@ Por outra banda, Apache Kafka está deseñado para ser depregado como un cluster
 - Produtor
 - Consumidor
 
+E un proxecto que se emprega do que poderíamos falar aparte:
+
+- Zookeeper
+
 Outros conceptos:
 
 - Topic
