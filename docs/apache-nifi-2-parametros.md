@@ -1,5 +1,6 @@
 # 💧 Apache Nifi &mdash; 🎯 Parámetros e segredos
 
+![Logo Apache Nifi](images/nifi/Apache-nifi-logo.svg#derecha "Logo Apache Nifi")
 
 ## Asociar un contexto de parámetros a grupo de procesamento
 

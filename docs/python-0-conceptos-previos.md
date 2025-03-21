@@ -1,5 +1,7 @@
 # 🗂️ Arquivos en Python
 
+![Logo Python](images/python/python-logo-generic.svg#derecha "Logo Python")
+
 ## Rutas absolutas e relativas en Microsoft Windows e GNU/Linux
 
 Así de xeito rápido poderíamos definir:

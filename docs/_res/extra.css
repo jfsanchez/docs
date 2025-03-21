@@ -6,6 +6,11 @@ pre[class*="language-"] {
        max-height: 32em !important; 
 }
 
+img[src*="#derecha"] {
+  width: 150px;
+  float:right;
+}
+
 /* .md-clipboard {
   display: none !important;
 }

@@ -1,5 +1,7 @@
 # 🔵 Docker — Guía básica
 
+![Logotipo docker](images/docker/Docker_container_engine_logo.svg#derecha "Logotipo docker")
+
 - Baseado en: <https://docs.docker.com/engine/install/debian/>
 - Tamén hai dispoñible unha presentación de [🐳 Docker / Contedores](https://jfsanchez.es/docencia/docker){:target="_blank"}
 

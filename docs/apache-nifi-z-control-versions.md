@@ -1,5 +1,7 @@
 # 💧 Apache Nifi &mdash; 😼 Control de versións
 
+![Logo Apache Nifi](images/nifi/Apache-nifi-logo.svg#derecha "Logo Apache Nifi")
+
 Apache Nifi permite gardar as versións dos grupo de procesamento ou ben no Nifi Registry, Github ou Gitlab. Esto permite gardar o estado de cada grupo de procesamento permitindo volver atrás.
 
 Tamén se podería facer un backup do arquivo flowfile.xml.gz pero isto implica facer unha copia manual de cada vez. Se queremos so unha copia, podemos facer click dereito no Canvas &rarr; **Download Flow Definition** &rarr; **With/Without External Services**.

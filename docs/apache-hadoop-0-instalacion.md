@@ -1,4 +1,6 @@
-# 🧾 🐘 Apache Hadoop - Instalación
+# 🐘 Apache Hadoop &mdash; 🧾 Instalación
+
+![Logo Apache Hadoop](images/hadoop/Hadoop_logo_new.svg#derecha "Logo Apache Hadoop")
 
 Instalación de Apache Hadoop empregando ClusterShell
 

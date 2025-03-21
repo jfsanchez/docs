@@ -1,5 +1,7 @@
 # 💧 Apache Nifi &mdash; Instalación
 
+![Logo Apache Nifi](images/nifi/Apache-nifi-logo.svg#derecha "Logo Apache Nifi")
+
 ⚠️ Antes de seguir [asegúrate de ter instalado docker no equipo](docker-0-base-simple.md).
 
 ## Instalación rápida de Apache Nifi empregando Docker

@@ -1,5 +1,7 @@
 # 💧 Apache Nifi &mdash; Instalación manual
 
+![Logo Apache Nifi](images/nifi/Apache-nifi-logo.svg#derecha "Logo Apache Nifi")
+
 Empregaremos o software integrándoo co Apache Hadoop do CESGA, de xeito que poidamos ler e escribir do HDFS.
 
 Instalaremos sobre o noso usuario no servidor: `hadoop.cesga.es`, é conveniente que conectemos coa VPN para evitar problemas cos portos.

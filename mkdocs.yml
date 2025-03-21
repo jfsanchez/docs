@@ -58,6 +58,7 @@ nav:
     - "👣 Primeiros pasos": "apache-nifi-1-primeiros-pasos.md"
     - "🎯 Parámetros": "apache-nifi-2-parametros.md"
     - "😼 Control de versións": "apache-nifi-z-control-versions.md"
+  - "➿ Apache Kafka": "docker-7-kafka.md"
   - "♾️ Apache Superset": "apache-superset.md"
   - "🇸 Apache Sqoop": "apache-sqoop-0-resumo.md"
   - "🐍 Conda e Python":
@@ -73,7 +74,6 @@ nav:
     - "🧾 PostgreSQL": "docker-4-postgresql.md"
     - "🧾 Microsoft SQL Server": "docker-5-mssql-server.md"
     - "🧾 Oracle Free": "docker-6-oracle.md"
-    - "🧾 Kafka": "docker-7-kafka.md"
     - "📘 La guía refinitiva": "docker-z-guia-refinitiva.md"
   - "☁️ Nube/Cloud/Openstack":
     - "☁️ Introdución": "nube-0-intro.md"

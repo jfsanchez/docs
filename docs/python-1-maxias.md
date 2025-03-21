@@ -1,6 +1,6 @@
 # 🪄 Ipython: Maxias pitónicas
 
-![images/python/ipython.png](images/python/ipython.png)
+![Logo IPython](images/python/ipython.png#derecha "Logo IPython")
 
 ## E outras herbas
 

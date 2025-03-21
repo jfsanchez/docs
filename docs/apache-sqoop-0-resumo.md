@@ -1,6 +1,6 @@
 # 🇸 Apache sqoop
 
-![Logotipo de Apache Sqoop](images/sqoop/Apache_Sqoop_logo.svg "Logotipo de Apache Sqoop")
+![Logotipo de Apache Sqoop](images/sqoop/Apache_Sqoop_logo.svg#derecha "Logotipo de Apache Sqoop")
 
 [Apache sqoop](https://sqoop.apache.org/) é un proxecto xa obsoleto, a última publicación data do 18 de xaneiro de 2019. [En 2021, foi movido ao "ático" de Apache](https://attic.apache.org/projects/sqoop.html), o lugar onde se atopan os proxectos retirados ou que finalizaron o seu ciclo de vida ou non teñen suficientes desenvolvedores activos involucrados.
 

@@ -1,5 +1,7 @@
 # ⚝ Apache Spark - Instalación
 
+![Logo Apache Spark](images/spark/Apache_Spark_logo.svg#derecha "Logo Apache Spark")
+
 Faremos unha instalación de Apache Spark en 4 máquinas con **ClusterShell**, un programa que permite enviar á vez comandos a varias máquinas.
 
 A presente instalación contempla 1 master e 3 nodos (ou 4 nodos de actuar o máster tamén como worker). Se tes un número diferente de máquinas, deberás mudar nos comandos a parte do **[1-4]** ou **[2-4]** adaptándoo ás túas necesidades.

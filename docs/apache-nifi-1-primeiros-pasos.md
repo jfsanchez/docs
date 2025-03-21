@@ -1,6 +1,8 @@
 
 # 💧 Apache Nifi &mdash; 👣 Primeiros pasos
 
+![Logo Apache Nifi](images/nifi/Apache-nifi-logo.svg#derecha "Logo Apache Nifi")
+
 ## Requisitos previos
 
 Lembra seguir a [guía de instalación de Apache Nifi](docker-8-apache-nifi.md) antes de continuar con este documento.

@@ -1,5 +1,7 @@
 # 🐍 Conda: Contorno BigData
 
+![Anaconda Logo](images/conda-0/Anaconda_Logo.png#derecha "Anaconda Logo")
+
 Este contorno permite facer os exercicios da clase. Imos instalar algunhas librarías básicas, o jupyterlab (para os notebook) e configurar o Visual Studio Code (vscode/code) por comodidade.
 
 Pasos:

@@ -1,5 +1,7 @@
 # 🔲 Apache Hadoop - Comandos
 
+![Logo Apache Hadoop](images/hadoop/Hadoop_logo_new.svg#derecha "Logo Apache Hadoop")
+
 [Apache Hadoop](https://hadoop.apache.org), é un [framework](https://es.wikipedia.org/wiki/Framework) que permite o procesamento distribuido de grande volume de datos sobre [clústeres de computadoras](https://es.wikipedia.org/wiki/Cl%C3%BAster_de_computadoras) empregando modelos sinxelos de programación.
 
 O **HDFS** ou **H**adoop **D**istributed **F**ile **S**ystem é un sistema de arquivos distribuído empregado por Apache Hadoop que espalla os datos polos distintos discos dos servidores que forman o clúster de Hadoop.
