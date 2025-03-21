@@ -1,4 +1,7 @@
 # 🐧 WSL
+
+![Tux](images/linux/tux.svg#derecha Tux)
+
 **W**indows **S**ubsystem for **L**inux (WSL)
 
 ## Requisitos previos

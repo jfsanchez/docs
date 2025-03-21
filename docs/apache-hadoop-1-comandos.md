@@ -1,4 +1,4 @@
-# 🔲 Apache Hadoop - Comandos
+# 🐘 Apache Hadoop &mdash 🔲 Comandos
 
 ![Logo Apache Hadoop](images/hadoop/Hadoop_logo_new.svg#derecha "Logo Apache Hadoop")
 

@@ -1,5 +1,7 @@
 # 🧾 Redis
 
+![Logo Redis](images/redis/Redis_Logo_Red_RGB.svg#derecha "Logo Redis")
+
  - Baseado na imaxe oficial: <https://hub.docker.com/r/redis/redis-stack-server>
 
 Creamos o volume para persisitir os datos (**opcional**):

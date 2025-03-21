@@ -1,4 +1,4 @@
-# 💧 Apache Nifi &mdash; Instalación
+# 💧 Apache Nifi &mdash; 🐳 Instalación
 
 ![Logo Apache Nifi](images/nifi/Apache-nifi-logo.svg#derecha "Logo Apache Nifi")
 

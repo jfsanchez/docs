@@ -1,5 +1,7 @@
 # 🧾 MySQL / MariaDB
  
+ ![Logo MariaDB](images/mysql-server-docker/mariadb-logo.svg#derecha "Logo MariaDB")
+
  - Baseado nas imaxes oficiais:
      - MySQL: <https://hub.docker.com/_/mysql>
      - MariaDB: <https://hub.docker.com/_/mariadb>

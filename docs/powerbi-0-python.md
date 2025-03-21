@@ -1,5 +1,7 @@
 # 📶 PowerBi e Python
 
+![Logo PowerBI](images/powerbi/Power-BI.svg#derecha "Logo PowerBI")
+
 ## Crear un novo contorno de conda para Microsoft PowerBi
 
 ``` bash
