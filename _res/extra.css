@@ -1,0 +1,22 @@
+.md-grid {
+max-width: initial;
+}
+
+pre[class*="language-"] {
+       max-height: 32em !important; 
+}
+
+img[src*="#derecha"] {
+  width: 150px;
+  float:right;
+}
+
+/* .md-clipboard {
+  display: none !important;
+}
+
+.md-typeset pre>code {
+   overflow: unset !important;
+   padding: unset !important;
+} */
+/* From: <https://readthedocs.vinczejanos.info/Blog/2021/10/01/How_to_use_MKdocs/> */
