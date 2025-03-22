@@ -11,14 +11,15 @@ Lanzamos un novo contedor **brokerkafkiano** que escoita no porto 9092.
 ``` bash
 docker run -d  \
   --name brokerkafkiano \
+  --hostname brokerkafkiano.local \
   -p 9092:9092 -p 9093:9093 \
   -e KAFKA_NODE_ID=1 \
   -e KAFKA_PROCESS_ROLES=broker,controller \
   -e KAFKA_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093 \
-  -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092 \
+  -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://brokerkafkiano.local:9092 \
   -e KAFKA_CONTROLLER_LISTENER_NAMES=CONTROLLER \
   -e KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT \
-  -e KAFKA_CONTROLLER_QUORUM_VOTERS=1@localhost:9093 \
+  -e KAFKA_CONTROLLER_QUORUM_VOTERS=1@brokerkafkiano.local:9093 \
   -e KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1 \
   -e KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=1 \
   -e KAFKA_TRANSACTION_STATE_LOG_MIN_ISR=1 \
@@ -28,7 +29,7 @@ docker run -d  \
   apache/kafka:latest
 ```
 
-⚠️ O nome **localhost** debería ser cambiado por un nome DNS ou nome presente no etc/hosts que se resolvese ben dende tódolos sitios que conecten con Kafka.
+⚠️ O nome **brokerkafkiano.local** debería ser cambiado por un nome DNS ou nome presente no `etc/hosts` que se resolvese ben dende tódolos sitios que conecten con Kafka.
 
 
 ## Crear un topic
@@ -38,7 +39,7 @@ Empregando o script `kafka-topics.sh` crearemos o topic (tema) **metamorfosis**.
 ``` bash
 docker exec -it brokerkafkiano \
   /opt/kafka/bin/kafka-topics.sh \
-  --bootstrap-server localhost:9092 \
+  --bootstrap-server brokerkafkiano.local:9092 \
   --create --topic metamorfosis
 ```
 
@@ -49,7 +50,7 @@ Imos escribir unha serie de mensaxes no produtor, aínda que ninguén estea susc
 ``` bash
 docker exec -it brokerkafkiano \
 	/opt/kafka/bin/kafka-console-producer.sh \
-  	--bootstrap-server localhost:9092 \
+  	--bootstrap-server brokerkafkiano.local:9092 \
 	--topic metamorfosis
 ```
 Agora poderemos escribir algúns textos, por exemplo:
@@ -70,7 +71,7 @@ Os datos anteriores seguen en Kafka e podemos ter acceso ao topic dende o inicio
 ``` bash
 docker exec --interactive -it brokerkafkiano \
 	/opt/kafka/bin/kafka-console-consumer.sh \
-	--bootstrap-server localhost:9092 \
+	--bootstrap-server brokerkafkiano.local:9092 \
 	--topic metamorfosis \
 	--from-beginning
 ```
