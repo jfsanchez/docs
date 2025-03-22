@@ -8,7 +8,7 @@
 
 ### Instalación
 
-E recomendable crear un volume previamente cun nome para ter localizado onde temos os datos e que non se borre se executmaos un prune.
+É recomendable crear previamente un volume cun nome para ter localizado onde temos os datos e que non se borre se executamos un `docker volume prune`.
 
 Tamén imos crear un directorio compartido, deste xeito resultará máis fácil importar as bases de datos de proba sen ter que instalar outro cliente ou ter problemas por non estar no directorio correcto durante a importación.
 

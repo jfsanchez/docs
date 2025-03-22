@@ -46,11 +46,33 @@ markdown_extensions:
   - md_in_html
 nav:
   - "📚 Inicio — Presentacións": "index.md"
+  - "👷 Contorno/Configuracións":
+      - "🐍 Contorno BigData": "conda-0-config-basica.md"
+      - "🐧 WSL": "windows-wsl.md"
+      - "🔵 Docker": "docker-0-base-simple.md"
+      - "🐳 Bases de Datos":
+        - "🧾 MySQL / MariaDB": "docker-1-my-maria.md"
+        - "🧾 PostgreSQL": "docker-4-postgresql.md"
+        - "🧾 MongoDB": "docker-2-mongodb.md"
+        - "🧾 Redis": "docker-3-redis.md"
+        - "🧾 Microsoft SQL Server": "docker-5-mssql-server.md"
+        - "🧾 Oracle Free": "docker-6-oracle.md"
+      - "🦫 DBeaver e túneles SSH": "dbeaver-tunel-ssh.md"
+      - "🔑 SSH e túneles": "ssh-0-chaves-tuneles.md"
+      - "☕ Java/OpenJDK/Corretto": "amazon-corretto-java-0-instalacion.md"
+      - "🪄 Ipython máxico": "python-1-maxias.md"
+      - "🗂️ Arquivos en Python": "python-0-conceptos-previos.md"
+      - "📘 Docker ++": "docker-z-guia-refinitiva.md"
+  - "🍀 Apache Airflow": "apache-airflow-0-instalacion.md"
   - "🐘 Apache Hadoop":
     - "👉️ Instalación": "apache-hadoop-0-instalacion.md"
     - "🔲 Comandos": "apache-hadoop-1-comandos.md"
-  - "⚝ Apache Spark":
-    - "👉️ Instalación": "apache-spark-0-instalacion.md"
+  - "➿ Apache Kafka": 
+    - "🐳 Instalación docker": "apache-kafka-0-instalacion-docker.md"
+    - "🐜️ Conceptos básicos": "apache-kafka-1-conceptos-basicos.md"
+    - "🐍 Kafka e Python" : "apache-kafka-2-python.md"
+    - "⚝ Kafka e Spark": "apache-kafka-3-spark.md"
+    - "💧 Kafka e Nifi": "apache-kafka-4-nifi.md"
   - "💧 Apache NIFI":
     - "🐳 Instalación docker": "apache-nifi-0-instalacion.md"
     - "👉️ Instalación manual": "apache-nifi-0-instalacion-manual.md"
@@ -58,33 +80,18 @@ nav:
     - "👣 Primeiros pasos": "apache-nifi-1-primeiros-pasos.md"
     - "🎯 Parámetros": "apache-nifi-2-parametros.md"
     - "😼 Control de versións": "apache-nifi-z-control-versions.md"
-  - "➿ Apache Kafka": "docker-7-kafka.md"
+  - "⚝ Apache Spark":
+    - "👉️ Instalación": "apache-spark-0-instalacion.md"
   - "♾️ Apache Superset": "apache-superset.md"
   - "🇸 Apache Sqoop": "apache-sqoop-0-resumo.md"
-  - "🐍 Conda e Python":
-    - "🧾 Contorno BigData": "conda-0-config-basica.md"
-    - "🪄 Ipython máxico": "python-1-maxias.md"
-    - "🗂️ Arquivos en Python": "python-0-conceptos-previos.md"
-  - "🦫 DBeaver e túneles SSH": "dbeaver-tunel-ssh.md"
-  - "🐳 Docker":
-    - "🔵 Guía básica": "docker-0-base-simple.md"
-    - "🧾 MySQL / MariaDB": "docker-1-my-maria.md"
-    - "🧾 MongoDB": "docker-2-mongodb.md"
-    - "🧾 Redis": "docker-3-redis.md"
-    - "🧾 PostgreSQL": "docker-4-postgresql.md"
-    - "🧾 Microsoft SQL Server": "docker-5-mssql-server.md"
-    - "🧾 Oracle Free": "docker-6-oracle.md"
-    - "📘 La guía refinitiva": "docker-z-guia-refinitiva.md"
   - "☁️ Nube/Cloud/Openstack":
     - "☁️ Introdución": "nube-0-intro.md"
-    - "🔑 SSH e túneles": "ssh-0-chaves-tuneles.md"
     - "➕ Crear Instancia": "nube-1-openstack-crear-lanzar-instancia.md"
     - "💿 Volúmenes": "nube-2-openstack-volumes.md"
     - "🛡️ Grupos de seguridade": "nube-3-openstack-grupos-seguridade.md"
     - "⛈️ Recuperación": "nube-4-openstack-recovey.md"
     - "🐢 SWAP": "nube-5-openstack-crear-swap.md"
-  - "📶 PowerBi e Python": "powerbi-0-python.md"
-  - "🐧 WSL": "windows-wsl.md"
+  - "📶 Microsoft PowerBi": "powerbi-0-python.md"
   - "🗒️ Plantillas docencia": "https://github.com/jfsanchez/docencia/tree/main/libreta"
 extra_css:
   - _res/extra.css

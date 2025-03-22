@@ -1,5 +1,7 @@
 # 🧾 PostgreSQL
 
+![Logo PostgreSQL](images/postgresql/PostgreSQL_logo.3colors.svg#derecha "Logo PostgreSQL")
+
 - Baseado na imaxe oficial: <https://hub.docker.com/_/postgres>
 
 ## Instalación co docker

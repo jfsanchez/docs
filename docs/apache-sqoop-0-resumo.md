@@ -13,13 +13,9 @@ Hai dúas operacións básicas que nos interesan:
 
 ## Instalación
 
-1. **Descargamos** e **instalamos** Java 1.8 ou [Amazon Corretto](https://aws.amazon.com/es/corretto)
-  ``` bash
-  wget https://corretto.aws/downloads/latest/amazon-corretto-21-x64-linux-jdk.deb
-  sudo dpkg -i amazon-corretto-21-x64-linux-jdk.deb
-  ```
+1. [Sigue as instruccións para instalar Amazon Corretto](amazon-corretto-java-0-instalacion.md).
 
-2. **Baixamos** a versión 1.4.7, **descomprimímola** e metémola no **PATH**:
+2. **Baixamos** a última versión de Apache Sqoop: 1.4.7, **descomprimímola** e metémola no **PATH**:
   ``` bash
   wget https://archive.apache.org/dist/sqoop/1.4.7/sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz
   tar -xzf sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz
@@ -108,7 +104,7 @@ sqoop import \
 
 Dirección: HDFS &rarr; RDBMS (BBDD).
 
-=== "PostgreSQL"
+=== "MySQL"
 
     ``` bash
     sqoop export \

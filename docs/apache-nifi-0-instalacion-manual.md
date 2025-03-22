@@ -2,13 +2,7 @@
 
 ![Logo Apache Nifi](images/nifi/Apache-nifi-logo.svg#derecha "Logo Apache Nifi")
 
-Empregaremos o software integrándoo co Apache Hadoop do CESGA, de xeito que poidamos ler e escribir do HDFS.
-
-Instalaremos sobre o noso usuario no servidor: `hadoop.cesga.es`, é conveniente que conectemos coa VPN para evitar problemas cos portos.
-
-Cando conectamos con algún servizo do CESGA por SSH, en realidade estamos nun nodo de login, dende o que accedemos aos servizos. Esto implica que podemos chegar a ter unha IP interna diferente incluso se abrimos dúas sesións ao «mesmo» host.
-
-Ten en conta que Nifi abrirá un porto e exporá o seu servizo https á rede que lle indiquemos. Precisarás coñecer a IP cando esteas a cambiar os arquivos de configuración.
+Esta instalación é xenérica para case calquera distribución de GNU/Linux. Recoméndase empregar o docker por ser máis cómodo e rápido.
 
 ## Aviso previo
 
@@ -16,93 +10,47 @@ Ten en conta que Nifi abrirá un porto e exporá o seu servizo https á rede que
 
 ## Descarga, verificación e outras operacións
 
-Precisamos unha versión de Java máis recente, imos empregar a versión 11 de Amazon Corretto (A versión 21 de Corretto en decembro de 2023, está a dar problemas coa execución de Nifi na contorna do CESGA).
+Ollo coa versión de Java, dependendo da versión de Apache Nifi 1.2 ou 2.x precisaremos a versión 11 ou 21 de Amazon Corretto respectivamente.
 
-Descargamos Amazon Corretto v11 e descomprimimos:
+1. [Sigue as instruccións para instalar Amazon Corretto](amazon-corretto-java-0-instalacion.md).
 
-``` bash
-wget https://corretto.aws/downloads/latest/amazon-corretto-11-x64-linux-jdk.tar.gz
-tar -xzf amazon-corretto-11-x64-linux-jdk.tar.gz
-```
+2. Descargamos Apache Nifi 1.24.0 e o seu arquivo de firma (asc):
 
-Creamos un directorio local bin no que poñeremos tódalas ferramentas necesarias:
+    ``` bash
+    wget https://dlcdn.apache.org/nifi/1.24.0/nifi-1.24.0-bin.zip --no-check-certificate
+    wget https://dlcdn.apache.org/nifi/1.24.0/nifi-1.24.0-bin.zip.asc --no-check-certificate
+    ```
 
-``` bash
-mkdir bin
-```
+2. Comprobar a firma (e por tanto a integridade do arquivo e que non foi alterado) é unha boa práctica, así que primeiro baixamos a chave SSH coa que foi firmado o arquivo:
 
-Descargamos Apache Nifi 1.24.0 e o seu arquivo de firma (asc):
+    ``` bash
+    gpg --keyserver pgpkeys.mit.edu --recv-key 0C07C6D5
+    ```
 
-``` bash
-wget https://dlcdn.apache.org/nifi/1.24.0/nifi-1.24.0-bin.zip --no-check-certificate
-wget https://dlcdn.apache.org/nifi/1.24.0/nifi-1.24.0-bin.zip.asc --no-check-certificate
-```
+3. E verificamos que coincide:
 
-Comprobar a firma (e por tanto a integridade do arquivo e que non foi alterado) é unha boa práctica, así que primeiro baixamos a chave SSH coa que foi firmado o arquivo:
+    ``` bash
+    gpg --verify nifi-1.24.0-bin.zip.asc nifi-1.24.0-bin.zip
+    ```
 
-``` bash
-gpg --keyserver pgpkeys.mit.edu --recv-key 0C07C6D5
-```
+    Se todo coincide dirá "Good signature from ...". En caso de non coincidir a sinatura, debemos comprobar de novo os arquivos, volvelos baixar, revisar o sitio oficial e buscar outra descarga, etc.
 
-E verificamos que coincide:
+4. Descomprimimos Apache Nifi e movemos Apache Nifi dentro do directorio bin que temos creado:
 
-``` bash
-gpg --verify nifi-1.24.0-bin.zip.asc nifi-1.24.0-bin.zip
-```
+    ``` bash
+    unzip nifi-1.24.0-bin.zip
+    mv nifi-1.24.0 bin/
+    ```
 
-Se todo coincide dirá "Good signature from ...". En caso de non coincidir a sinatura, debemos comprobar de novo os arquivos, volvelos baixar, revisar o sitio oficial e buscar outra descarga, etc.
+5. Finalmente facemos un pouco de limpieza:
 
-Descomprimimos Apache Nifi:
-
-``` bash
-unzip nifi-1.24.0-bin.zip
-```
-
-Agora imos copiar tanto Amazon Corretto como Apache Nifi dentro do directorio bin que temos creado
-
-``` bash
-mv amazon-corretto-11.0.21.9.1-linux-x64 nifi-1.24.0 bin/
-```
-
-Finalmente facemos un pouco de limpieza:
-
-``` bash
-rm nifi-1.24.0-bin.zip nifi-1.24.0-bin.zip.asc
-```
+    ``` bash
+    rm nifi-1.24.0-bin.zip nifi-1.24.0-bin.zip.asc
+    ```
 
 ## Configuración
 
-Debemos configurar varias partes para que funcione:
-
-- Variables do contorno: PATH e JAVA_HOME
-- Apache Nifi (env e arquivo de configuración)
-
-### Configuración do PATH
-
-Imos configurar as variables de contorno: `PATH` e `JAVA_HOME`. Aínda que non é absolutamente necesario (posto que imos sobreescribir estes cambios tamén en Nifi) si que é conveniente por si empregamos outros programas que queremos que fagan uso de esta versión de OpenJDK.
-
-Editamos o arquivo: $HOME/.bash_profile e engadimos ao final as liñas:
-
-``` bash title="$HOME/.bash_profile"
-export PATH=$HOME/bin:$HOME/bin/amazon-corretto-11.0.21.9.1-linux-x64/bin:$PATH
-export JAVA_HOME=$HOME/bin/amazon-corretto-11.0.21.9.1-linux-x64/
-```
-
-Agora temos dúas opcións: Ou sair e volver a entrar (logout e login) ou empregar o comando . ou source co arquivo .bash_profile:
-
-``` bash
-source ~/.bash_profile
-```
-
-ou
-
-```
-. ~/.bash_profile
-```
-
-### Configuración de Apache Nifi
-
-Precisamos mudar dous arquivos:
+Debemos configurar Apache Nifi. Precisamos mudar dous arquivos:
 
 - bin/nifi-env.sh
 - conf/nifi.properties
@@ -116,7 +64,7 @@ nano $HOME/bin/nifi-1.24.0/bin/nifi-env.sh
 Teremos que indicarlle que máquina de Java coller (descomentamos se fai falta o JAVA_HOME e poñémolo como segue):
 
 ``` bash
-export JAVA_HOME="$HOME/bin/amazon-corretto-11.0.21.9.1-linux-x64/"
+export JAVA_HOME="$HOME/bin/amazon-corretto-latest/"
 ```
 
 Agora debemos configurar no arquivo `nifi.properties` o porto https, a IP na que vai a escoitar e o interfaz por defecto. Por defecto Apache Nifi abre un porto de xestión aleatorio, máis non abre o porto para a interfaz web.
@@ -183,7 +131,7 @@ cat $HOME/bin/nifi-1.24.0/logs/nifi-app.log| grep Generated
 
 Con eses datos xa podemos entrar nun navegador web na IP do nodo do paso anterior (no meu exemplo: https://10.10.10.101:64801). Por favor non esquezas o **https**.
 
-Cando remates, **antes de desconectarte do servidor de SSH**, non esquezas executar un:
+Para parar Apache Nifi executaremos:
 
 ``` bash
 ./nifi.sh stop

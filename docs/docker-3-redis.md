@@ -32,7 +32,7 @@ Se non especificamos o contrasinal con `-a 123quetal123` en liña de comandos, p
 Dentro da consola de texto de redis, creamos un usuario:
 
 ```
-acl setuser usuarioredis >contrasinal123inseguro on allchannels allkeys +get +set +del +info +scan +exists +hset +type +expire +getrange +hlen +hscan +hdel +sadd +srem +scard +sscan +sismember +lpush +llen +lset +rpushx +lrange +zrange +zadd +xadd +zcard +json.set +json.get +slowlog|get +config|get +xinfo|stream
+acl setuser usuarioredis >contrasinal123inseguro on allchannels allkeys +get +set +del +info +scan +exists +hset +type +expire +getrange +hlen +hscan +hdel +sadd +srem +scard +sscan +sismember +lpush +llen +lset +rpushx +lrange +zrange +zadd +xadd +zcard +json.set +json.get +slowlog +hget|get +config|get +xinfo|stream
 ```
 
 ``` bash
@@ -67,10 +67,11 @@ Por exemplo, se quixéramos persistir os datos no **RedisTimeSeries**, podemos e
  - **Recuperar unha clave**: `get clave`
  - **Almacenar datos JSON**: `JSON.SET clave $ valor_json`
  - **Recuperar datos JSON**: `JSON.GET clave $`
+ - **Recuperar datos HASH**: `HGET clave $`
  - **Establecer ou mudar o contrasinal**: `config set requirepass 123quetal123`
  - **Crear un usuario**: `acl setuser ...`
  - **Pedir clave no CLI**: `config set requirepass 123quetal123`
-
+ - **Mostrar as claves**: `keys *`
 ## Uso con Python
 
 **Instalar** as librarías con conda para poder conectar a redis:

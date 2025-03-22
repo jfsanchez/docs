@@ -1,12 +1,12 @@
 # 🐍 Conda: Contorno BigData
 
-![Anaconda Logo](images/conda-0/Anaconda_Logo.png#derecha "Anaconda Logo")
+![Logo Anaconda](images/conda-0/Anaconda_Logo.png#derecha "Logo Anaconda")
 
 Este contorno permite facer os exercicios da clase. Imos instalar algunhas librarías básicas, o jupyterlab (para os notebook) e configurar o Visual Studio Code (vscode/code) por comodidade.
 
 Pasos:
 
-1. Baixa miniconda <https://repo.anaconda.com/miniconda/> e instálao no teu equipo.
+1. Baixa miniconda <https://repo.anaconda.com/miniconda/> e instálao no teu equipo. Para Microsoft Windows baixa o instalable, para GNU/Linux emprega:
     ``` bash
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
     chmod a+rx Miniconda3-latest-Linux-x86_64.sh
@@ -78,11 +78,15 @@ Mirar cal das dúas aplica (mira os directorios e busca onde tes conda instalado
 
 ## Configurar Visual Studio Code (vscode) con conda e jupyterlab
 
+![Logo VSCode](images/vscode/vscode.svg#derecha "Logo VSCode")
+
 ### Instalar plugin de jupyterlab
 
 Selecciona na roda de configuración (abaixo, esquerda) a opción *"Extensiones"*.
 
 Busca *"Jupyter"* do autor *"Microsoft"* e instálao.
+
+![Logo Jupyter](images/jupyter/Jupyter_logo.svg#derecha "Logo Jupyter")
 
 ### Configurar a ruta base de conda
 
@@ -93,6 +97,7 @@ Busca *"Jupyter"* do autor *"Microsoft"* e instálao.
 ``` bash
 /home/USUARIO/miniconda3/bin/conda
 ```
+![Anaconda Logo](images/conda-0/Anaconda_Logo.png#derecha "Anaconda Logo")
 
 ### Configurar a terminal
 

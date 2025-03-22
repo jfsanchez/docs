@@ -37,6 +37,8 @@ sudo su - $USER
 docker run hello-world
 ```
 
+7. Xa podes probar a instalar o primeiro [docker con MySQL](docker-1-my-maria.md).
+
 Se estás nun contorno **WSL** coa distribución GNU/Debian instalada e recibes o erro:
 
 ~~~~ title="/var/log/docker.log"
