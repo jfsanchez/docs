@@ -6,11 +6,13 @@
 
 ### Instalación de paquetes
 
-1) Instalamos os dous módulos, kafka-python é un módulo máis simple mentres que o de confluent ten 
+1. Instalamos os dous módulos, kafka-python é un módulo máis simple mentres que o de confluent ten 
 
-``` bash
-conda install -c conda-forge kafka-python python-confluent-kafka
-```
+    ``` bash
+    conda install -c conda-forge kafka-python python-confluent-kafka
+    ```
+
+2. [Sigue o notebook do repositorio](https://github.com/jfsanchez/SBD/blob/main/notebooks/bbdd/apache-kafka.ipynb).
 
 ## Máis información
 
