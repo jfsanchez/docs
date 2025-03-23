@@ -111,3 +111,6 @@ if (empregamos_docker):
 
 - <https://github.com/jfsanchez/SBD/blob/main/notebooks/bbdd/redis.ipynb>
 
+## Máis información
+
+- <https://redis.io/docs/latest/develop/data-types/>
