@@ -4,13 +4,14 @@
 
 Esta instalación é xenérica para case calquera distribución de GNU/Linux. Recoméndase empregar o docker por ser máis cómodo e rápido.
 
-## Aviso previo
-
-**AVISO**: A versión 23 de amazon-corretto é necesaria para executar a última versión 2 de Apache Nifi.
-
 ## Descarga, verificación e outras operacións
 
-Ollo coa versión de Java, dependendo da versión de Apache Nifi 1.2 ou 2.x precisaremos a versión 11 ou 21 de Amazon Corretto respectivamente.
+⚠️ <u>**AVISO**</u>: Dependendo da versión de Apache Nifi precisaremos como **mínimo** unha determinada versión de Java (OpenJDK/Amazon Corretto):
+
+- Versión **11** para Apache Nifi **v1.2.x**.
+- Versión **23** para Apache Nifi **v2.4.x**.
+
+A explicación é para instalar a versión de Apache Nifi 1.24.0, se queres baixar outra versión mira a páxina de descargas: <https://nifi.apache.org/download/>.
 
 1. [Sigue as instruccións para instalar Amazon Corretto](amazon-corretto-java-0-instalacion.md).
 
@@ -52,8 +53,8 @@ Ollo coa versión de Java, dependendo da versión de Apache Nifi 1.2 ou 2.x prec
 
 Debemos configurar Apache Nifi. Precisamos mudar dous arquivos:
 
-- bin/nifi-env.sh
-- conf/nifi.properties
+- `bin/nifi-env.sh`
+- `conf/nifi.properties`
 
 Editamos primeiro `nifi-env.sh`:
 
@@ -63,7 +64,7 @@ nano $HOME/bin/nifi-1.24.0/bin/nifi-env.sh
 
 Teremos que indicarlle que máquina de Java coller (descomentamos se fai falta o JAVA_HOME e poñémolo como segue):
 
-``` bash
+``` bash title="$HOME/bin/nifi-1.24.0/bin/nifi-env.sh"
 export JAVA_HOME="$HOME/bin/amazon-corretto-latest/"
 ```
 
@@ -71,7 +72,7 @@ Agora debemos configurar no arquivo `nifi.properties` o porto https, a IP na que
 
 A instalación é dependente da IP do nodo de login, polo que debemos consultala. A que se pon aquí dase como exemplo e debes mirar a túa.
 
-Miramos a ip co comando `ifconfig`, en concreto interésanos a IPv4:
+Miramos a ip co comando `ifconfig`, en concreto interésanos a IPv4 (tamén podemos ver as IP con `hostname -I`):
 
 ```
 eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9000
@@ -96,16 +97,14 @@ nano $HOME/bin/nifi-1.24.0/conf/nifi.properties
 
 E cubrimos cos datos anteriores as seguintes variables no arquivo:
 
-``` title="conf/nifi.properties"
+``` title="$HOME/bin/nifi-1.24.0/conf/nifi.properties"
 nifi.web.https.host=10.10.10.101
 nifi.web.https.port=64801
 ```
 
 ### Inicio de Nifi
 
-Dentro de nifi hai un directorio bin que contén os scripts de lanzamento. En cocnreto interésanos:
-
-- bin/nifi.sh
+Dentro de nifi hai un directorio bin que contén os scripts de lanzamento. En concreto interésanos: `bin/nifi.sh`
 
 Entramos dentro do directorio:
 
@@ -119,11 +118,9 @@ E executamos:
 ./nifi.sh start
 ```
 
-Agora debemos consultar o usuario e clave por defecto en:
+Agora debemos consultar o usuario e clave por defecto en: `logs/nifi-app.log`.
 
-- logs/nifi-app.log
-
-Buscaremos o texto "Generated":
+Buscaremos o texto "**Generated**":
 
 ``` bash
 cat $HOME/bin/nifi-1.24.0/logs/nifi-app.log| grep Generated

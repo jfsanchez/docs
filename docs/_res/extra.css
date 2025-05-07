@@ -11,6 +11,11 @@ img[src*="#derecha"] {
   float:right;
 }
 
+img[src*="#izquierda-sin-ajuste"] {
+  float:left;
+  padding-right: 1em;
+}
+
 /* .md-clipboard {
   display: none !important;
 }

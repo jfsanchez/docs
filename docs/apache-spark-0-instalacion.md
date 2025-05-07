@@ -1,4 +1,4 @@
-# ⚝ Apache Spark - Instalación
+# ⚝ Apache Spark &mdash; 🧾 Instalación
 
 ![Logo Apache Spark](images/spark/Apache_Spark_logo.svg#derecha "Logo Apache Spark")
 
