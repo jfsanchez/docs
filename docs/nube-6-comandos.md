@@ -14,7 +14,7 @@ Esta receita está creada para o contorno do CESGA, sen embargo, pode adaptarse 
 
     ``` bash
     nano openstack.sh
-    ``` bash
+    ```
 
 4. Pegamos o contenido de OpenStack que temos baixado e gardamos (Ctrl+o, Enter) e saímos (Ctrl+x).
 
