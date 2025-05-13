@@ -1,4 +1,4 @@
-# 🛡️ OpenStack: Grupos de seguridade
+# ☁️ OpenStack &mdash; 🛡️ Grupos de seguridade
 
 O firewall na nube. Cada grupo de seguridade contén regras.
 
