@@ -7,8 +7,9 @@ pre[class*="language-"] {
 }
 
 img[src*="#derecha"] {
-  width: 150px;
+  width: 180px;
   float:right;
+  padding-left: 0.5em;
 }
 
 img[src*="#izquierda-sin-ajuste"] {
