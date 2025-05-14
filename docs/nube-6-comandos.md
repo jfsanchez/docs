@@ -31,7 +31,7 @@ Esta receita está creada para o contorno do CESGA, sen embargo, pode adaptarse 
 
     ``` bash
     USUARIO=${OS_USERNAME}
-    CENTRO='wirtz'
+    CENTRO='aqui-o-teu-centro'
     ```
 
 7. Probamos se todo funciona.
@@ -50,9 +50,9 @@ Esta receita está creada para o contorno do CESGA, sen embargo, pode adaptarse 
 9. Creamos o noso grupo de seguridade chamado segrup-USUARIO e que permita acceder a todo o mundo por SSH (normalmente abriríamolo só ao noso enderezo IP).
 
     ``` bash
-    openstack security group create segrup-${USUARIO}
-    openstack security group rule list segrup-${USUARIO}
-    openstack security group rule create --proto tcp --dst-port 22 --ingress --remote-ip 0.0.0.0/0 segrup-${USUARIO}
+    openstack security group create sg-centro-${USUARIO}
+    openstack security group rule list sg-centro-${USUARIO}
+    openstack security group rule create --proto tcp --dst-port 22 --ingress --remote-ip 0.0.0.0/0 sg-centro-${USUARIO}
     ```
 
 10. Creamos **catro** instancias.
