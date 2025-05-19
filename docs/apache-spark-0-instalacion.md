@@ -123,7 +123,7 @@ Outra opción se contas con pouco ancho de banda é baixar unha vez o arquivo de
 
     ``` bash
     clush -l cesgaxuser -bw hadoop[1-4] \
-      sudo curl -L -O https://dlcdn.apache.org/spark/spark-3.4.3/spark-3.4.3-bin-hadoop3.tgz \
+      sudo curl -L -O https://dlcdn.apache.org/spark/spark-3.5.5/spark-3.5.5-bin-hadoop3.tgz \
       -o /home/cesgaxuser/spark-bin-hadoop3.tar.gz
     ```
 
