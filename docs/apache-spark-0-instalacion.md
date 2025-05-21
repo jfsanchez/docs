@@ -263,6 +263,16 @@ E lembra ter todas as variables definidas nos arquivos **-env.sh** correspondent
 
 Executamos dende o master con spark-submit un traballo, que debería enviarse ao hadoop.
 
+Modo cluster seleccionando manualmente master de hadoop:
+``` bash
+spark-submit --deploy-mode cluster \
+  --master spark://hadoop1:7077
+  --class org.apache.spark.examples.SparkPi \
+  $SPARK_HOME/examples/jars/spark-examples_2.14-3.4.2.jar 2
+```
+
+
+Modo cliente
 ``` bash
 spark-submit --deploy-mode client \
   --class org.apache.spark.examples.SparkPi \
